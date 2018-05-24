@@ -1,0 +1,138 @@
+//=======================================================================================================//
+// File: Description.ext                                                                                 //
+// Author: TheMagnetar                                                                                   //
+// Version: 1.0                                                                                          //
+// File creation: 2015/02/22                                                                             //
+// Description: This file is used in order to configure different scenario attributes. In this case this //
+//              file presents a modular structure, where mission dependant variables (respawn type,      //
+//              authors, ...) are defined in a separate file. Functions and their permissions are        //
+//              declared also in this way.                                                               //
+// Changes: 1.0 (2015/11/26) First public version.                                                       //
+//=======================================================================================================//
+
+//=======================================================================================================//
+// UST101 Mission Framework.                                                                             //
+//=======================================================================================================//
+#include "umfFramework/frameworkConfig.hpp"
+
+//=======================================================================================================//
+// Mission header - Game type definition and minimum and maximum number of players.                      //
+//=======================================================================================================//
+class Header {
+    gameType = Coop;           // Game type: https://community.bistudio.com/wiki/Multiplayer_Game_Types
+    minPlayers = 1;            // Minimum number of players.
+    maxPlayers = 14;           // Maximum number of players.
+    playerCountMultipleOf = 1; // Balancing in tvt or pvp game types.
+};
+
+//=======================================================================================================//
+// Mission configuration - Variables to configure different scripts of the template.                     //
+//=======================================================================================================//
+class CfgMission {
+    // Variables affecting the admin briefing.
+    essentialAddons[] = {};
+    recommendedAddons[] = {};
+    
+    missionVersion = "vX.Y (date).";
+    missionCollaborators = "TheMagnetar (A3-BMT) and *** Possible collaborators ***.";
+    missionDifficulty = "*** Expected mission difficulty. ***";
+    missionSummary = "*** Mission summary for administrators. ***";
+    missionNotesAndRemarks = "*** Additional notes and remarks from the mission author. ***";
+};
+
+//=======================================================================================================//
+// Loading screen: https://community.bistudio.com/wiki/Description.ext                                   //
+//=======================================================================================================//
+
+onLoadName = "*** Mission name. ***";                     // Mission name.
+onLoadMission = "*** Mission description. ***";           // Brief mission description.
+onLoadIntro = "UST101 Mission Framework (UMF)";      // Message shown while loading introduction.
+onLoadIntroTime = 0;                                  // Show (1) or hide (0) date and time on when loading introduction.
+onLoadMissionTime = 0;                                    // Show (1) or hide (0) date and time on when loading mission.
+author = "*** Author(s). ***";                            // Author.
+loadScreen = "images\loadScreen.jpg";                     // Image displayed when loading mission.
+overviewPicture = "images\overviewPicture.jpg";           // Imatge displayed when selecting mission (aspect 2:1).
+overviewText = "*** Text to show. ***";                   // Text shown when selecting mission.
+
+//=======================================================================================================//
+// DEBRIEFING: Additional information displayed when mission ends.                                       //
+//=======================================================================================================//
+class CfgDebriefing {
+    class EndingSuccess1 {
+        title = "Ending #1";
+        subtitle = "";
+        description = "*** Debriefing Ending #1. ***";
+        pictureBackground = "";
+        picture = "b_inf";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+
+    class EndingSuccess2 {
+        title = "Ending #2";
+        subtitle = "";
+        description = "*** Debriefing Ending #2. ***";
+        pictureBackground = "";
+        picture = "b_inf";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+
+    //class EndingSuccess3, EndingSuccess4, ....
+
+    class EndingFailure1 {
+        title = "Mission failed #1";
+        subtitle = "";
+        description = "*** Debriefing for mission failed #1. ***";
+        pictureBackground = "";
+        picture = "KIA";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+
+    class EndingFailure2 {
+        title = "Mission failed #2";
+        subtitle = "";
+        description = "*** Debriefing for mission failed #2. ***";
+        pictureBackground = "";
+        picture = "KIA";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+
+    //class EndingFailure3, EndingFailure4, ....
+
+    // Do not delete
+    class Disaster {
+        title = "Disaster";
+        subtitle = "";
+        description = "*** Definition of disaster. ***";
+        pictureBackground = "";
+        picture = "KIA";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+};
+
+
+//=======================================================================================================//
+// Respawn Settings: https://community.bistudio.com/wiki/Arma_3_Respawn                                  //
+//=======================================================================================================//
+respawnDelay        = 10;      // Respawn delay in seconds.
+respawnVehicleDelay = 30;      // Vehicle respawn delay in seconds.
+
+//=======================================================================================================//
+// FUNCTIONS: Functions used in the "Arma 3 Basic Mission Template" (A3-BMT).                            //
+//=======================================================================================================//
+class CfgFunctions {
+    
+};
+
+//=======================================================================================================//
+// REMOTE FUNCTION RESTRICTIONS: This section defines the restriction of remote execution of functions.  //
+//                               https://community.bistudio.com/wiki/CfgRemoteExec                       //
+//=======================================================================================================//
+class CfgRemoteExec {
+    // List of functions that can be send by the client by using emoteExec/remoteExecCall.
+    class Functions {
+        mode = 2;  // Default remoteExecc state: 0: deactivated, 1: activated with whitelist, 2: activated ignoring whitelist (default).
+        jip = 1;   // Hability to send JIP messages. 0: deactivated, 1: activatedt.
+    };
+};
+
+//============================================= END OF FILE =============================================//

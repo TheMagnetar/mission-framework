@@ -1,0 +1,12 @@
+name = "UST101 Mission Framework 1.0.0";
+picture = "logo_ust101_ca.paa";
+actionName = "GitHub";
+action = "https://github.com/TheMagnetar/us101-mission-framework";
+description = "UMF - Version 1.0.0";
+logo = "logo_ust101_ca.paa";
+logoOver = "logo_ust101_ca.paa";
+tooltip = "UMF";
+tooltipOwned = "UST101 Owned";
+overview = "UST101 Mission Framework is a collection of scripts used for the missions edited for UST101 gameplay sessions.";
+author = "TheMagnetar Team";
+overviewPicture = "logo_ust101_ca.paa";
