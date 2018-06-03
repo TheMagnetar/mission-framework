@@ -1,0 +1,9 @@
+PREP(config);
+PREP(effects);
+PREP(enterSpectator);
+PREP(exitSpectator);
+PREP(manageTickets);
+PREP(moveToMarker);
+PREP(onPlayerKilled);
+PREP(onPlayerRespawn);
+PREP(respawnCounter);

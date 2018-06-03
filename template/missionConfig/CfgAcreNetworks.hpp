@@ -36,6 +36,8 @@ class networkCommand {
 };
 
 class networkAir : networkCommand {
+    displayName = "Air";
+
     class ACRE_PRC117F {
         roles[] = {"jtac"};
         networkConfiguration[] = {
@@ -52,6 +54,8 @@ class networkAir : networkCommand {
 };
 
 class networkLezo : networkCommand {
+    displayName = "Lezo";
+
     class ACRE_PRC152 {
         roles[] = {"pl", "psg", "rto", "fo", "jtac", "sl", "tl", "sn", "sp", "divsl"};
         networkConfiguration[] = {

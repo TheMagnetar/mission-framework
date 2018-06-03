@@ -1,0 +1,42 @@
+/*
+ * Author: TheMagnetar
+ * Loads the defined networks in 3DEN
+ *
+ * Arguments:
+ * 0: Unit <OBJECT> (Default: objNull)
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player] call umf_acre_fnc_loadNetworks3den
+ *
+ * Public: Yes
+ */
+#include "script_component.hpp"
+
+disableSerialization;
+params ["_control", ""];
+
+private _unit = get3DENSelected "object";
+
+private _selectedNetwork = ((_unit # 0) get3DENAttribute QEGVAR(acre,assignedNetworks)) select 0;
+private _networkEntries = missionConfigFile >> "CfgAcreNetworks";
+
+private _definedNetworks = [["default", "default"]];
+{
+    _definedNetworks pushBackUnique [getText (_x >> "displayName"), toLower (configName _x)];
+} forEach configProperties [_networkEntries, "isClass _x"];
+
+_definedNetworks sort true;
+
+lbClear _control;
+
+{
+    private _index = _control lbAdd (_x # 0);
+    _control lbSetData [_index, _x # 1];
+
+    if((_x # 1) isEqualTo _selectedNetwork) then {
+        _control lbSetCurSel _index
+    };
+} forEach _definedNetworks;

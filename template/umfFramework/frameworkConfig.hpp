@@ -1,7 +1,7 @@
 class CfgUmfConfig {
-    templateVersion = "v0.1 (2016-05-24).";
-    author = "TheMagnetar";
-}
+    templateVersion = "v0.1 (2018-06-01).";
+    authors = "TheMagnetar";
+};
 
 //=======================================================================================================//
 // Respawn Settings: https://community.bistudio.com/wiki/Arma_3_Respawn                                  //
@@ -37,23 +37,29 @@ enableDebugConsole = 1;  // Enabled for SP and MP administrators.
 //=======================================================================================================//
 // Configuration of several mission parameters.                                                          //
 //=======================================================================================================//
-showGPS     = 1;             // Shows (1) or hides (0) the GPS receiver on the map screen.
-showCompass = 1;             // Shows (1) or hides (0) the compass on the map screen.
-showMap     = 1;             // Shows (1) or hides (0) map after the mission starts.
-showWatch   = 1;             // Shows (1) or hides (0) the watch on the map screen.
-showUAVFeed = 0;             // Shows (1) or hides (0) the UAV feed.
+showGPS                 = 1; // Shows (1) or hides (0) the GPS receiver on the map screen.
+showCompass             = 1; // Shows (1) or hides (0) the compass on the map screen.
+showMap                 = 1; // Shows (1) or hides (0) map after the mission starts.
+showWatch               = 1; // Shows (1) or hides (0) the watch on the map screen.
+showUAVFeed             = 0; // Shows (1) or hides (0) the UAV feed.
 forceRotorLibSimulation = 1; // Force enable or disable RotorLib: 0 = client options based,
                              // 1 = force enable, 2 = force disable.
-//disableChannels[]={0,1,2,3,4,5,6}; // Disable channels. MOTD and admin say have exception and will show in global.
-                                   // 0 = global, 1 = Side, 2 = Command, 3 = Group, 4 = Vehicle, 5 = Direct,
-                                   // 6 = System.
+disableChannels[]={
+    {0, false, false},  // Global (always enabled for admin by definition)
+    {1, false, false},  // Side
+    {2, false, false},  // Command
+    {3, false, false},  // Group (always enabled by definition)
+    {4, false, false},  // Vehicle
+    {5, false, false},  // Direct
+    {6, false, false}   // System
+};
 
 // Mission defined loadouts and factions
 class CfgLoadouts {
-    #include "missionConfig/CfgLoadouts.hpp"
+    #include "..\missionConfig\CfgLoadouts.hpp"
 };
 
 // ACRE Networks
 class CfgAcreNetworks {
-    #include "missionConfig/CfgAcreNetworks.hpp"
+    #include "..\missionConfig\CfgAcreNetworks.hpp"
 };

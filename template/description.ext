@@ -13,7 +13,7 @@
 //=======================================================================================================//
 // UST101 Mission Framework.                                                                             //
 //=======================================================================================================//
-#include "umfFramework/frameworkConfig.hpp"
+#include "umfFramework\frameworkConfig.hpp"
 
 //=======================================================================================================//
 // Mission header - Game type definition and minimum and maximum number of players.                      //
@@ -32,27 +32,24 @@ class CfgMission {
     // Variables affecting the admin briefing.
     essentialAddons[] = {};
     recommendedAddons[] = {};
-    
+    clientAddons[] = {};
+    community = "Unidad de Simulación Táctica 101 (UST101)";
     missionVersion = "vX.Y (date).";
-    missionCollaborators = "TheMagnetar (A3-BMT) and *** Possible collaborators ***.";
-    missionDifficulty = "*** Expected mission difficulty. ***";
-    missionSummary = "*** Mission summary for administrators. ***";
-    missionNotesAndRemarks = "*** Additional notes and remarks from the mission author. ***";
+    missionCollaborators = "*** Possible collaborators ***.";
 };
 
 //=======================================================================================================//
 // Loading screen: https://community.bistudio.com/wiki/Description.ext                                   //
 //=======================================================================================================//
-
-onLoadName = "*** Mission name. ***";                     // Mission name.
-onLoadMission = "*** Mission description. ***";           // Brief mission description.
-onLoadIntro = "UST101 Mission Framework (UMF)";      // Message shown while loading introduction.
+onLoadName = "*** Mission name. ***";                 // Mission name.
+onLoadMission = "*** Mission description. ***";       // Brief mission description.
+onLoadIntro = "UST101 Mission Framework (UMF)";       // Message shown while loading introduction.
 onLoadIntroTime = 0;                                  // Show (1) or hide (0) date and time on when loading introduction.
-onLoadMissionTime = 0;                                    // Show (1) or hide (0) date and time on when loading mission.
-author = "*** Author(s). ***";                            // Author.
-loadScreen = "images\loadScreen.jpg";                     // Image displayed when loading mission.
-overviewPicture = "images\overviewPicture.jpg";           // Imatge displayed when selecting mission (aspect 2:1).
-overviewText = "*** Text to show. ***";                   // Text shown when selecting mission.
+onLoadMissionTime = 0;                                // Show (1) or hide (0) date and time on when loading mission.
+author = "*** Author(s). ***";                        // Author.
+loadScreen = "media\images\loadScreen.jpg";           // Image displayed when loading mission.
+overviewPicture = "media\images\overviewPicture.jpg"; // Imatge displayed when selecting mission (aspect 2:1).
+overviewText = "*** Text to show. ***";               // Text shown when selecting mission.
 
 //=======================================================================================================//
 // DEBRIEFING: Additional information displayed when mission ends.                                       //
@@ -109,7 +106,6 @@ class CfgDebriefing {
     };
 };
 
-
 //=======================================================================================================//
 // Respawn Settings: https://community.bistudio.com/wiki/Arma_3_Respawn                                  //
 //=======================================================================================================//
@@ -117,10 +113,25 @@ respawnDelay        = 10;      // Respawn delay in seconds.
 respawnVehicleDelay = 30;      // Vehicle respawn delay in seconds.
 
 //=======================================================================================================//
-// FUNCTIONS: Functions used in the "Arma 3 Basic Mission Template" (A3-BMT).                            //
+// Music: https://community.bistudio.com/wiki/Description.ext                                            //
+//=======================================================================================================//
+class CfgMusic {
+
+};
+
+//=======================================================================================================//
+// Leaflets: https://community.bistudio.com/wiki/Arma_3_Leaflets                                         //
+//           Allows creating custom propaganda leaflets                                                  //
+//=======================================================================================================//
+class CfgLeaflets {
+
+};
+
+//=======================================================================================================//
+// FUNCTIONS: Functions used in the mission. External scripts may need to be placed in here.             //
 //=======================================================================================================//
 class CfgFunctions {
-    
+
 };
 
 //=======================================================================================================//
