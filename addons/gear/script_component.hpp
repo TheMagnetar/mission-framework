@@ -14,6 +14,8 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_GEAR
 #endif
 
+#include "\u\umf\addons\main\script_macros.hpp"
+
 #define EXPAND_2(var1) var1,var1
 #define EXPAND_3(var1) var1,var1,var1
 #define EXPAND_4(var1) var1,var1,var1,var1
@@ -33,5 +35,3 @@
 #define EXPAND_18(var1) var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1
 #define EXPAND_19(var1) var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1
 #define EXPAND_20(var1) var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1
-
-#include "\u\umf\addons\main\script_macros.hpp"
