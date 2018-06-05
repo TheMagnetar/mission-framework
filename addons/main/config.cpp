@@ -12,7 +12,7 @@ class CfgPatches {
             "cba_main",
             "cba_xeh"
         };
-        author = ECSTRING(core,BMTTeam);
+        author = ECSTRING(core,UMFTeam);
         url = CSTRING(URL);
         VERSION_CONFIG;
     };

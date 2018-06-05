@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="UMF">
+    <Package name="Main">
+        <Key ID="STR_UMF_Main_URL">
+            <English>http://www.ust101.com/</English>
+        </Key>
+    </Package>
+</Project>
