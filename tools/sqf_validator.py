@@ -8,7 +8,7 @@ import sys
 import argparse
 
 def validKeyWordAfterCode(content, index):
-    keyWords = ["for", "do", "count", "each", "forEach", "else", "and", "not", "isEqualTo", "in", "call", "spawn", "execVM", "catch"];
+    keyWords = ["for", "do", "count", "each", "forEach", "else", "and", "not", "isEqualTo", "in", "call", "spawn", "execVM", "catch", "param", "select", "apply"];
     for word in keyWords:
         try:
             subWord = content.index(word, index, index+len(word))
@@ -50,7 +50,7 @@ def check_sqf_syntax(filepath):
         checkForSemiColumn = False
 
         # Extra information so we know what line we find errors at
-        lineNumber = 0
+        lineNumber = 1
 
         indexOfCharacter = 0
         # Parse all characters in the content of this file to search for potential errors
@@ -84,7 +84,7 @@ def check_sqf_syntax(filepath):
                             isInString = True
                             inStringType = c
                         elif (c == '#'):
-                            ignoreTillEndOfLine = True
+                            checkForSemiColumn = False
                         elif (c == '/'):
                             checkIfInComment = True
                         elif (c == '('):
