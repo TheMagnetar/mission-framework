@@ -72,8 +72,8 @@ dssignfile = ""
 prefix = "umf"
 pbo_name_prefix = "umf_"
 signature_blacklist = []
-importantFiles = ["mod.cpp", "README.md", "AUTHORS.txt", "LICENSE", "logo_ust101_ca.paa", "logo_ust101_over_ca.paa", "logo_ust101_small_ca.paa"]
-versionFiles = ["README.md", "mod.cpp"]
+importantFiles = ["mod.cpp", "readme.md", "authors.txt", "license", "logo_ust101_ca.paa", "logo_ust101_over_ca.paa", "logo_ust101_small_ca.paa"]
+versionFiles = ["readme.md", "mod.cpp"]
 
 ciBuild = False # Used for CI builds
 
