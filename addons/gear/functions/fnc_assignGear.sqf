@@ -51,6 +51,9 @@ if (!isClass _configEntry) exitWith {
     WARNING_1("Role not found %1",_role);
 };
 
+private _forceItems = getNumber (_configEntry >> "forceItems");
+_unit setVariable [QGVAR(forceItems), _forceItems == 1, true];
+
 [_unit] call compile (getText (_configEntry >> "preLoadout"));
 
 {

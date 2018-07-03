@@ -31,6 +31,7 @@ if (_network isEqualTo "default") exitWith {
 
 private _radioAdded = false;
 
+private _forceItems = _unit getVariable [QEGVAR(gear,forceItems), false];
 {
     private _networkEntry = toLower (configName _x);
     if (_networkEntry isEqualTo _network) then {
@@ -40,7 +41,7 @@ private _radioAdded = false;
             //[_radio, toLower (configName _networkEntries)] call acre_api_fnc_setPreset;
             [_radio, _networkEntry] call acre_api_fnc_setPreset;
 
-            if ((_unitRole in _roles) && {_unit canAdd _radio}) then {
+            if ((_unitRole in _roles) && {_unit canAdd _radio || _forceItems}) then {
                 _unit addItem _radio;
             };
         } forEach (configProperties [_x, "isClass _x", true]);

@@ -57,7 +57,7 @@ if (_type == "magazines") then {
     } forEach _weapons;
 };
 
-
+private _forceItems = _unit getVariable [QGVAR(forceItems), false];
 {
     private _selectedItem = _x;
 
@@ -100,7 +100,7 @@ if (_type == "magazines") then {
         case (_conditionMagazine || _conditionMagazineAttachment): {_unit addWeaponItem [_weapon, _selectedItem];};
         case (_unit canAddItemToUniform _selectedItem): {_unit addItemToUniform _selectedItem;};
         case (_unit canAddItemToVest _selectedItem): {_unit addItemToVest _selectedItem;};
-        case (_unit canAddItemToBackpack _selectedItem && _type == "backpackitems"): {_unit addItemToBackpack _selectedItem;};
+        case ((_unit canAddItemToBackpack _selectedItem || _forceItems) && {_type isEqualTo "backpackitems"}): {_unit addItemToBackpack _selectedItem;};
         default {_couldNotAdd pushBack _selectedItem;};
     };
 } forEach _items;

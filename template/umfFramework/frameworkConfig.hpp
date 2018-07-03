@@ -54,6 +54,8 @@ disableChannels[]={
     {6, false, false}   // System
 };
 
+#include "script_component.hpp"
+
 // Mission defined loadouts and factions
 class CfgLoadouts {
     #include "..\missionConfig\CfgLoadouts.hpp"
