@@ -26,7 +26,19 @@ if (count _weapons > 0) then {
     _selectedWeapon = selectRandom _weapons;
 };
 
-if  (count _selectedWeapon == 0) exitWith{};
+if  (count _selectedWeapon == 0) exitWith{
+    switch (toLower _type) do {
+        case "primaryweapon": {
+             _unit removeWeapon (primaryWeapon _unit);
+        };
+        case "handgun": {
+            _unit removeWeapon (handgunWeapon _unit);
+        };
+        case "launcher": {
+            _unit removeWeapon (secondaryWeapon _unit);
+        };
+    };
+};
 
 switch (toLower _type) do {
     case "primaryweapon": {
@@ -49,7 +61,7 @@ switch (toLower _type) do {
             _unit addPrimaryWeaponItem _attachment;
         } forEach _selectedWeapon select [1, count _selectedWeapon -1];
     };
-    case "secondaryweapon": {
+    case "handgun": {
         if (handgunWeapon _unit != _selectedWeapon select 0) then {
             _unit removeWeapon (handgunWeapon _unit);
             _unit addWeapon (_selectedWeapon select 0);
@@ -71,7 +83,7 @@ switch (toLower _type) do {
     };
     case "launcher": {
         if (secondaryWeapon  _unit != _selectedWeapon select 0) then {
-            _unit removeWeapon (secondaryWeapon  _unit);
+            _unit removeWeapon (secondaryWeapon _unit);
             _unit addWeapon (_selectedWeapon select 0);
         };
 

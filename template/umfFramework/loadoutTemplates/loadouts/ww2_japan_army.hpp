@@ -14,13 +14,13 @@ class baseMan {// Weaponless baseclass
     nightVision[] = {};                        // Nightvision randoom {nvg1, nvg2}
 
     // Weapons
-    primaryWeapon[] = {{""}};   // Randoom weapon with randoom attachments 1a,1b + 2,2a + 3 + 4
-                                // {
-                                //    {weaponName1, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
-                                //    {weaponName2, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
-                                // }
-    secondaryWeapon[] = {{""}}; // Handgun
-    launcher[] = {{""}};        // Launcher
+    primaryWeapon[] = {};   // Randoom weapon with randoom attachments 1a,1b + 2,2a + 3 + 4
+                            // {
+                            //    {weaponName1, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
+                            //    {weaponName2, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
+                            // }
+    handgun[] = {};         // Handgun
+    launcher[] = {};        // Launcher
 
     // Items and magazines
     magazines[] = {};      // Magazines. The first suitable magazine will be added to the corresponding weapon
@@ -86,7 +86,7 @@ class tl : rfl {
     primaryWeapon[] = {
         {"fow_w_type100"}
     };
-    secondaryWeapon[] = {
+    handgun[] = {
         {"fow_w_type14"}
     };
     magazines[] = {
@@ -148,7 +148,7 @@ class mg : rfl {
     primaryWeapon[] = {
         {"fow_w_type99_lmg"}
     };
-    secondaryWeapon[] = {
+    handgun[] = {
         {"fow_w_type14"}
     };
     magazines[] = {
@@ -190,8 +190,8 @@ class jplt : baseMan {
     vest[] = {};
     headgear[] = {"fow_h_ija_flight_helmet","fow_h_ija_hakimachi"};
 
-    primaryWeapon[] = {{""}};
-    secondaryWeapon[] = {
+    primaryWeapon[] = {};
+    handgun[] = {
         {"fow_w_type14"}
     };
     magazines[] = {

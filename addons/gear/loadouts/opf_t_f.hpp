@@ -12,7 +12,7 @@ class baseMan {// Weaponless baseclass
 
     // Weapons
     primaryWeapon[] = {};       // {weaponName, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4}
-    secondaryWeapon[] = {};
+    handgun[] = {};
     launcher[] = {};
 
     // Items and magazines

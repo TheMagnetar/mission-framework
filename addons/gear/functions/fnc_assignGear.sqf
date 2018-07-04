@@ -66,7 +66,7 @@ _unit setVariable [QGVAR(forceItems), _forceItems == 1, true];
     if (isArray (_configEntry >> _x)) then {
         [_unit, getArray (_configEntry >> _x), _x] call FUNC(replaceWeapons);
     };
-} forEach ["primaryWeapon", "secondaryWeapon", "launcher"];
+} forEach ["primaryWeapon", "handgun", "launcher"];
 
 
 private _backpackItems = getArray (_configEntry >> "backpackItems");

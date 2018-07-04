@@ -16,7 +16,7 @@ class baseMan {// Weaponless baseclass
                                 //    {weaponName1, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
                                 //    {weaponName2, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
                                 // }
-    secondaryWeapon[] = {};     // Handgun
+    handgun[] = {};             // Handgun
     launcher[] = {};            // Launcher
 
     // Items and magazines
@@ -45,7 +45,7 @@ class rfl : baseMan {
     primaryWeapon[] = {
             {"rhs_weap_m4a1_pmag", "rhsusf_acc_compm4"}
         };
-    secondaryWeapon[] = {
+    handgun[] = {
         {"rhsusf_weap_m9"}
     };
     magazines[] = {
