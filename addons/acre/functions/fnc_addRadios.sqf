@@ -42,7 +42,7 @@ private _forceItems = _unit getVariable [QEGVAR(gear,forceItems), false];
             [_radio, _networkEntry] call acre_api_fnc_setPreset;
 
             if ((_unitRole in _roles) && {_unit canAdd _radio || _forceItems}) then {
-                if (_forceItems) then {
+                if (_forceItems && {!(_unit canAdd _radio)}) then {
                     (unitBackpack _unit) addItemCargoGlobal [_radio, 1];
                 } else {
                     _unit addItem _radio;
