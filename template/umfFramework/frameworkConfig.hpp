@@ -65,3 +65,8 @@ class CfgLoadouts {
 class CfgAcreNetworks {
     #include "..\missionConfig\CfgAcreNetworks.hpp"
 };
+
+// MAI group compositions
+class CfgGroupCompositions {
+    #include "..\missionConfig\mai\CfgGroupCompositions.hpp"
+};
