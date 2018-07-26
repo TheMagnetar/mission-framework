@@ -1,7 +1,7 @@
 class baseMan {// Weaponless baseclass
     displayName = "Unarmed";                // Identificador en el editor 3D
 
-    forceItems = 0;                         // Forces all items in the backpack.
+    forceBackpackRadio = 0;                         // Forces all items in the backpack.
     uniform[] = {"rhs_uniform_cu_ucp"};     // Uniform: randoom {uniform1, uniform2}
     vest[] = {"rhsusf_iotv_ucp_rifleman"};  // Vest randoom {vest1, vest2}
     backpack[] = {};                        // Backpack randoom {backpack1, backpack2}

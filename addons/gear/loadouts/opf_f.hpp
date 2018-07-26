@@ -1,7 +1,7 @@
 class baseMan {// Weaponless baseclass
     displayName = "Unarmed";
 
-    forceItems = 0;
+    forceBackpackRadio = 0;
     uniform[] = {};
     vest[] = {};
     backpack[] = {};

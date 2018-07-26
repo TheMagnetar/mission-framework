@@ -31,18 +31,19 @@ if (_network isEqualTo "default") exitWith {
 
 private _radioAdded = false;
 
-private _forceItems = _unit getVariable [QEGVAR(gear,forceItems), false];
+private _forceBackpackRadio = _unit getVariable [QEGVAR(gear,forceBackpackRadio), false];
 {
     private _networkEntry = toLower (configName _x);
     if (_networkEntry isEqualTo _network) then {
         {
             private _roles = getArray (_x >> "roles");
             private _radio = configName _x;
-            //[_radio, toLower (configName _networkEntries)] call acre_api_fnc_setPreset;
-            [_radio, _networkEntry] call acre_api_fnc_setPreset;
 
-            if ((_unitRole in _roles) && {_unit canAdd _radio || _forceItems}) then {
-                if (_forceItems && {!(_unit canAdd _radio)}) then {
+            [_radio, _networkEntry] call acre_api_fnc_setPreset;
+            private _isManpack = (getNumber (configFile >> "CfgAcreComponents" >> _radio >> "isPackRadio") == 1);
+
+            if ((_unitRole in _roles) && {_unit canAdd _radio || {_forceBackpackRadio && {_isManpack}}) then {
+                if (_forceBackpackRadio && {_isManpack} && {!(_unit canAdd _radio)}) then {
                     (unitBackpack _unit) addItemCargoGlobal [_radio, 1];
                 } else {
                     _unit addItem _radio;

@@ -116,7 +116,7 @@ class pl : sl {
 class rto : gr {
     displayName = "RTO";
 
-    forceItems = 1;
+    forceBackpackRadio = 1;
 };
 
 class rto_pl : rto {
