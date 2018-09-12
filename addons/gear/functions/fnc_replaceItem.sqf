@@ -41,7 +41,6 @@ if (_type == "magazines") then {
     { _unit removeMagazineGlobal _x; } forEach (magazines _unit);
 
     {
-        private _compatSecondary = [];
         _compatibleMagazines pushBack ((getArray (configFile >> "CfgWeapons" >> _x >> "magazines")) apply {toLower _x});
         private _muzzles = getArray (configFile >> "CfgWeapons" >> _x >> "muzzles");
         private _muzzle = "";
@@ -63,7 +62,6 @@ if (_type == "magazines") then {
     private _loadedMagazines = [];
     private _conditionMagazine = false;
     private _conditionMagazineAttachment = false;
-    private _addToWeapon = false;
     private _weapon = "";
     if (_type == "magazines") then {
         _loadedMagazines = [primaryWeaponMagazine _unit, handgunMagazine _unit, secondaryWeaponMagazine _unit];

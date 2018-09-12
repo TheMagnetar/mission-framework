@@ -49,7 +49,6 @@ private _networkEntries = missionConfigFile >> "CfgAcreNetworks";
                 ERROR_1("Too many channels for radio %1",_baseRadio);
             };
 
-            private _frequency = 0;
             if (count _x == 1) then {
                 private _channelName = _x select 0;
                 //[_baseRadio, _presetName, _forEachIndex, "label", _channelName] call acre_api_fnc_setPresetChannelField;

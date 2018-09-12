@@ -29,9 +29,8 @@ if (_network isEqualTo "default") exitWith {
     ERROR_1("Undefined network for unit %1",_unit);
 };
 
-private _radioAdded = false;
-
 private _forceBackpackRadio = _unit getVariable [QEGVAR(gear,forceBackpackRadio), false];
+
 {
     private _networkEntry = toLower (configName _x);
     if (_networkEntry isEqualTo _network) then {
@@ -42,7 +41,7 @@ private _forceBackpackRadio = _unit getVariable [QEGVAR(gear,forceBackpackRadio)
             [_radio, _networkEntry] call acre_api_fnc_setPreset;
             private _isManpack = (getNumber (configFile >> "CfgAcreComponents" >> _radio >> "isPackRadio") == 1);
 
-            if ((_unitRole in _roles) && {_unit canAdd _radio || {_forceBackpackRadio && {_isManpack}}) then {
+            if ((_unitRole in _roles) && {_unit canAdd _radio || {_forceBackpackRadio && {_isManpack}}}) then {
                 if (_forceBackpackRadio && {_isManpack} && {!(_unit canAdd _radio)}) then {
                     (unitBackpack _unit) addItemCargoGlobal [_radio, 1];
                 } else {

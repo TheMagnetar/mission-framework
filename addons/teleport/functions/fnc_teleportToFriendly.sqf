@@ -21,7 +21,7 @@ private _rank = -1;
 private _couldTeleport = false;
 
 {
-    if (alive _x and (rankId _x > _rank) && {(vehicle _x == _x) || ([vehicle _x] call FUNC(hasEmptyPositions))}) then {
+    if (alive _x && {rankId _x > _rank} && {(vehicle _x == _x) || {[vehicle _x] call FUNC(hasEmptyPositions)}}) then {
         _rank = rankId _x;
         _targetUnit = _x;
     };
