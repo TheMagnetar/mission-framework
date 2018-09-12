@@ -1,8 +1,8 @@
-name = "UST101 Mission Framework 0.1.3";
+name = "UST101 Mission Framework 0.1.2";
 picture = "logo_ust101_ca.paa";
 actionName = "GitHub";
 action = "https://github.com/TheMagnetar/us101-mission-framework";
-description = "UMF - Version 0.1.3";
+description = "UMF - Version 0.1.2";
 logo = "logo_ust101_ca.paa";
 logoOver = "logo_ust101_over_ca.paa";
 logoSmall = "logo_ust101_small_ca.paa";

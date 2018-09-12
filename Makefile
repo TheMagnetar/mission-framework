@@ -81,7 +81,7 @@ release: clean version commit
 	@"$(MAKE)" $(MAKEFLAGS) signatures
 	@echo "  ZIP  $(ZIP)_v$(VERSION_S).zip"
 	@cp authors.txt license logo_ust101_ca.paa logo_ust101_over_ca.paa logo_ust101_small_ca.paa mod.cpp readme.md $(BIN)
-	@zip -qr $(ZIP)_v$(VERSION_S).zip $(BIN)
+	@7z a -tzip $(ZIP)_$(VERSION).zip "./$(BIN)"
 
 clean:
 	rm -rf $(BIN) $(ZIP)_*.zip
