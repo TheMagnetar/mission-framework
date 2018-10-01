@@ -1,5 +1,5 @@
 class CfgUmfConfig {
-    templateVersion = "v0.1 (2018-06-01).";
+    templateVersion = "v0.2 (2018-10-01).";
     authors = "TheMagnetar";
 };
 
@@ -31,8 +31,10 @@ class CfgRespawnTemplates {
 
 //=======================================================================================================//
 // BIS Debug Console: https://community.bistudio.com/wiki/Description.ext#enableDebugConsole             //
+// Debug console is handled by the addon itself.                                                         //
+// https://community.bistudio.com/wiki/Mission_Editor:_Debug_Console_(Arma_3)#Mod_support                //
 //=======================================================================================================//
-enableDebugConsole = 1;  // Enabled for SP and MP administrators.
+// enableDebugConsole = 1;  // Enabled for SP and MP administrators.
 
 //=======================================================================================================//
 // Configuration of several mission parameters.                                                          //
@@ -44,7 +46,9 @@ showWatch               = 1; // Shows (1) or hides (0) the watch on the map scre
 showUAVFeed             = 0; // Shows (1) or hides (0) the UAV feed.
 forceRotorLibSimulation = 1; // Force enable or disable RotorLib: 0 = client options based,
                              // 1 = force enable, 2 = force disable.
-disableChannels[]={
+
+saving = 0;             // Disable saving
+disableChannels[] = {
     {0, false, false},  // Global (always enabled for admin by definition)
     {1, false, false},  // Side
     {2, false, false},  // Command

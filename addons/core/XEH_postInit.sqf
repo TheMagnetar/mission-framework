@@ -1,8 +1,5 @@
 #include "script_component.hpp"
 
-// Disable Saving and Automatic Saving. https://community.bistudio.com/wiki/enableSaving
-enableSaving [false, false];
-
 // Disable radio chatter: https://community.bistudio.com/wiki/enableSentences
 enableSentences false;
 
@@ -21,7 +18,7 @@ enableSentences false;
     [DIK_PERIOD, [true, true, true]]
 ] call CBA_fnc_addKeybind;
 
-// Disable all channels
-{
-    _x enableChannel [false, false];
-} forEach [0, 1, 2, 3, 4, 5, 6];
+if !(hasInterface) exitWith {};
+
+// Handles the unit rating of players in order to avoid being shot in case of friendly fire
+player addEventHandler ["HandleRating", { 10000 }];

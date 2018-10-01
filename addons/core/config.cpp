@@ -16,3 +16,4 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 #include "CfgEden.hpp"
+#include "CfgWhitelist.hpp"

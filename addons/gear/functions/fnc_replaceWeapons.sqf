@@ -22,11 +22,11 @@ params ["_unit", "_weapons", "_type"];
 
 private _selectedWeapon = "";
 
-if (count _weapons > 0) then {
+if !(_weapons isEqualTo []) then {
     _selectedWeapon = selectRandom _weapons;
 };
 
-if  (count _selectedWeapon == 0) exitWith{
+if  (_selectedWeapon isEqualTo []) exitWith{
     switch (toLower _type) do {
         case "primaryweapon": {
              _unit removeWeapon (primaryWeapon _unit);
