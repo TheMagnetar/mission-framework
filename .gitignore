@@ -1,2 +1,5 @@
 *.pbo
-release/*
+*.zip
+release/
+@umf/
+tools/make.cache
