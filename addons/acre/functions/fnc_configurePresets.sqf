@@ -1,4 +1,4 @@
-/*
+        /*
  * Author: TheMagnetar
  * Configures the presets for the different radios.
  *
@@ -45,7 +45,7 @@ private _networkEntries = missionConfigFile >> "CfgAcreNetworks";
         [_baseRadio, _presetName, _networkName] call acre_api_fnc_copyPreset;
 
         {
-            if (_forEachIndex + 1 >= _channelCount) exitWith {
+            if (_forEachIndex + 1 > _channelCount) exitWith {
                 ERROR_1("Too many channels for radio %1",_baseRadio);
             };
 
@@ -65,7 +65,7 @@ private _networkEntries = missionConfigFile >> "CfgAcreNetworks";
                     default {""};
                 };
 
-                [_baseRadio, _networkName, _forEachIndex + 1, _name, _channelName] call acre_api_fnc_setPresetChannelField;
+                [_baseRadio, _networkName, _forEachIndex + 1, "label", _channelName] call acre_api_fnc_setPresetChannelField;
                 [_baseRadio, _networkName, _forEachIndex + 1, "frequencyTX", _frequency] call acre_api_fnc_setPresetChannelField;
                 [_baseRadio, _networkName, _forEachIndex + 1, "frequencyRX", _frequency] call acre_api_fnc_setPresetChannelField;
             };

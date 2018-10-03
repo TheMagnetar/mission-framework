@@ -18,36 +18,34 @@ params ["_displayEvent", "_unit"];
 private _canTeleport = _unit getVariable [QGVAR(teleportEnabled), false];
 
 if (_canTeleport && {_displayEvent select 1 == 87}) then {
-
     // Try first, teleporting to the other members of the squad.
+    private _playerList = units (group _unit);
+    _playerList deleteAt (_playerList find _unit);
+
+    private _couldTeleport = [_unit, _playerList] call EFUNC(teleport,teleportToFriendly);
+
     private _unitList = [];
-    {
-        if (isPlayer  _x) then { _unitList pushBack _x; };
-    } forEach (units group _unit) - [_unit];
-
-    private _couldTeleport = [_unit, _unitList] call EFUNC(teleport,teleportToFriendly);
-
-    // If not, try with any unit of the same faction.
-    // Identify which faction the unit belongs to.
-    private _unitFaction = _unit getVariable [QEGVAR(gear,faction), toLower (faction _unit)];
-
     if (!_couldTeleport) then {
-        _unitList = [];
+        // If not, try with any unit of the same faction.
+        // Identify which faction the unit belongs to.
+        private _unitFaction = _unit getVariable [QEGVAR(gear,faction), toLower (faction _unit)];
+
+        _playerList = [] call CBA_fnc_players;
+        _playerList deleteAt (_unitList find _unit);
+
         {
             private _remoteFaction = _x getVariable [QEGVAR(gear,faction), toLower (faction _x)];
 
-            if ((isPlayer _x) && {_remoteFaction isEqualTo _unitFaction}) then { _unitList pushBack _x; };
-        } forEach ([] call CBA_fnc_players - [_unit]);
+            if (_remoteFaction isEqualTo _unitFaction) then { _unitList pushBack _x; };
+        } forEach _playerList;
 
         _couldTeleport = [_unit, _unitList] call EFUNC(teleport,teleportToFriendly);
     };
 
     // If not, try with any unit of the same side.
     if (!_couldTeleport) then {
-        _unitList = [];
-        {
-            if ((isPlayer  _x) && {side _x == side _unit}) then { _unitList pushBack _x; };
-        } forEach ([] call CBA_fnc_players - [_unit]);
+        private _unitSide = side _unit;
+        _unitList = _playerList select {side _x == _unitSide};
 
         _couldTeleport = [_unit, _unitList] call EFUNC(teleport,teleportToFriendly);
     };

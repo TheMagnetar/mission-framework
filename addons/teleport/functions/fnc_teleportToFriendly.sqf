@@ -31,7 +31,8 @@ if (!isNull _targetUnit) then {
     if ((vehicle _targetUnit) != _targetUnit) then {
         _unit moveInAny (vehicle _targetUnit);
     } else {
-        _unit setPos (getPos _targetUnit);
+        private _position = (getPos _targetUnit) findEmptyPosition [0, 10];
+        _unit setPos _position;
     };
     _couldTeleport = true;
 };

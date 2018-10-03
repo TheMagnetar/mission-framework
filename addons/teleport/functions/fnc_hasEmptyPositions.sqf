@@ -18,7 +18,7 @@ params ["_vehicle"];
 private _isFree = false;
 
 {
-    if ((_vehicle emptyPositions _x) != 0) exitWith {
+    if ((_vehicle emptyPositions _x) > 0) exitWith {
         _isFree = true;
     };
 } forEach ["driver", "gunner", "commander", "cargo"];

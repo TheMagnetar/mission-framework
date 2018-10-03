@@ -15,5 +15,3 @@
 #endif
 
 #include "\u\umf\addons\main\script_macros.hpp"
-
-// Whitelist IDs
