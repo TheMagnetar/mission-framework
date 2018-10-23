@@ -18,37 +18,35 @@ params ["_displayEvent", "_unit"];
 private _canTeleport = _unit getVariable [QGVAR(teleportEnabled), false];
 
 if (_canTeleport && {_displayEvent select 1 == 87}) then {
-
     // Try first, teleporting to the other members of the squad.
-    private _checkList = units (group _unit);
-    _checkList deleteAt (_checkList find _unit);
+    private _playerList = units (group _unit);
+    _playerList deleteAt (_playerList find _unit);
 
-    private _unitList = _checkList select {isPlayer _x};
+    private _unitList = _playerList select {isPlayer _x};
     private _couldTeleport = [_unit, _unitList] call EFUNC(teleport,teleportToFriendly);
 
-    // If not, try with any unit of the same faction.
+    private _unitList = [];
     if (!_couldTeleport) then {
-        _checkList = [] call CBA_fnc_players;
-        _checkList deleteAt (_checkList find _unit);
-
+        // If not, try with any unit of the same faction.
+        // Identify which faction the unit belongs to.
         private _unitFaction = _unit getVariable [QEGVAR(gear,faction), toLower (faction _unit)];
 
-        _unitList = [];
+        _playerList = [] call CBA_fnc_players;
+        _playerList deleteAt (_unitList find _unit);
+
         {
             private _remoteFaction = _x getVariable [QEGVAR(gear,faction), toLower (faction _x)];
 
             if (_remoteFaction isEqualTo _unitFaction) then { _unitList pushBack _x; };
-        } forEach _checkList;
+        } forEach _playerList;
 
         _couldTeleport = [_unit, _unitList] call EFUNC(teleport,teleportToFriendly);
     };
 
     // If not, try with any unit of the same side.
     if (!_couldTeleport) then {
-        _unitList = [];
-        {
-            if (side _x == side _unit) then { _unitList pushBack _x; };
-        } forEach _checkList;
+        private _unitSide = side _unit;
+        _unitList = _playerList select {side _x == _unitSide};
 
         _couldTeleport = [_unit, _unitList] call EFUNC(teleport,teleportToFriendly);
     };

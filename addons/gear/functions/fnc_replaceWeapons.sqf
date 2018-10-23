@@ -21,7 +21,6 @@
 params ["_unit", "_weapons", "_type"];
 
 private _selectedWeapon = "";
-
 if !(_weapons isEqualTo []) then {
     _selectedWeapon = selectRandom _weapons;
 };

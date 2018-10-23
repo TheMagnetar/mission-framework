@@ -1,1 +1,5 @@
 *.pbo
+*.zip
+release/
+@umf/
+tools/make.cache

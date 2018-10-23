@@ -15,7 +15,7 @@
 params ["_unit", ["_vehicle", objNull]];
 
 private _assignedNetworks = _unit getVariable [QEGVAR(acre,assignedNetworks), "default"];
-if (_assignedNetworks isEqualTo "default") exitWith {};
+if (_assignedNetworks isEqualTo "default") exitWith {""};
 
 private _getNetList = {
     params ["_networkId"];
@@ -23,7 +23,7 @@ private _getNetList = {
     private _radioText = "";
     {
         private _networkEntry = toLower (configName _x);
-        private _networkText = getText(_x >> "displayName");
+        private _networkText = getText (_x >> "displayName");
         if (_networkEntry isEqualTo _networkId) then {
             _radioText = format ["<font color='#FF0000' size='18'>Radio Network: %1</font><br/><br/>", _networkText];
             {

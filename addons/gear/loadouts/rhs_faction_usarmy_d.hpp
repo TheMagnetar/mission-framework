@@ -17,7 +17,9 @@ class baseMan {// Weaponless baseclass
                                 //    {weaponName2, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
                                 // }
     handgun[] = {};             // Handgun
-    launcher[] = {};            // Launcher
+    launcher[] = {
+        {""}
+    };            // Launcher
 
     // Items and magazines
     magazines[] = {};      // Magazines. The first suitable magazine will be added to the corresponding weapon
@@ -124,6 +126,7 @@ class psg : sl {
 
 class rto : rfl {
     displayName = "Radiotelephone Operator";
+    backpack[] = {"B_TacticalPack_mcamo"};
 };
 
 class fo : rto {

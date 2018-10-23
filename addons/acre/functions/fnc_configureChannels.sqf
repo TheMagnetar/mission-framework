@@ -71,18 +71,15 @@ private _findChannelIndex = {
                         _channel = [_netConfig, toLower (_unit getVariable [QGVAR(shortRangeChannel), ""])] call _findChannelIndex;
                     };
                     case "ACRE_PRC117F": {
-                        _channel = [_netConfig, toLower (_unit getVariable [QGVAR(lomgRangeChannel), ""])] call _findChannelIndex;
+                        _channel = [_netConfig, toLower (_unit getVariable [QGVAR(longRangeChannel), ""])] call _findChannelIndex;
                     };
                     case "ACRE_SEM52SL": {
                         _channel = [_netConfig, toLower (_unit getVariable [QGVAR(shortRangeChannel), ""])] call _findChannelIndex;
                     };
-                    case "ACRE_PRC77": {
-                        _channel = [_netConfig, toLower (_unit getVariable [QGVAR(lomgRangeChannel), ""])] call _findChannelIndex;
-                    };
                 };
 
                 {
-                    if ([_x, _radio] call acre_api_fnc_isKindOf) then {
+                    if ([_x, _radio] call acre_api_fnc_isKindOf && {_radio != "ACRE_PRC77"}) then {
                         [_x, _channel] call acre_api_fnc_setRadioChannel;
                     };
                 } forEach _radioList;
