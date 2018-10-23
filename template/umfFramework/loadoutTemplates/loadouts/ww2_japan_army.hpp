@@ -116,7 +116,6 @@ class pl : sl {
     rank[] = {"lieutenant"};
 };
 
-
 class rto : gr {
     displayName = "RTO";
 
