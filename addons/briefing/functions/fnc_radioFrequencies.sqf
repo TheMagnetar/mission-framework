@@ -61,6 +61,6 @@ if (_vehicle != _unit) then {
     };
 };
 
-_radioText = format["%1%2", _radioText, _rackText];
+_radioText = format ["%1%2", _radioText, _rackText];
 
 _radioText
