@@ -10,13 +10,19 @@ class baseMan {// Weaponless baseclass
     nightVision[] = {};                        // Nightvision randoom {nvg1, nvg2}
 
     // Weapons
-    primaryWeapon[] = {};   // Randoom weapon with randoom attachments 1a,1b + 2,2a + 3 + 4
-                            // {
-                            //    {weaponName1, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
-                            //    {weaponName2, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
-                            // }
-    handgun[] = {};         // Handgun
-    launcher[] = {};        // Launcher
+    primaryWeapon[] = {                        // Randoom weapon with randoom attachments 1a,1b + 2,2a + 3 + 4
+        {""}                                   // {
+    };                                         //    {weaponName1, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
+                                               //    {weaponName2, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
+                                               // }
+
+    handgun[] = {                              // Handgun
+        {""}
+    };
+
+    launcher[] = {                             // Launcher
+        {""}
+    };
 
     // Items and magazines
     magazines[] = {};      // Magazines. The first suitable magazine will be added to the corresponding weapon

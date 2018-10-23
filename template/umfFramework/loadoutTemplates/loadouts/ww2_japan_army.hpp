@@ -1,26 +1,32 @@
 class baseMan {// Weaponless baseclass
-    displayName = "Unarmed";                // 3DEN identifier
+    displayName = "Unarmed";           // 3DEN identifier
 
-    uniform[] = {"fow_u_ija_type98"};       // Uniform: randoom {uniform1, uniform2}
-    vest[] = {"fow_v_ija_rifle"};           // Vest randoom {vest1, vest2}
-    backpack[] = {};                        // Backpack randoom {backpack1, backpack2}
-    headgear[] = {                          // Helmet randoom {helmet1, helmet2}
+    uniform[] = {"fow_u_ija_type98"};  // Uniform: randoom {uniform1, uniform2}
+    vest[] = {"fow_v_ija_rifle"};      // Vest randoom {vest1, vest2}
+    backpack[] = {};                   // Backpack randoom {backpack1, backpack2}
+    headgear[] = {                     // Helmet randoom {helmet1, helmet2}
         "fow_h_ija_type90",
         "fow_h_ija_type90_net_neck",
         "fow_h_ija_type90_net"
     };
-    goggles[]     = {};                        // Goggles randoom {goggle1, google2}
-    binoculars[]  = {};                        // Binoculars randoom {binocular1, binocular2}
-    nightVision[] = {};                        // Nightvision randoom {nvg1, nvg2}
+    goggles[]     = {};                // Goggles randoom {goggle1, google2}
+    binoculars[]  = {};                // Binoculars randoom {binocular1, binocular2}
+    nightVision[] = {};                // Nightvision randoom {nvg1, nvg2}
 
     // Weapons
-    primaryWeapon[] = {};   // Randoom weapon with randoom attachments 1a,1b + 2,2a + 3 + 4
-                            // {
-                            //    {weaponName1, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
-                            //    {weaponName2, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
-                            // }
-    handgun[] = {};         // Handgun
-    launcher[] = {};        // Launcher
+    primaryWeapon[] = {                // Randoom weapon with randoom attachments 1a,1b + 2,2a + 3 + 4
+        {""}                           // {
+    };                                 //    {weaponName1, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
+                                       //    {weaponName2, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
+                                       // }
+
+    handgun[] = {                      // Handgun
+        {""}
+    };
+
+    launcher[] = {                     // Launcher
+        {""}
+    };
 
     // Items and magazines
     magazines[] = {};      // Magazines. The first suitable magazine will be added to the corresponding weapon
