@@ -1,5 +1,5 @@
 //=======================================================================================================//
-// File: fn_jip_addTo_allowedJIPPlayerList.sqf                                                           //
+// File: fn_jip_addallowedPlayer.sqf                                                                     //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
 // File creation: 2016/11/12                                                                             //

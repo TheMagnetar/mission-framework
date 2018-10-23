@@ -1,5 +1,5 @@
 //=======================================================================================================//
-// File: fn_jip_check_allowedJIPPlayerList.sqf                                                           //
+// File: fn_jip_checkAllowedPlayers.sqf                                                                  //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
 // File creation: 2016/11/12                                                                             //
@@ -22,7 +22,8 @@ if (GVAR(allowedPlayers) isEqualTo []) exitWith {
 
 private _found = false;
 {
-    if ((_x # 0 == getPlayerUID _unit) && {_x # 1 == name _unit}) exitWith {
+    _x params ["_uid", "_name"];
+    if ((_uid == getPlayerUID _unit) && {_name == name _unit}) exitWith {
         _found =  true;
     };
 } forEach GVAR(allowedPlayers);

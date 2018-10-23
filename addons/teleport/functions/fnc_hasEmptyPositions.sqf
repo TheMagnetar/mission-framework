@@ -1,5 +1,5 @@
 //=======================================================================================================//
-// File: fn_misc_checkEmptyPosition.sqf                                                                  //
+// File: fn_misc_hasEmptyPositions.sqf                                                                   //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
 // File creation: 2015/10/02                                                                             //

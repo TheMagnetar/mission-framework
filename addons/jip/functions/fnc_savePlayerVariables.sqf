@@ -19,16 +19,16 @@ params ["_unit"];
 private _jipPlayerVariables = [];
 private _variablesToStore = ["umf", "ace"];
 {
-    if (_x select [0, 3] in _variablesToStore) then {
+    if ((_x select [0, 3]) in _variablesToStore) then {
         // Hack for ace medical
-        if ((_x select [0, 11] isEqualTo "ace_medical") or (_x select [0, 20] isEqualTo "ace_advanced_fatigue")) then {
+        if (((_x select [0, 11]) isEqualTo "ace_medical") || {(_x select [0, 20]) isEqualTo "ace_advanced_fatigue"}) then {
             if (_x isEqualTo "ace_medical_medicclass") then {
                 _jipPlayerVariables pushBack [_x, _unit getVariable _x];
             };
         } else {
             // Do not save initialisation variables
             private _initVariables = [QGVAR(teleportEnabled)];
-            if (!(_x in _initVariables)) then {
+            if !(_x in _initVariables) then {
                 _jipPlayerVariables pushBack [_x, _unit getVariable _x];
             };
         };

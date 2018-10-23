@@ -20,13 +20,16 @@
 params ["_unit", "_jipPlayerVariables"];
 
 {
-    _unit setVariable [_x # 0, _x # 1, true];
+	_x params ["_name", "_value"];
+
+    _unit setVariable [_name, _value, true];
 } forEach _jipPlayerVariables;
 
 // Handle advanced fatigue
 if ((GVAR(saveStatus) == 2) && {EGVAR(core,aceLoaded)}) then {
     {
-        call compile format ["%1 = %2;", _x # 0, _x # 1];
+    	_x params ["_name", "_value"];
+        call compile format ["%1 = %2;", _name, _value];
     } forEach GVAR(advancedFatigue);
 };
 

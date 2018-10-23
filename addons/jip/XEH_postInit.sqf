@@ -68,6 +68,8 @@ if (didJiP) then {
                 [player] call FUNC(retrieveStatus);
             };
         };
+
+        [player] call FUNC(handleAllowTeleport);
     };
 } else {
     // Initialise a list of all players that initially connect.

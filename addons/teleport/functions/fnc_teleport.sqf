@@ -17,7 +17,7 @@
 
 params ["_object","_marker", ["_altitude",0.0], "_direction"];
 
-_object setposatl [getmarkerpos _marker select 0, getmarkerpos _marker select 1, _altitude];
+_object setPosATL [getmarkerpos _marker select 0, getmarkerpos _marker select 1, _altitude];
 
 if (isNil "_direction") then {
     _object setDir (markerDir _marker);
