@@ -1,21 +1,26 @@
-//=======================================================================================================//
-// File: fn_jip_teleport.sqf                                                                             //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2016/11/12                                                                             //
-// Description: This function teleports a JIP unit to the highest ranking in the squad, faction or side. //
-//              If the highest ranking unit is inside a vehicle, and there is a free position, the unit  //
-//              will be teleported inside the vehicle.                                                   //
-//              Arguments:                                                                               //
-//               - 0: displayEventHandler <ARRAY>.                                                       //
-//               - 1: unit to teleport <OBJECT>.                                                         //
-// Changes: 1.0 (2016/11/12) First public version.                                                       //
-//=======================================================================================================//
+/*
+ * Author: TheMagnetar
+ * Teleports a JIP unit to the highest ranking in the squad, faction or side. If the highest ranking unit is
+ * inside a vehicle, and there is a free position, the unit will be teleported inside the vehicle.
+ *
+ * Arguments:
+ * 0: Display EventHandler <ARRAY>
+ * 1: Unit to teleport <OBJECT>
+ *
+ * Return Value:
+ * Teleport successful <BOOL>
+ *
+ * Example:
+ * [87, player] call umf_briefing_fnc_credits
+ *
+ * Public: Yes
+ */
 #include "script_component.hpp"
 
 params ["_displayEvent", "_unit"];
 
 private _canTeleport = _unit getVariable [QGVAR(teleportEnabled), false];
+private _couldTeleport = false;
 
 if (_canTeleport && {_displayEvent select 1 == 87}) then {
     // Try first, teleporting to the other members of the squad.
@@ -23,7 +28,7 @@ if (_canTeleport && {_displayEvent select 1 == 87}) then {
     _playerList deleteAt (_playerList find _unit);
 
     private _unitList = _playerList select {isPlayer _x};
-    private _couldTeleport = [_unit, _unitList] call EFUNC(teleport,teleportToFriendly);
+    _couldTeleport = [_unit, _unitList] call EFUNC(teleport,teleportToFriendly);
 
     private _unitList = [];
     if (!_couldTeleport) then {
@@ -59,7 +64,6 @@ if (_canTeleport && {_displayEvent select 1 == 87}) then {
     };
 };
 
-// Return value
-false
+_couldTeleport
 
 //============================================= END OF FILE =============================================//
