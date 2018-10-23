@@ -1,5 +1,5 @@
 //=======================================================================================================//
-// File: fn_jip_retrievePlayerVariables.sqf                                                                //
+// File: fn_jip_retrievePlayerVariables.sqf                                                              //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
 // File creation: 2016/11/12                                                                             //
@@ -20,7 +20,7 @@
 params ["_unit", "_jipPlayerVariables"];
 
 {
-	_x params ["_name", "_value"];
+    _x params ["_name", "_value"];
 
     _unit setVariable [_name, _value, true];
 } forEach _jipPlayerVariables;
@@ -28,7 +28,7 @@ params ["_unit", "_jipPlayerVariables"];
 // Handle advanced fatigue
 if ((GVAR(saveStatus) == 2) && {EGVAR(core,aceLoaded)}) then {
     {
-    	_x params ["_name", "_value"];
+        _x params ["_name", "_value"];
         call compile format ["%1 = %2;", _name, _value];
     } forEach GVAR(advancedFatigue);
 };
