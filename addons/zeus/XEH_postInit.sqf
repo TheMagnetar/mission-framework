@@ -2,7 +2,7 @@
 
 [{CBA_missionTime > 0},
 {
-    if (GVAR(createModule) && isServer) then {
+    if (GVAR(createModule) && {isServer}) then {
         [] call FUNC(createModule);
     };
 },[]] call CBA_fnc_waitUntilAndExecute;

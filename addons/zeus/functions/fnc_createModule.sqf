@@ -22,7 +22,7 @@ if (isNil QEGVAR(core,centreSideLogic)) then {
     EGVAR(core,groupSideLogic) = createGroup EGVAR(core,centreSideLogic);
 };
 
-private _curator = EGVAR(core,groupSideLogic) createUnit ["ModuleCurator_F",[0,0,0] , [], 0, "NONE"];
+private _curator = EGVAR(core,groupSideLogic) createUnit ["ModuleCurator_F", [0,0,0], [], 0, "NONE"];
 _curator setVariable ["showNotification", false, true];
 _curator setVariable ["birdType", "", true];
 
