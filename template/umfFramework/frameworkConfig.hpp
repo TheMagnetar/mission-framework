@@ -1,5 +1,5 @@
 class CfgUmfConfig {
-    templateVersion = "v0.2 (2018-10-01).";
+    templateVersion = "v0.3";
     authors = "TheMagnetar";
 };
 

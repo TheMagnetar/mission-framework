@@ -18,7 +18,7 @@
 
 params ["_unit", "_item"];
 
-if (isNull _unit || _item isEqualTo "") exitWith {
+if (isNull _unit || {_item isEqualTo ""}) exitWith {
     WARNING_2("Cannot add item %1 to unit %2",_item,_unit);
     false
 };

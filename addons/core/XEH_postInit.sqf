@@ -22,3 +22,5 @@ if !(hasInterface) exitWith {};
 
 // Handles the unit rating of players in order to avoid being shot in case of friendly fire
 player addEventHandler ["HandleRating", { 10000 }];
+
+[] call FUNC(checkVersions);
