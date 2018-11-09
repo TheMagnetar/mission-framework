@@ -17,6 +17,6 @@
 
 private _templateVersion = getText (missionConfigFile >> "CfgUmfConfig" >> "templateVersion");
 
-if !(_templateVersion == REQUIRED_VERSION) then {
-    ERROR_2("Outdated template version detected. Required version is %1 while mission has %2. Please update the mission template", REQUIRED_VERSION, _templateVersion);
+if !(_templateVersion isEqualTo TEMPLATE_REQUIRED_VERSION) then {
+    systemChat format [localize LSTRING(templateError), TEMPLATE_REQUIRED_VERSION, _templateVersion];
 };

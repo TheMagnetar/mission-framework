@@ -11,7 +11,7 @@
  * Teleport successful <BOOL>
  *
  * Example:
- * [87, player] call umf_briefing_fnc_credits
+ * [87, player] call umf_jip_fnc_teleport
  *
  * Public: Yes
  */
@@ -40,7 +40,7 @@ if (!_couldTeleport) then {
     private _unitFaction = _unit getVariable [QEGVAR(gear,faction), toLower (faction _unit)];
 
     _playerList = [] call CBA_fnc_players;
-    _playerList deleteAt (_unitList find _unit);
+    _playerList deleteAt (_playerList find _unit);
 
     {
         private _remoteFaction = _x getVariable [QEGVAR(gear,faction), toLower (faction _x)];

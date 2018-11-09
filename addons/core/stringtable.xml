@@ -4,5 +4,9 @@
         <Key ID="STR_UMF_Core_UMFTeam">
             <English>UMF-Team</English>
         </Key>
+        <Key ID="STR_UMF_Core_templateError">
+            <English>Outdated template version detected. Required version is %1 while mission has %2. Please update the mission template.</English>
+            <Spanish>La versión de la plantilla está desactualizada. La versión requerida es %1 mientras que la misión tiene %2. Por favor actualiza la plantilla.</Spanish>
+        </Key>
     </Package>
 </Project>
