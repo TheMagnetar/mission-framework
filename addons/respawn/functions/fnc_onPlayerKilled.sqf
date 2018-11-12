@@ -20,28 +20,15 @@
 // Parameters passed when onPlayerKilled.
 params [["_unit",objNull], ["_killer",objNull], "", ""];
 
-private _respawn = getMissionConfigValue ["respawn", 3];
-if (_respawn isEqualType "") then {
-    switch (_respawn) do {
-        case "NONE": {_respawn = 0;};
-        case "BIRD": {_respawn = 1;};
-        case "INSTANT": {_respawn = 2;};
-        case "BASE": {_respawn = 3;};
-        case "GROUP": {_respawn = 4;};
-        case "SIDE": {_respawn = 5;};
-    };
-};
-
 // Substract tickets from player's pool or player's side pool.
 private _numRespawns = [_unit, "substract"] call FUNC(manageTickets);
 
-if ((_numRespawns == -1) or (_respawn == 0)) then {
+if (_numRespawns == -1) then {
     _unit setVariable [QGVAR(playerAlive), false, true];
     setPlayerRespawnTime 1e10;
 };
 
-if (((_respawn == 3) || (_respawn == 0)) && {{_x getVariable [QGVAR(playerAlive), true]} count allPlayers <= 0}) exitWith {
-
+if ((allPlayers findIf {_x getVariable [QGVAR(playerAlive), true}) == -1) exitWith {
     sleep 1;
     // Execute the respawn effects.
     if (GVAR(killCamEnabled) && {!isNull _killer}) then {
@@ -55,7 +42,7 @@ if (((_respawn == 3) || (_respawn == 0)) && {{_x getVariable [QGVAR(playerAlive)
 };
 
 if (GVAR(saveGear)) then {
-    _unit setVariable[QGVAR(savedLoadout),getUnitLoadout _unit];
+    _unit setVariable [QGVAR(savedLoadout), getUnitLoadout _unit];
     if (EGVAR(core,aceLoaded)) then {
         _unit setVariable [QGVAR(hasEarPlugs), _unit getVariable ["ACE_hasEarPlugsin", false]];
     };
