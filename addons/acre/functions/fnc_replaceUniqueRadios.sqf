@@ -31,14 +31,14 @@ private _replaceRadioAcre = {
     };
 };
 
-    if !((_loadout # 3) isEqualTo []) then {
-        {_x call _replaceRadioAcre} forEach ((_loadout # 3) # 1); // Uniform items
-    };
-    if !((_loadout # 4) isEqualTo []) then {
-        {_x call _replaceRadioAcre} forEach ((_loadout # 4) # 1); // Vest items
-    };
-    if !((_loadout # 5) isEqualTo []) then {
-        {_x call _replaceRadioAcre} forEach ((_loadout # 5) # 1); // Backpack items
-    };
+if !((_loadout # 3) isEqualTo []) then {
+    {_x call _replaceRadioAcre} forEach ((_loadout # 3) # 1); // Uniform items
+};
+if !((_loadout # 4) isEqualTo []) then {
+    {_x call _replaceRadioAcre} forEach ((_loadout # 4) # 1); // Vest items
+};
+if !((_loadout # 5) isEqualTo []) then {
+    {_x call _replaceRadioAcre} forEach ((_loadout # 5) # 1); // Backpack items
+};
 
 _loadout
