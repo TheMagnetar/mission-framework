@@ -38,6 +38,12 @@ class CfgMission {
     missionCollaborators = "*** Possible collaborators ***.";
 };
 
+class CfgCampaign {
+    campaignName = "Nombre de la campaña";
+    enableCampaign = 0;
+    isLastMission = 0;
+};
+
 //=======================================================================================================//
 // Loading screen: https://community.bistudio.com/wiki/Description.ext                                   //
 //=======================================================================================================//

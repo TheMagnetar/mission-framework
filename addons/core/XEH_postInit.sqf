@@ -3,10 +3,6 @@
 // Disable radio chatter: https://community.bistudio.com/wiki/enableSentences
 enableSentences false;
 
-[QGVAR(finishMission),{
-    [] execVM "missionConfig\endMission.sqf"
-}] call CBA_fnc_addEventHandler;
-
 [
     "UMF",
     QGVAR(handleChat),
