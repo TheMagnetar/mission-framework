@@ -1,0 +1,10 @@
+PREP(applyPlayerVariables);
+PREP(clientRetrieveVariables);
+PREP(clientSaveStatus);
+PREP(configurePersistence);
+PREP(copyMissionStatus);
+PREP(deleteCampaign);
+PREP(getPlayerVariables);
+PREP(serverRetrieveObjects);
+PREP(serverSaveClient);
+PREP(serverSaveObject);

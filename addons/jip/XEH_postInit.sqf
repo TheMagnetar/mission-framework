@@ -16,7 +16,9 @@ if (isServer) then {
     }, 5, []] call CBA_fnc_addPerFrameHandler;
 
     if (GVAR(saveStatus)) then {
-        GVAR(missionEH) = addMissionEventHandler ["HandleDisconnect", {[_this select 0, _this select 2, _this select 3] call FUNC(saveStatus);}];
+        GVAR(missionEH) = addMissionEventHandler ["HandleDisconnect", {
+            [_this select 0, _this select 2, _this select 3, true] call EFUNC(persistence,clientSaveStatus);
+        }];
 
         if (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")) then {
             GVAR(advancedFatigue) = [];
@@ -35,14 +37,15 @@ if (didJiP) then {
     // Kill the player if JIP is not allowed and exit.
     if (!GVAR(isAllowed) && {!_initialPlayer}) then {
         // Wait a little before killing the player.
-        sleep 1;
+        [{
+            // Remove any possibility of respawning.
+            player setVariable [QEGVAR(respawn,numRespawns), -1, true];
+            player setDamage 1;
+            [{
+                "normal" cutText ["This mission does not support JIP. Be punctual next time!", "PLAIN"];
+            }, [player], 5] call CBA_fnc_waitAndExecute;
 
-        // Remove any possibility of respawning.
-        player setVariable [QEGVAR(respawn,numRespawns), -1, true];
-        player setDamage 1;
-
-        sleep 5;
-        "normal" cutText ["This mission does not support JIP. Be punctual next time!", "PLAIN"];
+        }, [player], 1] call CBA_fnc_waitAndExecute;
     } else {
         // Since JIP is still allowed, add the new player to the list of allowed players.
         if (!_initialPlayer) then {
@@ -61,11 +64,11 @@ if (didJiP) then {
                     waitUntil {
                         sleep 1.0;
                         call compile format [QUOTE(GVAR(advancedFatigue) = GVAR(advancedFatigue_%1)), getPlayerUID player];
-                        count GVAR(advancedFatigue) > 0
+                        !(GVAR(advancedFatigue) isEqualTo [])
                     };
                 };
 
-                [player] call FUNC(retrieveStatus);
+                [player, true] call FUNC(persistence,clientRetrieveStatus);
             };
         };
 

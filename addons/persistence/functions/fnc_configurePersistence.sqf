@@ -34,7 +34,7 @@ if (GVAR(isFirstMission)) then {
     private _hashInformation = [] call CBA_fnc_hashCreate;
     {
         [_hashInformation, _x, []] call CBA_fnc_hashSet;
-    } forEach ["player", "vehicle", "objects"];
+    } forEach ["player", "vehicles", "objects"];
 
     _profileInformation setVariable [GVAR(campaignName), _hashInformation];
     profileNamespace setVariable [QGVAR(persistence), _profileInformation];
