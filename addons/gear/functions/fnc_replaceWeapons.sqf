@@ -25,7 +25,7 @@ if !(_weapons isEqualTo []) then {
     _selectedWeapon = selectRandom _weapons;
 };
 
-if  (_selectedWeapon isEqualTo []) exitWith{
+if (_selectedWeapon isEqualTo [] || {_selectedWeapon isEqualTo ""}) exitWith {
     switch (toLower _type) do {
         case "primaryweapon": {
              _unit removeWeapon (primaryWeapon _unit);
