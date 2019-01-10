@@ -17,13 +17,6 @@ params ["_unit"];
 if (EGVAR(core,aceLoaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
     [false] call ace_spectator_fnc_setSpectator;
 } else {
-
-    // Exit spectator mode depending on which radio system is used.
-    // Task Force Arrowhead Radio (TFAR)
-    if (EGVAR(core,tfarLoaded)) then {
-        [_unit, false] call TFAR_fnc_forceSpectator;
-    };
-
     // Advanced Combat Radio Environment 2 (ACRE 2)
     if (EGVAR(core,acreLoaded)) then {
         [false] call acre_api_fnc_setSpectator;

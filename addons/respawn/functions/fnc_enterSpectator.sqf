@@ -32,12 +32,6 @@ if (EGVAR(core,aceLoaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
 } else {
     LOG("Using vanila spectator mode.");
 
-    // Put units into spectator mode depending on the radio system used.
-    // Task Force Arrowhead Radio (TFAR)
-    if (EGVAR(core,tfarLoaded)) then {
-        [_respawnUnit, true] call TFAR_fnc_forceSpectator;
-    };
-
     // Advanced Combat Radio Environment 2 (ACRE 2)
     if (EGVAR(core,acreLoaded)) then {
         [true] call acre_api_fnc_setSpectator;
