@@ -34,7 +34,7 @@ private _playerInformation = [_informationList, "player"] call CBA_fnc_hashGet;
 
 private _found = false;
 {
-    params ["_uid", "_name", "_position", "_variables", "_loadout"];
+    _x params ["_uid", "_name", "_position", "_variables", "_loadout"];
     if ((_uid == getPlayerUID _unit) && {_name == profileName}) exitWith {
         [_unit, _variables] call FUNC(applyPlayerVariables);
         if (_unit getVariable [QEGVAR(respawn,playerAlive), true]) then {
