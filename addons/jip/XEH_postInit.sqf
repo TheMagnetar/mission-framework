@@ -16,7 +16,9 @@ if (isServer) then {
     }, 5, []] call CBA_fnc_addPerFrameHandler;
 
     if (GVAR(saveStatus)) then {
-        GVAR(missionEH) = addMissionEventHandler ["HandleDisconnect", {[_this select 0, _this select 2, _this select 3] call FUNC(saveStatus);}];
+        GVAR(missionEH) = addMissionEventHandler ["HandleDisconnect", {
+            [_this select 0, _this select 2, _this select 3, true] call EFUNC(persistence,clientSaveStatus);
+        }];
 
         if (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")) then {
             GVAR(advancedFatigue) = [];
@@ -65,7 +67,7 @@ if (didJiP) then {
                     };
                 };
 
-                [player] call FUNC(retrieveStatus);
+                [player, true] call EFUNC(persistence,retrieveStatus);
             };
         };
 

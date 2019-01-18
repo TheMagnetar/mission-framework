@@ -34,13 +34,16 @@ private _playerInformation = [_informationList, "player"] call CBA_fnc_hashGet;
 
 private _found = false;
 {
-    if ((_x select 0 == getPlayerUID _unit) && {_x select 1 == profileName}) exitWith {
-        [_unit, _x select 3] call FUNC(applyPlayerVariables);
+    params ["_uid", "_name", "_position", "_variables", "_loadout"];
+    if ((_uid == getPlayerUID _unit) && {_name == profileName}) exitWith {
+        [_unit, _variables] call FUNC(applyPlayerVariables);
         if (_unit getVariable [QEGVAR(respawn,playerAlive), true]) then {
-            private _loadout = _x select 3;
+            if (!_jip) then {
+                _unit setPosASL _position;
+            };
 
             if (EGVAR(core,acreLoaded)) then {
-                _loadout =+ [_loadout] call EFUNC(acre,replaceUniqueRadios);
+                _loadout = [_loadout] call EFUNC(acre,replaceUniqueRadios);
             };
 
             _unit setUnitLoadout [_loadout, false];

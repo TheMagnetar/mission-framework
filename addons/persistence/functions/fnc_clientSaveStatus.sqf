@@ -23,7 +23,7 @@ if (_uid isEqualTo "") then {_uid = getPlayerUID _unit};
 if (_name isEqualTo "") then {_name = name _unit};
 
 private _variables = [_unit] call FUNC(getPlayerVariables);
-private _loadout = getUnitLoadout _unit;
+private _loadout = getUnitLoadout [_unit, false];
 private _position = getPosASL _unit;
 private _information = [_uid, _name, _position, _variables, _loadout];
 
