@@ -18,7 +18,7 @@
 #include "script_component.hpp"
 
 // Parameters passed when onPlayerRespawn.
-params [["_unit",objNull]];
+params [["_unit", objNull]];
 
 // Hide custom respawn counter and terminate camera.
 [false] call FUNC(respawnCounter);

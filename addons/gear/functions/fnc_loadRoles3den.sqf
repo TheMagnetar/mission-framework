@@ -5,8 +5,8 @@ params ["_control", ""];
 
 private _unit = get3DENSelected "object";
 
-private _role = ((_unit # 0) get3DENAttribute QGVAR(role)) select 0;
-private _faction = ((_unit # 0) get3DENAttribute QGVAR(faction)) select 0;
+private _role = ((_unit select 0) get3DENAttribute QGVAR(role)) select 0;
+private _faction = ((_unit select 0) get3DENAttribute QGVAR(faction)) select 0;
 private _rolesEntries = missionConfigFile >> "CfgLoadouts" >> _faction;
 
 if (_role isEqualTo "") then {
@@ -27,10 +27,10 @@ _definedRoles sort true;
 lbClear _control;
 
 {
-    private _index = _control lbAdd (_x # 0);
-    _control lbSetData [_index, _x # 1];
+    private _index = _control lbAdd (_x select 0);
+    _control lbSetData [_index, _x select 1];
 
-    if((_x # 1) isEqualTo _role) then {
+    if((_x select 1) isEqualTo _role) then {
         _control lbSetCurSel _index
     };
 } forEach _definedRoles;

@@ -28,7 +28,7 @@ if (_numRespawns == -1) then {
     setPlayerRespawnTime 1e10;
 };
 
-if ((allPlayers findIf {_x getVariable [QGVAR(playerAlive), true}) == -1) exitWith {
+if ((allPlayers findIf {_x getVariable [QGVAR(playerAlive), true]}) == -1) exitWith {
     sleep 1;
     // Execute the respawn effects.
     if (GVAR(killCamEnabled) && {!isNull _killer}) then {

@@ -44,7 +44,7 @@ private _findChannelIndex = {
     if (_channelName isEqualTo "" || _netConfig isEqualTo []) exitWith {_channelIndex};
 
     {
-        if (toLower (_x # 0) isEqualTo _channelName) exitWith {
+        if (toLower (_x select 0) isEqualTo _channelName) exitWith {
             _channelIndex = _forEachIndex + 1;
         };
     } forEach _netConfig;

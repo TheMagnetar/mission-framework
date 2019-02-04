@@ -41,7 +41,7 @@ if (!_isSideLogic) then {
             [_unit] call FUNC(removeRadios);
 
             // Add radios depending on the role.
-            [_unit] call FUNC(addRadios);
+            [DFUNC(addRadios), [_unit]] call CBA_fnc_execNextFrame;
         };
         // Configure active channels.
         if (GVAR(configureChannels)) then {
@@ -63,5 +63,4 @@ if (GVAR(configureBabel)) then {
 [false] call acre_api_fnc_setSpectator;
 
 GVAR(radiosConfigured) = true;
-
 LOG("Radios configured");

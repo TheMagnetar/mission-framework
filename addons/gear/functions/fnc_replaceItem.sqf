@@ -45,7 +45,7 @@ if (_type == "magazines") then {
         private _muzzles = getArray (configFile >> "CfgWeapons" >> _x >> "muzzles");
         private _muzzle = "";
         if (count _muzzles > 1) then {
-            _muzzle = _muzzles # 1;
+            _muzzle = _muzzles select 1;
         };
 
         if (_muzzle != "") then {
@@ -94,7 +94,7 @@ if (_type == "magazines") then {
     };
 
     switch (true) do {
-        case (_conditionMagazine || _conditionMagazineAttachment): {_unit addWeaponItem [_weapon, _selectedItem];};
+        case (_conditionMagazine || {_conditionMagazineAttachment}): {_unit addWeaponItem [_weapon, _selectedItem];};
         case (_unit canAddItemToUniform _selectedItem): {_unit addItemToUniform _selectedItem;};
         case (_unit canAddItemToVest _selectedItem): {_unit addItemToVest _selectedItem;};
         case ((_unit canAddItemToBackpack _selectedItem) && {_type isEqualTo "backpackitems"}): {
