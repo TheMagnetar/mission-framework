@@ -12,7 +12,7 @@
 //=======================================================================================================//
 #include "script_component.hpp"
 
-params ["_unit"];
+params [""];
 
 if (EGVAR(core,aceLoaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
     [false] call ace_spectator_fnc_setSpectator;

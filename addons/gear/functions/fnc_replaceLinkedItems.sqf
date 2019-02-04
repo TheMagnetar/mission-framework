@@ -24,7 +24,7 @@ params ["_unit", "_items", "_type"];
 private _selectedItem = "";
 
 if !(EGVAR(core,acreLoaded) && {_type isEqualTo "radio"}) then {
-    if (count _items > 0) then {
+    if !(_items isEqualTo []) then {
         _selectedItem = selectRandom _items;
     };
 };

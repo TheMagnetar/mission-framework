@@ -24,7 +24,8 @@ if (_jipInformation isEqualTo "") exitWith {
 private _found = false;
 
 {
-    if ((_x select 0 == getPlayerUID _unit) && {_x select 1 == profileName}) exitWith {
+    _x params ["_uid", "_profileName"];
+    if ((_uid == getPlayerUID _unit) && {_profileName == profileName}) exitWith {
         [_unit, _x select 2] call FUNC(retrievePlayerVariables);
         if (_unit getVariable [QEGVAR(respawn,playerAlive), true]) then {
             private _loadout = _x select 3;

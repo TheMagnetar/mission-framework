@@ -18,8 +18,8 @@
 params ["_loadout"];
 
 // Thesseus Aegis. Credits to jonpas
-if ((_loadout # 9) # 2 == "ItemRadioAcreFlagged") then {
-    (_loadout # 9) set [2, ""];
+if ((_loadout select 9) select 2 == "ItemRadioAcreFlagged") then {
+    (_loadout select 9) set [2, ""];
 };
 
 private _replaceRadioAcre = {
@@ -31,14 +31,14 @@ private _replaceRadioAcre = {
     };
 };
 
-if !((_loadout # 3) isEqualTo []) then {
-    {_x call _replaceRadioAcre} forEach ((_loadout # 3) # 1); // Uniform items
+if !((_loadout select 3) isEqualTo []) then {
+    {_x call _replaceRadioAcre} forEach ((_loadout select 3) select 1); // Uniform items
 };
-if !((_loadout # 4) isEqualTo []) then {
-    {_x call _replaceRadioAcre} forEach ((_loadout # 4) # 1); // Vest items
+if !((_loadout select 4) isEqualTo []) then {
+    {_x call _replaceRadioAcre} forEach ((_loadout select 4) select 1); // Vest items
 };
-if !((_loadout # 5) isEqualTo []) then {
-    {_x call _replaceRadioAcre} forEach ((_loadout # 5) # 1); // Backpack items
+if !((_loadout select 5) isEqualTo []) then {
+    {_x call _replaceRadioAcre} forEach ((_loadout select 5) select 1); // Backpack items
 };
 
 _loadout

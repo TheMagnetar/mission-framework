@@ -14,7 +14,8 @@ if (_jipInformation_List isEqualTo []) then {
     // Check first if an entry for the player already exists.
     private _found = false;
     {
-        if ((_x select 0 == _uid) && (_x select 1 == _name)) exitWith {
+        params ["_uidX", "_nameX"];
+        if ((_uidX == _uid) && (_nameX == _name)) exitWith {
             _found = true;
             _jipInformation_List set [_forEachIndex, _jipInformation];
             LOG_2("Gear of player %1 with UID %2 already exists. Overwriting it.",_name,_uid);
