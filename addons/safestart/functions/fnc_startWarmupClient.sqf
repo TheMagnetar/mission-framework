@@ -22,7 +22,6 @@ if (isNull _unit) exitWith {
 };
 
 _unit allowDamage false;
-
 private _markerName = format ["respawnArea_%1", side _unit];
 
 if (getMarkerColor _markerName == "") exitWith {
@@ -44,7 +43,7 @@ GVAR(safePosPFH) = [{
             hint localize LSTRING(cannotLeaveZone);
             _unit setPosASL _previousPos;
         } else {
-            _params set [2, getPosATL _unit];
+            _params set [2, getPosASL _unit];
         };
     } else {
         // Do nothing if the vehicle is not local
@@ -54,7 +53,7 @@ GVAR(safePosPFH) = [{
                 _vehicle setPosASL _previousPos;
             };
         } else {
-            _params set [2, getPosATL _vehicle];
+            _params set [2, getPosASL _vehicle];
         };
     };
-}, 1, [_unit, _markerName, _previousPos]] call CBA_fnc_addPerFramHandler;
+}, 1, [_unit, _markerName, _previousPos]] call CBA_fnc_addPerFrameHandler;
