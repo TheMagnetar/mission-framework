@@ -37,12 +37,11 @@ private _found = false;
     _x params ["_uid", "_name", "_position", "_variables", "_loadout"];
     if ((_uid == getPlayerUID _unit) && {_name == profileName}) exitWith {
         [_unit, _variables] call FUNC(applyPlayerVariables);
-
-        if (!_jip) then {
-            _unit setPosASL _position;
-        };
-
         if (_unit getVariable [QEGVAR(respawn,playerAlive), true]) then {
+            if (!_jip) then {
+                _unit setPosASL _position;
+            };
+
             if (EGVAR(core,acreLoaded)) then {
                 _loadout = [_loadout] call EFUNC(acre,replaceUniqueRadios);
             };

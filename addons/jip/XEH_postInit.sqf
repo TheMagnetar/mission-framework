@@ -68,7 +68,7 @@ if (didJiP) then {
                     };
                 };
 
-                [player, true] call FUNC(persistence,clientRetrieveStatus);
+                [player, true] call EFUNC(persistence,clientRetrieveStatus);
             };
         };
 
