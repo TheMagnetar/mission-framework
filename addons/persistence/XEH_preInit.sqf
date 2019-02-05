@@ -9,7 +9,7 @@ ADDON = false;
 DGVAR(campaignName) = "";
 DGVAR(lastCampaignMission) = false;
 DGVAR(persistenceEnabled) = false;
-EGVAR(playerStatusSaved) = [];
+DGVAR(playerStatusSaved) = [];
 
 if (isServer) then {
     [] call FUNC(configurePersistence);
