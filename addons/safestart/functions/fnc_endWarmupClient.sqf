@@ -10,7 +10,7 @@
  * CBA PFH ID <NUMBER>
  *
  * Example:
- * [player] call umf_safestart_fnc_startWarmup
+ * [player] call umf_safestart_fnc_endWarmupClient
  *
  * Public: No
  */
@@ -19,9 +19,13 @@ params ["_unit"];
 
 if (!hasInterface) exitWith {};
 
-GVAR(safeStartFinished) = true;
+GVAR(finished) = true;
 
 _unit allowDamage true;
-if (GVAR(safePosPFH) > -1) then {
-    [GVAR(safePosPFH)] call CBA_fnc_removePerFrameHandler;
+if (GVAR(safeStartPFH) > -1) then {
+    [GVAR(safeStartPFH)] call CBA_fnc_removePerFrameHandler;
 };
+
+// Remove safe start count down
+TIMER_DIALOG_IDD cutFadeOut 0;
+TIMER_DIALOG_IDD cutFadeOut 1;

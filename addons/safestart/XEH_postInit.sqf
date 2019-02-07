@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if (GVAR(safeStartTime) == 0 && !GVAR(safeStartFinished)) exitWith {};
+if (GVAR(safeStartTime) == 0 && !GVAR(finished)) exitWith {};
 
 if (hasInterface) then {
     [player] call FUNC(startWarmupClient);

@@ -5,5 +5,13 @@
             <English>You cannot leave the respawn area.</English>
             <Spanish>No puedes salir de la zona de respawn.</Spanish>
         </Key>
+        <Key ID="STR_UMF_safestart_active">
+            <English>Safe start active.</English>
+            <Spanish>Fase de Calentamiento</Spanish>
+        </Key>
+        <Key ID="STR_UMF_safestart_safestartTime">
+            <English>Safe start remaining time: %1:%2.</English>
+            <Spanish>Tiempo restante de calentamiento: %1:%2 </Spanish>
+        </Key>
     </Package>
 </Project>
