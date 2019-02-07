@@ -7,5 +7,6 @@ ADDON = false;
 #include "initSettings.sqf"
 
 GVAR(safeStartFinished) = false;
+GVAR(safePosPFH) = -1;
 
 ADDON = true;

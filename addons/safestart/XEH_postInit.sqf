@@ -3,16 +3,10 @@
 if (GVAR(safeStartTime) == 0 && !GVAR(safeStartFinished)) exitWith {};
 
 if (hasInterface) then {
-    player allowDamage false;
+    [player] call FUNC(startWarmupClient);
 };
 
-[QGVAR(safeStartFinishEvent),{
-    GVAR(safeStartFinished) = true;
-
-    if (hasInterface) then {
-        player allowDamage true;
-    };
-}] call CBA_fnc_addEventHandler;
+[QGVAR(safeStartFinishEvent), DFUNC(endWarmupClient)] call CBA_fnc_addEventHandler;
 
 if (!isServer) exitWith {};
 
