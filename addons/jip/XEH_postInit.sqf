@@ -4,7 +4,6 @@
 
 if (GVAR(allowedTime) == 0) exitWith { GVAR(isAllowed) = false; };
 
-
 if (isServer) then {
     GVAR(timePFH) = [{
         private _elapsedTime = GVAR(allowedTime)*60 - CBA_missionTime;
@@ -38,12 +37,14 @@ if (didJiP) then {
     if (!GVAR(isAllowed) && {!_initialPlayer}) then {
         // Wait a little before killing the player.
         [{
+            params ["_unit"];
+
             // Remove any possibility of respawning.
-            player setVariable [QEGVAR(respawn,numRespawns), -1, true];
-            player setDamage 1;
+            _unit setVariable [QEGVAR(respawn,numRespawns), -1, true];
+            _unit setDamage 1;
             [{
                 "normal" cutText ["This mission does not support JIP. Be punctual next time!", "PLAIN"];
-            }, [player], 5] call CBA_fnc_waitAndExecute;
+            }, [], 5] call CBA_fnc_waitAndExecute;
 
         }, [player], 1] call CBA_fnc_waitAndExecute;
     } else {
@@ -68,7 +69,7 @@ if (didJiP) then {
                     };
                 };
 
-                [player, true] call EFUNC(persistence,clientRetrieveStatus);
+                [QEGVAR(persistence,retrieveStatusFromServer), [player]] call CBA_fnc_serverEvent;
             };
         };
 

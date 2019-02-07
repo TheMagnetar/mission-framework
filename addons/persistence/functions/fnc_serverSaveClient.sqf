@@ -26,18 +26,20 @@ if (_uid isEqualTo "" || {_name isEqualTo ""}) exitWith {
 private _informationList = [];
 private _profileInformation = objNull;
 
-if (_jip) then {
-    _informationList = missionNamespace getVariable [QGVAR(persistence), []];
+private _informationList = if (_jip) then {
+    missionNamespace getVariable [QGVAR(persistence), []]
 } else {
     _profileInformation = profileNamespace getVariable [QGVAR(persistence), objNull];
-    _informationList = _profileInformation getVariable [GVAR(campaignName), []];
+    _profileInformation getVariable [GVAR(campaignName), []]
 };
 
 private _playerInformation = [_informationList, "player"] call CBA_fnc_hashGet;
 
 private _found = false;
 {
-    if ((_x select 0 isEqualTo _uid) && {_x select 1 isEqualTo _name}) exitWith {
+    params ["_uidX", "_nameX"];
+
+    if ((_uidX isEqualTo _uid) && {_nameX isEqualTo _name}) exitWith {
         _found = true;
         _playerInformation set [_forEachIndex, _information];
     }
@@ -49,8 +51,6 @@ if (!_found) then {
 
 [_informationList, "player", _informationList] call CBA_fnc_hashSet;
 
-if (_jip)then {
-    publicVariable QGVAR(persistence);
-} else {
+if (!_jip) then {
     profileNamespace setVariable [QGVAR(persistence), _profileInformation];
 };

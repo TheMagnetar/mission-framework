@@ -17,13 +17,11 @@
  * Public: No
  */
 
-params ["_unit", ["_jip", false]];
+params ["_unit", ["_jip", false], ["_informationList", []]];
 
-private _informationList = if (_jip) then {
-     missionNamespace getVariable [QGVAR(persistence), []];
-} else {
+if (!_jip) then {
     private _profileInformation = profileNamespace getVariable [QGVAR(persistence), objNull];
-    _profileInformation getVariable [GVAR(campaignName), []];
+    _informationList = _profileInformation getVariable [GVAR(campaignName), []];
 };
 
 if (_informationList isEqualTo []) exitWith {
@@ -54,7 +52,7 @@ private _found = false;
                 "normal" cutText ["You were dead when you disconnected. Therefore, you are dead when reconnecting!", "PLAIN"];
             }, [_unit], 5] call CBA_fnc_waitAndExecute;
         };
-        _found =  true;
+        _found = true;
     };
 } forEach _playerInformation;
 
