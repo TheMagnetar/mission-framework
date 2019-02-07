@@ -4,18 +4,18 @@
  * Ends the warmup phase.
  *
  * Arguments:
- * 0: Unit <OBJECT> (Default: objNull)
+ * 0: Unit <OBJECT> (Default: acre_player)
  *
  * Return Value:
  * CBA PFH ID <NUMBER>
  *
  * Example:
- * [player] call umf_safestart_fnc_endWarmupClient
+ * [acre_player] call umf_safestart_fnc_endWarmupClient
  *
  * Public: No
  */
 
-params ["_unit"];
+params [["_unit", acre_player]];
 
 if (!hasInterface) exitWith {};
 

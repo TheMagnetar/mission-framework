@@ -15,7 +15,7 @@
  * Public: No
  */
 
-private _timeLeft = GVAR(safeStartTime) - CBA_missionTime;
+private _timeLeft = GVAR(safeStartTime)*60 - CBA_missionTime;
 private _formatTime = {
     params ["_val"];
 
@@ -33,4 +33,9 @@ private _seconds = [floor (_timeLeft - (_minutes * 60))] call _formatTime;
 _minutes = [_minutes] call _formatTime;
 
 private _ctrl = ((uiNamespace getVariable [QGVAR(timerDisplay), displayNull]) displayCtrl TIMER_DIALOG_IDC);
-_ctrl ctrlSetText (format [localize LSTRING(safestartTime), _minutes,_seconds]);
+
+if (_seconds == "00" && {_minutes == "00"}) then {
+    _ctrl ctrlSetText (localize LSTRING(safeStartOver));
+}  else {
+    _ctrl ctrlSetText (format [localize LSTRING(safestartTime), _minutes, _seconds]);
+};

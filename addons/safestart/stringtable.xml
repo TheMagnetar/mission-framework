@@ -13,5 +13,9 @@
             <English>Safe start remaining time: %1:%2.</English>
             <Spanish>Tiempo restante de calentamiento: %1:%2 </Spanish>
         </Key>
+        <Key ID="STR_UMF_safestart_safeStartOver">
+            <English>Safe start over: go go go!</English>
+            <Spanish>Empieza la misión!</Spanish>
+        </Key>
     </Package>
 </Project>

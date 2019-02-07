@@ -11,7 +11,7 @@ class RscTitles {
             class Text : RscText {
                 idc = TIMER_DIALOG_IDC;
                 text = CSTRING(active);
-                x = 0.25*safezoneW + safezoneX;
+                x = 0.37*safezoneW + safezoneX;
                 y = safezoneY;
                 w = 0.5 * safezoneW;
                 h = 0.05 * safezoneH;
