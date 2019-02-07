@@ -1,18 +1,20 @@
-//=======================================================================================================//
-// File: fn_jip_checkAllowedPlayers.sqf                                                                  //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2016/11/12                                                                             //
-// Description: This function checks if a JIP player belongs to the allowed JIP players list. It does so //
-//              by comparing the stored player UID and profile name with the ones of the given playable  //
-//              unit.                                                                                    //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - 0: unit to check <OBJECT>.                                                            //
-//                                                                                                       //
-// Changes: 1.0 (2016/11/12) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * checks if a JIP player belongs to the allowed JIP players list. It does so by comparing the stored player
+ * UID and profile name with the ones of the given playable unit.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player] call umf_jip_fnc_checksAllowedPlayer
+ *
+ * Public: No
+ */
 
 params ["_unit"];
 

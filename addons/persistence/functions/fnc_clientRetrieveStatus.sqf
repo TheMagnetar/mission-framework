@@ -5,14 +5,14 @@
  *
  * Arguments:
  * 0: Unit <OBJECT> (default: objNull)
- * 1: Variables to store <ARRAY> (default: ["umf", "ace"])
+ * 1: Is JIP <BOOL> (default: false)
  * 2: Variables to exclude <ARRAY> (default: [QGVAR(teleportEnabled)])
  *
  * Return Value:
  * None
  *
  * Example:
- * [player] call umf_acre_fnc_getPlayerVariables
+ * [player] call umf_persistence_fnc_clientRetrieveStatus
  *
  * Public: No
  */

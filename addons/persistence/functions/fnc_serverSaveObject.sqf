@@ -11,9 +11,9 @@
  * Adding successfull <BOOL>
  *
  * Example:
- * [player, "ACRE_PRC77"] call umf_core_fnc_addItem
+ * [player, "ACRE_PRC77"] call umf_persistence_fnc_serverSaveObject
  *
- * Public: Yes
+ * Public: No
  */
 
 private _searchObjectsFnc = {

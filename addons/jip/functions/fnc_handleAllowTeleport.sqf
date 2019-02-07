@@ -1,17 +1,19 @@
-//=======================================================================================================//
-// File: fn_jip_handleAllowTeleport.sqf                                                                  //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/04/28                                                                             //
-// Description: Checks if a unit can be JIP teleported to a friendly unit                                //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - 0: unit to teleport <OBJECT>.                                                         //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//          1.1 (2018/05/15) Ported to CBA                                                               //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Checks if a unit can be JIP teleported to a friendly unit.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player] call umf_jip_fnc_handleAllowTeleport
+ *
+ * Public: No
+ */
 
 params ["_unit"];
 

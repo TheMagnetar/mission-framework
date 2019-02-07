@@ -12,9 +12,9 @@
  * None
  *
  * Example:
- * [player] call umf_acre_fnc_getPlayerVariables
+ * [player] call umf_persistence_fnc_getPlayerVariables
  *
- * Public: Yes
+ * Public: No
  */
 
 params [

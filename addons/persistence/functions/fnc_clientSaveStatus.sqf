@@ -4,15 +4,16 @@
  * Retrieves player variables that are important for persistence.
  *
  * Arguments:
- * 0: Unit <OBJECT> (default: objNull)
- * 1: Variables to store <ARRAY> (default: ["umf", "ace"])
- * 2: Variables to exclude <ARRAY> (default: [QGVAR(teleportEnabled)])
+ * 0: Unit <OBJECT> (default: player)
+ * 1: Player UID <ARRAY> (default: "")
+ * 2: Player name <ARRAY> (default: "")
+ * 3: JIP <BOOL> (default: false)
  *
  * Return Value:
  * None
  *
  * Example:
- * [player] call umf_acre_fnc_getPlayerVariables
+ * [player] call umf_persistence_fnc_clientSaveStatus
  *
  * Public: No
  */

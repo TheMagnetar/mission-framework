@@ -1,17 +1,19 @@
-//=======================================================================================================//
-// File: fn_jip_saveStatus_AdvancedFatigue.sqf                                                           //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2016/11/12                                                                             //
-// Description: This function stores global client variables related to ACE advanced fatigue in order to //
-//              persist them.                                                                            //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - 0: unit that whill have its ACE advanced fatigue.                                     //
-//                                                                                                       //
-// Changes: 1.0 (2016/11/12) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Stores global client variables related to ACE advanced fatigue in order to persist them.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player] call umf_persistence_fnc_saveStatusAdvancedFatigue
+ *
+ * Public: No
+ */
 
 params ["_unit"];
 

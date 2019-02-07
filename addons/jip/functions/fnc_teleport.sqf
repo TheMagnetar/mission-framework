@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: TheMagnetar
  * Teleports a JIP unit to the highest ranking in the squad, faction or side. If the highest ranking unit is
@@ -13,9 +14,8 @@
  * Example:
  * [87, player] call umf_jip_fnc_teleport
  *
- * Public: Yes
+ * Public: No
  */
-#include "script_component.hpp"
 
 params ["_displayEvent", "_unit"];
 

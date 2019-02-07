@@ -11,9 +11,9 @@
  * Adding successfull <BOOL>
  *
  * Example:
- * [player, "ACRE_PRC77"] call umf_core_fnc_addItem
+ * [player, "ACRE_PRC77"] call umf_persistence_fnc_serverSaveClient
  *
- * Public: Yes
+ * Public: No
  */
 
 params ["_information", ["_jip", false]];
@@ -30,10 +30,15 @@ private _informationList = if (_jip) then {
     missionNamespace getVariable [QGVAR(persistence), []]
 } else {
     _profileInformation = profileNamespace getVariable [QGVAR(persistence), objNull];
-    _profileInformation getVariable [GVAR(campaignName), []]
+    _profileInformation getVariable [QGVAR(campaignName), []]
 };
 
-private _playerInformation = [_informationList, "player"] call CBA_fnc_hashGet;
+private _playerInformation = if (_informationList isEqualTo []) then {
+    _informationList = [] call CBA_fnc_hashCreate;
+    []
+} else {
+    [_informationList, "player"] call CBA_fnc_hashGet;
+};
 
 private _found = false;
 {
@@ -42,15 +47,17 @@ private _found = false;
     if ((_uidX isEqualTo _uid) && {_nameX isEqualTo _name}) exitWith {
         _found = true;
         _playerInformation set [_forEachIndex, _information];
-    }
-} forEach _informationList;
+    };
+} forEach _playerInformation;
 
 if (!_found) then {
-    _informationList pushBack [_information];
+    _playerInformation pushBack _information;
 };
 
-[_informationList, "player", _informationList] call CBA_fnc_hashSet;
+[_informationList, "player", _playerInformation] call CBA_fnc_hashSet;
 
 if (!_jip) then {
     profileNamespace setVariable [QGVAR(persistence), _profileInformation];
+} else {
+    missionNamespace setVariable [QGVAR(persistence), _informationList];
 };
