@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="UMF">
+    <Package name="safestart">
+        <Key ID="STR_UMF_safestart_cannotLeaveZone">
+            <English>You cannot leave the respawn area.</English>
+            <Spanish>No puedes salir de la zona de respawn.</Spanish>
+        </Key>
+    </Package>
+</Project>

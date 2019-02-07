@@ -18,7 +18,7 @@
 
 if (!EGVAR(core,dacLoaded) || {GVAR(enabled)}) exitWith {};
 
-if (!isServer) exitWith { };
+if (!isServer) exitWith {};
 
 // Create DAC necessary "DAC_Source_Extern" logic module.
 if (isNil EGVAR(core,centreSideLogic)) then {
