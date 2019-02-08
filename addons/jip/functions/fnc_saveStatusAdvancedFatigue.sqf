@@ -26,5 +26,3 @@ _aceAdvancedFatigue pushback [QGVAR(muscleDamage), ace_advanced_fatigue_muscleDa
 
 call compile format [QUOTE(GVAR(advancedFatigue_%1) = _aceAdvancedFatigue;), getPlayerUID _unit];
 publicVariableServer (format [QGVAR(advancedFatigue_%1), getPlayerUID _unit]);
-
-//============================================= END OF FILE =============================================//

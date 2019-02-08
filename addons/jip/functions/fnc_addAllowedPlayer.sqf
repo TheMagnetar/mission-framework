@@ -19,8 +19,5 @@
 params ["_unit"];
 
 GVAR(allowedPlayers) pushBackUnique [getPlayerUID _unit, name _unit];
-publicVariable QGVAR(allowedPlayers);
 
 LOG_2("Player named %1 with UID %2 was successfully added to valid JIP players.",name _unit,getPlayerUID _unit);
-
-//============================================= END OF FILE =============================================//

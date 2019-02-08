@@ -19,12 +19,12 @@
         if (!hasInterface) exitWith {};
         if ((GVAR(savePlayerStatus) == 2) && {isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")}) then {
             if (GVAR(saveAdvancedFatiguePFH) == -1) then {
-                GVAR(saveAdvancedFatiguePFH) = [DFUNC(saveStatusAdvancedFatigue), 1, player] call CBA_fnc_addPerFrameHandler;
+                //GVAR(saveAdvancedFatiguePFH) = [DFUNC(saveStatusAdvancedFatigue), 1, player] call CBA_fnc_addPerFrameHandler;
             };
         } else {
             if (GVAR(saveAdvancedFatiguePFH) > -1) then {
-                [GVAR(saveAdvancedFatiguePFH)] call CBA_fnc_removePerFrameHandler;
-                GVAR(saveAdvancedFatiguePFH) = -1;
+                //[GVAR(saveAdvancedFatiguePFH)] call CBA_fnc_removePerFrameHandler;
+                //GVAR(saveAdvancedFatiguePFH) = -1;
             };
         };
     }

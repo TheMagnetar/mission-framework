@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: TheMagnetar
- * checks if a JIP player belongs to the allowed JIP players list. It does so by comparing the stored player
+ * Checks if a JIP player belongs to the allowed JIP players list. It does so by comparing the stored player
  * UID and profile name with the ones of the given playable unit.
  *
  * Arguments:
@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player] call umf_jip_fnc_checksAllowedPlayer
+ * [player] call umf_jip_fnc_checkAllowedPlayer
  *
  * Public: No
  */
@@ -32,6 +32,4 @@ private _found = false;
 
 LOG_3("Player named %1 with UID %2 is in the allowed JIP list: %3.",name _unit,getPlayerUID _unit,_found);
 
-_found
-
-//============================================= END OF FILE =============================================//
+[QGVAR(processJipPlayer), [_found], _unit] call CBA_fnc_targetEvent;

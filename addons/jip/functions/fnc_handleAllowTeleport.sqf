@@ -18,7 +18,7 @@
 params ["_unit"];
 
 _unit setVariable [QGVAR(teleportEnabled), true];
-hint "Press F11 to teleport to your squad or any other friendly unit. You have 5 minutes.";
+hint (localize LSTRING(pressF11));
 
 GVAR(displayEH) = (findDisplay 46) displayAddEventHandler ["KeyDown", QUOTE([ARR_2(_this, player)] call FUNC(teleport))];
 
@@ -28,7 +28,7 @@ GVAR(displayEH) = (findDisplay 46) displayAddEventHandler ["KeyDown", QUOTE([ARR
     params ["_unit"];
 
     if (_unit getVariable [QGVAR(teleportEnabled), false]) then {
-        hint "5 minutes have passed. You cannot teleport to your squad anymore.";
+        hint (localize LSTRING(f11TimeExpired));
         _unit setVariable [QGVAR(teleportEnabled), false];
     };
 
