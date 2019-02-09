@@ -1,28 +1,25 @@
-//=======================================================================================================//
-// File: fn_misc_teleport.sqf                                                                            //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/10/18                                                                             //
-// Description: This function teleports a player to a defined destination point.                         //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - 0: object to teleport <OBJECT>.                                                       //
-//               - 1: marker where the object will be teleported <STRING>.                               //
-//               - 2: altitude (ASL) at the destination point <FLOAT><OPTIONAL>.                         //
-//               - 3: direction at destination point <FLOAT><OPTIONAL>. Defaults to marker direction.    //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Teleports an object to a defined destination point
+ *
+ * Arguments:
+ * 0: Object to teleport <OBJECT>
+ * 1: Marker where the object will be teleported <STRING>
+ * 2: Altitude (ASL) at the destination point <NUMBER> (default: 0)
+ * 3: Direction at destination point <NUMBER> (default: 0)
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [] call umf_teleport_fnc_teleport
+ *
+ * Public: No
+ */
 
-params ["_object","_marker", ["_altitude",0.0], "_direction"];
+params ["_object", "_marker", ["_altitude", 0], ["_direction", 0]];
 
 _object setPosATL [getmarkerpos _marker select 0, getmarkerpos _marker select 1, _altitude];
 
-if (isNil "_direction") then {
-    _object setDir (markerDir _marker);
-} else {
-    _object setDir _direction;
-};
-
-//============================================= END OF FILE =============================================//
+_object setDir _direction;

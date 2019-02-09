@@ -1,18 +1,19 @@
-//=======================================================================================================//
-// File: fn_respawn_exitSpectator.sqf                                                                    //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/10/02                                                                             //
-// Description: This function exits spectator mode.                                                      //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - none                                                                                  //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
-
-params [""];
+/*
+ * Author: TheMagnetar
+ * Handles exiting the spectator mode. It supports both ACE and EG Spectator modes.
+ *
+ * Arguments:
+ * 0: Unit entering the spectator mode <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [] call umf_respawn_exitSpectator
+ *
+ * Public: No
+ */
 
 if (EGVAR(core,aceLoaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
     [false] call ace_spectator_fnc_setSpectator;
@@ -26,5 +27,3 @@ if (EGVAR(core,aceLoaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
     // Exit the End Game Spectator mode.
     ["Terminate"] call BIS_fnc_EGSpectator;
 };
-
-//============================================= END OF FILE =============================================//

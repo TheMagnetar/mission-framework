@@ -1,20 +1,21 @@
-//=======================================================================================================//
-// File: fn_dac_init.sqf                                                                                 //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/09/29                                                                             //
-// Description: This funtion has the purpose of initialising the addon version of the addon, created by  //
-//              Silola, Dynamic-AI-Creator (DAC) (http://www.armaholic.com/page.php?id=25550). It        //
-//              automatically creates a Logic Module "DAC_Source_Extern" (there is no need to place it   //
-//              using the editor) and initialises the variable "DAC_STRPlayers" with the playable units' //
-//              names in order to avoid having to introduce them in the file "DAC_Config_Creator.sqf".   //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - none                                                                                  //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Initialises the addon version of the addon, created by Silola, Dynamic-AI-Creator (DAC) (http://www.armaholic.com/page.php?id=25550).
+ * It automatically creates a Logic Module "DAC_Source_Extern" (there is no need to place it using the editor) and initialises the variable
+ * "DAC_STRPlayers" with the playable units'  names in order to avoid having to introduce them in the file "DAC_Config_Creator.sqf".
+ *
+ * Arguments:
+ * None
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [] call umf_dac_fnc_init
+ *
+ * Public: No
+ */
 
 if (!EGVAR(core,dacLoaded) || {GVAR(enabled)}) exitWith {};
 
@@ -38,5 +39,3 @@ DAC_STRPlayers = [];
 publicVariable "DAC_STRPlayers";
 
 LOG_1("%1", DAC_STRPlayers);
-
-//============================================= END OF FILE =============================================//

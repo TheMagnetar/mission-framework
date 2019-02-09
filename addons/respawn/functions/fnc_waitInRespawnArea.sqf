@@ -4,13 +4,14 @@
  * Prevents the players from exiting the respawn area for a certain amount of  time.
  *
  * Arguments:
- * 0: Unit <OBJECT> (Default: objNull)
+ * 0: Unit <OBJECT>
+ * 1: Respawn area marker <STRING>
  *
  * Return Value:
  * CBA PFH ID <NUMBER>
  *
  * Example:
- * [player] call umf_safestart_fnc_startWarmupClient
+ * [player] call umf_respawn_fnc_waitInRespawnArea
  *
  * Public: No
  */

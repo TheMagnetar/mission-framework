@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: TheMagnetar
  * Removes all ACRE radios from the inventory.
@@ -11,9 +12,8 @@
  * Example:
  * [player] call umf_acre_fnc_removeRadios
  *
- * Public: Yes
+ * Public: No
  */
-#include "script_component.hpp"
 
 params [["_unit", objNull]];
 

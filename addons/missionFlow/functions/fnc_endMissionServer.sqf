@@ -1,19 +1,18 @@
 #include "script_component.hpp"
 /*
  * Author: TheMagnetar
- * Finishes .
+ * Finishes the mission globally.
  *
  * Arguments:
- * 0: Unit <OBJECT> (Default: objNull)
- * 1: Item <STRING>
+ * None
  *
  * Return Value:
- * Adding successfull <BOOL>
+ * None
  *
  * Example:
- * [player, "ACRE_PRC77"] call umf_core_fnc_addItem
+ * [] call umf_missionFlow_fnc_endMissionServer
  *
- * Public: Yes
+ * Public: No
  */
 
 if (!isServer) exitWith {};

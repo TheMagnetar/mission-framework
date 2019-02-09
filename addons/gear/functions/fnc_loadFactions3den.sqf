@@ -1,4 +1,19 @@
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Loads the list of factions in 3DEN.
+ *
+ * Arguments:
+ * 0: Control <NUMBER>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [1] call umf_gear_fnc_loadFactions3den
+ *
+ * Public: No
+ */
 
 disableSerialization;
 params ["_control", ""];

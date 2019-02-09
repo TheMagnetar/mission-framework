@@ -1,17 +1,19 @@
-//=======================================================================================================//
-// File: fn_respawn_moveToMarker.sqf                                                                     //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/10/02                                                                             //
-// Description: This function enters spectator mode. The spectator mode that is used, ACE3 spectator or  //
-//              BI's End Game Spectator, depends on mission parameters.                                  //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - none                                                                                  //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Moves a unit to a respawn marker. If the unit cannot be moved to a marker, the unit is killed.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player] call umf_respawn_moveToMarker
+ *
+ * Public: No
+ */
 
 params ["_unit"];
 
@@ -52,4 +54,3 @@ if (!_couldRespawn) then {
 };
 
 _couldRespawn
-//============================================= END OF FILE =============================================//

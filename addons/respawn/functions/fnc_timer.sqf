@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: TheMagnetar
- * Safe start timer. It shows minutes and seconds until safe start finishes.
+ * Wait in respawn timer. It shows minutes and seconds until a player can leave the respawn area.
  *
  * Arguments:
  * None
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call umf_safestart_fnc_timer
+ * [] call umf_respawn_fnc_timer
  *
  * Public: No
  */

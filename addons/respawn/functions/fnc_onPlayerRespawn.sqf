@@ -1,21 +1,22 @@
-//=======================================================================================================//
-// File: bmt_respawn_onPlayerRespawn.sqf                                                                 //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/10/02                                                                             //
-// Description: This document configures the onPlayerRespawn event. For the moment ACE3 spectator mode   //
-//              (http://ace3mod.com/wiki/feature/spectator.html) in case it is available, defaulting to  //
-//              the vanila one if ACE3 is not loaded.                                                    //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - 0: unit to be respawned <OBJECT>.                                                     //
-//               - 1: old unit that was killed <OBJECT>.                                                 //
-//               - 2: respawn type <SCALAR>.                                                             //
-//               - 3: number of seconds until respawn <SCALAR>.                                          //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Handles on player respawn event.
+ *
+ * Arguments:
+ * 0: Unit respawning <OBJECT> (default: objNull)
+ * 1: Old unit that was killed <OBJECT> (not used)
+ * 2: Respawn type <NUMBER> (not used)
+ * 3: Number of seconds until respawn <NUMBER> (not used)
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player] spawn umf_respawn_onPlayerRespawn
+ *
+ * Public: No
+ */
 
 // Parameters passed when onPlayerRespawn.
 params [["_unit", objNull]];
@@ -66,5 +67,3 @@ if (GVAR(saveGear)) then {
         };
     };
 };
-
-//============================================= END OF FILE =============================================//

@@ -1,24 +1,25 @@
-//=======================================================================================================//
-// File: bmt_respawn_onPlayerKilled.sqf                                                                  //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/10/02                                                                             //
-// Description: This document configures the onPlayerKilled event. For the moment ACE3 spectator mode    //
-//              (http://ace3mod.com/wiki/feature/spectator.html) in case it is available, defaulting to  //
-//              the vanila one if ACE3 is not loaded.                                                    //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - 0: unit that has been killed <OBJECT>.                                                //
-//               - 1: unit that made he kill <OBJECT>.                                                   //
-//               - 2: respawn type <SCALAR>.                                                             //
-//               - 3: number of seconds until respawn <SCALAR>.                                          //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Handles on player killed event.
+ *
+ * Arguments:
+ * 0: Unit that was killed <OBJECT> (default: objNull)
+ * 1: Unit that made he kill <OBJECT> (default: objNull)
+ * 2: Respawn type <NUMBER> (not used)
+ * 3: Number of seconds until respawn <NUMBER> (not used)
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [acre_player, s1] spawn umf_respawn_onPlayerKilled
+ *
+ * Public: No
+ */
 
 // Parameters passed when onPlayerKilled.
-params [["_unit",objNull], ["_killer",objNull], "", ""];
+params [["_unit", objNull], ["_killer", objNull], "", ""];
 
 // Substract tickets from player's pool or player's side pool.
 private _numRespawns = [_unit, "substract"] call FUNC(manageTickets);
@@ -88,6 +89,3 @@ if ((_numRespawns >= 0) or (_numRespawns == -99)) then {
 
     [_unit, _killer] call FUNC(enterSpectator);
 };
-
-
-//============================================= END OF FILE =============================================//

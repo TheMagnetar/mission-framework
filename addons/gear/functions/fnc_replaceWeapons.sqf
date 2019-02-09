@@ -1,21 +1,21 @@
-//=======================================================================================================//
-// File: fn_configEquipment_replaceWeapon.sqf                                                            //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2018/05/16                                                                             //
-// Description: This function equips the unit according to a specified role and depending on the defined //
-//              faction.                                                                                 //
-//                                                                                                       //
-// Arguments:                                                                                            //
-//    - 0: Unit <OBJECT>                                                                                 //
-//    - 1: Items <ARRAY>                                                                                 //
-//    - 2: Type of item <STRING>                                                                         //
-//                                                                                                       //
-// Return:                                                                                               //
-//      None                                                                                             //
-//                                                                                                       //
-// Changes: 1.0  (2018/05/16) First public version.                                                      //
-//=======================================================================================================//
+#include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Replaces a certain type of weapon from the unit's inventory.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ * 1: Array of weapons (it will be randomly selected) <ARRAY>
+ * 2: Type of weapon <STRING>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player, ["weaponxX", "weaponY"], "primaryWeapon"] call umf_gear_fnc_replaceWeapons
+ *
+ * Public: No
+ */
 
 #include "script_component.hpp"
 params ["_unit", "_weapons", "_type"];

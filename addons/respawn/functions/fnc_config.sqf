@@ -1,18 +1,19 @@
-//=======================================================================================================//
-// File: fn_respawn_config.sqf                                                                           //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/10/02                                                                             //
-// Description: This function configures the diffetent parameters of the BMT Respawn system. It is       //
-//              executed during the PostInit phase.                                                      //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - none                                                                                  //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//=======================================================================================================//
-
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Configures the number of respawns of a unit.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player, s1] call umf_respawn_config
+ *
+ * Public: No
+ */
 
 params ["_unit"];
 
@@ -32,5 +33,3 @@ if (GVAR(numRespawnsConfig) < 0) then {
 
 LOG("Assigning respawn for players.");
 _unit setVariable [QGVAR(numRespawns), _numRespawns, true];
-
-//============================================= END OF FILE =============================================//

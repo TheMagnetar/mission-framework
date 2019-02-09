@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: TheMagnetar
  * Loads the defined networks in 3DEN
@@ -11,9 +12,8 @@
  * Example:
  * [player] call umf_acre_fnc_loadNetworks3den
  *
- * Public: Yes
+ * Public: No
  */
-#include "script_component.hpp"
 
 disableSerialization;
 params ["_control", ""];

@@ -1,20 +1,22 @@
-//=======================================================================================================//
-// File: fn_respawn_enterSpectator.sqf                                                                   //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/10/02                                                                             //
-// Description: This function enters spectator mode. The spectator mode that is used, ACE3 spectator or  //
-//              BI's End Game Spectator, depends on mission parameters.                                  //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - 0: unit entering the spectator mode <OBJECT>.                                         //
-//               - 1: unit where the spectator camera will be initially focusing onto <OBJECT>.          //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Handles entering the spectator mode. It supports both ACE and EG Spectator modes.
+ *
+ * Arguments:
+ * 0: Unit entering the spectator mode <OBJECT>
+ * 1: Unit where the spectator camera will be initially focusing onto <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player, player] call umf_respawn_enterSpectator
+ *
+ * Public: No
+ */
 
-params [["_respawnUnit",objNull], ["_spectableUnit",objNull]];
+params [["_respawnUnit", objNull], ["_spectableUnit", objNull]];
 
 // If ACE 3 is loaded use the spectator mode of ACE3. Use the vanila one otherwise (End Game Spectator).
 if (EGVAR(core,aceLoaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
@@ -43,5 +45,3 @@ if (EGVAR(core,aceLoaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
     // - The AI cannot be observed.
     ["Initialize", [player, [], false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
 };
-
-//============================================= END OF FILE =============================================//

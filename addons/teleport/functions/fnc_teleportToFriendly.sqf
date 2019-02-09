@@ -1,18 +1,21 @@
-//=======================================================================================================//
-// File: fn_misc_teleport_toFriendly.sqf                                                                 //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/10/02                                                                             //
-// Description: This function teleports the given object close to the highest ranking friendly unit in   //
-//              the given list. If the target unit is inside the vehicle, it will teleport the  unit if  //
-//              there is a free place.                                                                   //
-//              Arguments:                                                                               //
-//               - 0: unit to teleport <OBJECT>.                                                         //
-//               - 1: unit <ARRAY> of objects. Possible teleport candidates.                             //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//=======================================================================================================//
-
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Teleports the given unit close to the highest ranking friendly unit in the given list. If the target unit
+ * is inside the vehicle, it will teleport the unit if there is a free place.
+ *
+ * Arguments:
+ * 0: Unit to Teleport <OBJECT>
+ * 1: Group of target units <ARRAY>
+ *
+ * Return Value:
+ * Unit successfully teleported <BOOL>
+ *
+ * Example:
+ * [] call umf_teleport_fnc_teleport
+ *
+ * Public: No
+ */
 
 params["_unit", "_groupUnits"];
 
@@ -38,5 +41,3 @@ if (!isNull _targetUnit) then {
 };
 
 _couldTeleport
-
-//============================================= END OF FILE =============================================//

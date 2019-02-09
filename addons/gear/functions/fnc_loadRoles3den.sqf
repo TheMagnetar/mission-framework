@@ -1,12 +1,28 @@
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Loads the list of roles in 3DEN.
+ *
+ * Arguments:
+ * 0: Control <NUMBER>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [1] call umf_gear_fnc_loadRoles3den
+ *
+ * Public: No
+ */
 
 disableSerialization;
 params ["_control", ""];
 
 private _unit = get3DENSelected "object";
 
-private _role = ((_unit select 0) get3DENAttribute QGVAR(role)) select 0;
-private _faction = ((_unit select 0) get3DENAttribute QGVAR(faction)) select 0;
+private _entity = _unit select 0;
+private _role = (_entity get3DENAttribute QGVAR(role)) select 0;
+private _faction = (_entity get3DENAttribute QGVAR(faction)) select 0;
 private _rolesEntries = missionConfigFile >> "CfgLoadouts" >> _faction;
 
 if (_role isEqualTo "") then {
