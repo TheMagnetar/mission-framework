@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: TheMagnetar
- * Starts the warmup phase by preventing taking damage and leaving the designated area.
+ * Prevents the players from exiting the respawn area for a certain amount of  time.
  *
  * Arguments:
  * 0: Unit <OBJECT> (Default: objNull)
@@ -15,35 +15,35 @@
  * Public: No
  */
 
-params ["_unit"];
+params ["_unit", "_markerName"];
 
-if (isNull _unit) exitWith {
-    ERROR("Null unit as input parameter.");
-};
-
+// Prevent unit from taking damage
 _unit allowDamage false;
-private _markerName = format ["safeStartArea_%1", side _unit];
-
-// Show safestart count down
-TIMER_DIALOG_IDD cutRsc [QGVAR(timerDialog), "PLAIN"];
-
-// Check if there is a safe area
-if (getMarkerColor _markerName == "") exitWith {
-    ERROR_1("Marker %1 does not exist",_markerName);
-    GVAR(safeStartPFH) = [DFUNC(timer), 1] call CBA_fnc_addPerFrameHandler;
-};
 
 private _previousPos = getPosASL _unit;
 if (_previousPos inArea _markerName) then {
     _previousPos = [_markerName] call CBA_fnc_randPosArea;
 };
 
-GVAR(safeStartPFH) = [{
-    params ["_params", ""];
+// Show respawn count down
+TIMER_DIALOG_IDD cutRsc [QGVAR(timerDialog), "PLAIN"];
+
+[{
+    params ["_params", "_pfhId"];
     _params params ["_unit", "_marker", "_previousPos"];
 
     // Update the time
     [] call FUNC(timer);
+
+    if (GVAR(respawnAreaTime)*60 - GVAR(killedTime) <= 0) exitWith {
+        _unit allowDamage false;
+
+        // Remove respawn count down
+        TIMER_DIALOG_IDD cutFadeOut 0;
+        TIMER_DIALOG_IDD cutFadeOut 1;
+
+        [_pfhId] call CBA_fnc_removePerFrameHandler;
+    };
 
     private _vehicle = objectParent _unit;
     if (isNull _vehicle) then {

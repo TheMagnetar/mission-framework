@@ -27,7 +27,7 @@ private _numRespawns = 0;
 if (GVAR(numRespawnsConfig) < 0) then {
     _numRespawns = -99;
 } else {
-    _numRespawns = GVAR(numRespawns);
+    _numRespawns = GVAR(numRespawnsConfig);
 };
 
 LOG("Assigning respawn for players.");

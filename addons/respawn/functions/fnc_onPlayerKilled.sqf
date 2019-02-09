@@ -22,10 +22,10 @@ params [["_unit",objNull], ["_killer",objNull], "", ""];
 
 // Substract tickets from player's pool or player's side pool.
 private _numRespawns = [_unit, "substract"] call FUNC(manageTickets);
-
 if (_numRespawns == -1) then {
     _unit setVariable [QGVAR(playerAlive), false, true];
     setPlayerRespawnTime 1e10;
+    [false] call FUNC(respawnCounter);
 };
 
 if ((allPlayers findIf {_x getVariable [QGVAR(playerAlive), true]}) == -1) exitWith {
@@ -38,7 +38,7 @@ if ((allPlayers findIf {_x getVariable [QGVAR(playerAlive), true]}) == -1) exitW
     };
 
     sleep 6;
-    [QEGVAR(core,finishMission), []] call CBA_fnc_globalEvent;
+    [QEGVAR(missionFlow,finishMission), []] call CBA_fnc_globalEvent;
 };
 
 if (GVAR(saveGear)) then {
@@ -64,11 +64,12 @@ sleep 1;
 
 // Do not enter spectator mode if there are still tickets available.
 if ((_numRespawns >= 0) or (_numRespawns == -99)) then {
+    GVAR(killedTime) = CBA_missionTime;
     [true] call FUNC(respawnCounter);
 } else {
 
     sleep 3;
-    cutText ["You are dead! Entering spectator mode.", "PLAIN DOWN"];
+    cutText [localize LSTRING(enterSpectator), "PLAIN DOWN"];
     sleep 5;
 
     // If there was no killer or the kill cam is disabled then pass it as a random playable unit.

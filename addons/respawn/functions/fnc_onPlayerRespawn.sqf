@@ -25,7 +25,9 @@ params [["_unit", objNull]];
 GVAR(camera) = false;
 
 [_unit] call FUNC(exitSpectator);
-[_unit] call FUNC(moveToMarker);
+private _couldRespawn = [_unit] call FUNC(moveToMarker);
+
+if (!_couldRespawn) exitWith {};
 
 // Assign equipment before death or default one depending on the role
 if (GVAR(saveGear)) then {
@@ -53,7 +55,7 @@ if (GVAR(saveGear)) then {
         // Distribute radios
         if (EGVAR(acre,distributeRadios)) then {
             // Remove radios
-            [_unit] call EFUNC(acre2,removeRadios);
+            [_unit] call EFUNC(acre,removeRadios);
 
             [DEFUNC(acre,addRadios), [_unit]] call CBA_fnc_execNextFrame;
         };

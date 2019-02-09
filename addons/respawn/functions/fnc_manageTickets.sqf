@@ -18,18 +18,16 @@ params ["_unit", "_operation", ["_amount", 1]];
 
 private _numRespawns = _unit getVariable [QGVAR(numRespawns), -1];
 
-if (_numRespawns >= 0) then {
-    switch (_operation) do {
-        case "substract": { _numRespawns = _numRespawns - _amount; };
-        case "add": { _numRespawns = _numRespawns + _amount; };
-        default {
-            LOG_1("Operation not recognised. It should be substract or add and not %1",_operation);
-        };
+if (_numRespawns < 0) exitWith {_numRespawns};
+
+switch (_operation) do {
+    case "substract": { _numRespawns = _numRespawns - _amount; };
+    case "add": { _numRespawns = _numRespawns + _amount; };
+    default {
+        ERROR_1("Operation not recognised. It should be substract or add and not %1",_operation);
     };
-    _unit setVariable [QGVAR(numRespawns), _numRespawns, true];
 };
+_unit setVariable [QGVAR(numRespawns), _numRespawns, true];
 
 // Return value
 _numRespawns
-
-//============================================= END OF FILE =============================================//

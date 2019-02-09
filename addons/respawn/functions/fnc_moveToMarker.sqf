@@ -31,9 +31,15 @@ private _unitSide = tolower format ["%1", side _unit];
 // faction marker for respawning, and last try if there is a side marker (respawn_west, respawn_east, ...)
 private _couldRespawn = false;
 {
-    private _respawnMarkerName = format ["respawn_%1", _x];
-    if (getMarkerColor _respawnMarkerName != "") exitWith {
-        _unit setPosATL [getMarkerPos _respawnMarkerName select 0, getMarkerPos _respawnMarkerName select 1, 0];
+    private _marker = format ["respawnArea_%1", _x];
+    if (getMarkerColor _marker != "") exitWith {
+        _unit setPosATL ([_marker] call CBA_fnc_randPosArea);
+        [_unit, _marker] call FUNC(waitInRespawnArea);
+        _couldRespawn = true;
+    };
+    _marker = format ["respawn_%1", _x];
+    if (getMarkerColor _marker != "") exitWith {
+        _unit setPosATL ([_marker, 5] call CBA_fnc_randPos);
         _couldRespawn = true;
     };
 } forEach [_unitGroup, _unitFaction, _unitSide];
@@ -42,8 +48,8 @@ private _couldRespawn = false;
 if (!_couldRespawn) then {
     _unit setVariable [QGVAR(numRespawns), -1, true];
     _unit setDamage 1;
-    [{"normal" cutText ["Not possible to respawn anywhere. There are no suitable respawn markers!", "PLAIN"];}, [], 2] call CBA_fnc_waitAndExecute;
-    
+    [{"normal" cutText [localize LSTRING(noMarkers), "PLAIN"];}, [], 2] call CBA_fnc_waitAndExecute;
 };
 
+_couldRespawn
 //============================================= END OF FILE =============================================//

@@ -7,3 +7,5 @@ PREP(moveToMarker);
 PREP(onPlayerKilled);
 PREP(onPlayerRespawn);
 PREP(respawnCounter);
+PREP(timer);
+PREP(waitInRespawnArea);

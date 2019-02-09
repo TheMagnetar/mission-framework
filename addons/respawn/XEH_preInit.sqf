@@ -6,6 +6,6 @@ ADDON = false;
 
 #include "initSettings.sqf"
 
-DGVAR(numRespawns) = 0;
+GVAR(killedTime) = 0;
 
 ADDON = true;

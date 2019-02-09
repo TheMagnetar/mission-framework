@@ -18,7 +18,7 @@
 
 if (!isServer) exitWith {};
 
-if (GVAR(persistenceEnabled)) then {
+if (EGVAR(persistence,persistenceEnabled)) then {
 
     if (GVAR(isLastMission)) then {
         [] call FUNC(deleteCampaign);
