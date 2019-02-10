@@ -30,11 +30,11 @@ class CfgRespawnTemplates {
 };
 
 //=======================================================================================================//
-// BIS Debug Console: https://community.bistudio.com/wiki/Description.ext#enableDebugConsole             //
+// CBA Target Debug Console: https://github.com/CBATeam/CBA_A3/wiki/Target-Debugging                     //
 // Debug console is handled by the addon itself.                                                         //
 // https://community.bistudio.com/wiki/Mission_Editor:_Debug_Console_(Arma_3)#Mod_support                //
 //=======================================================================================================//
-// enableDebugConsole = 1;  // Enabled for SP and MP administrators.
+enableTargetDebug = 1;  // Enabled for SP and MP administrators.
 
 //=======================================================================================================//
 // Configuration of several mission parameters.                                                          //
