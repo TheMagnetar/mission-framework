@@ -192,7 +192,7 @@ class cen : en {
 
 class exp : rfl {
     displayName = "Explosives Specialist";
-    postLoadout = "_unit setVariable ['ACE_IsEOD', 1, true];";
+    postLoadout = "_unit setVariable ['ACE_IsEOD', true, true];";
 };
 
 class sp : rfl {
@@ -214,7 +214,7 @@ class divme : div {
 
 class divexp : div {
     displayName = "Diver Explosives Specialist";
-    postLoadout = "_unit setVariable ['ACE_IsEOD', 1, true];";
+    postLoadout = "_unit setVariable ['ACE_IsEOD', true, true];";
 };
 
 class divtl : div {

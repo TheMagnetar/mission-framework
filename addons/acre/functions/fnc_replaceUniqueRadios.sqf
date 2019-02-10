@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: Jonpas (Thesseus Aegis). Adapted by TheMagnetar.
  * Replaces all unique items in a unit loadout with a base radio.
@@ -13,7 +14,6 @@
  *
  * Public: No
  */
-#include "script_component.hpp"
 
 params ["_loadout"];
 

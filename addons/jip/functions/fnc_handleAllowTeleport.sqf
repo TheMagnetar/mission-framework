@@ -1,22 +1,24 @@
-//=======================================================================================================//
-// File: fn_jip_handleAllowTeleport.sqf                                                                  //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/04/28                                                                             //
-// Description: Checks if a unit can be JIP teleported to a friendly unit                                //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - 0: unit to teleport <OBJECT>.                                                         //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//          1.1 (2018/05/15) Ported to CBA                                                               //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Checks if a unit can be JIP teleported to a friendly unit.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player] call umf_jip_fnc_handleAllowTeleport
+ *
+ * Public: No
+ */
 
 params ["_unit"];
 
 _unit setVariable [QGVAR(teleportEnabled), true];
-hint "Press F11 to teleport to your squad or any other friendly unit. You have 5 minutes.";
+hint (localize LSTRING(pressF11));
 
 GVAR(displayEH) = (findDisplay 46) displayAddEventHandler ["KeyDown", QUOTE([ARR_2(_this, player)] call FUNC(teleport))];
 
@@ -26,7 +28,7 @@ GVAR(displayEH) = (findDisplay 46) displayAddEventHandler ["KeyDown", QUOTE([ARR
     params ["_unit"];
 
     if (_unit getVariable [QGVAR(teleportEnabled), false]) then {
-        hint "5 minutes have passed. You cannot teleport to your squad anymore.";
+        hint (localize LSTRING(f11TimeExpired));
         _unit setVariable [QGVAR(teleportEnabled), false];
     };
 

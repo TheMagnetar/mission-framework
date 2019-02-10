@@ -1,9 +1,6 @@
 PREP(addAllowedPlayer);
 PREP(checkAllowedPlayers);
 PREP(handleAllowTeleport);
-PREP(retrievePlayerVariables);
-PREP(retrieveStatus);
-PREP(savePlayerVariables);
-PREP(saveStatus);
+PREP(processJipPlayer);
 PREP(saveStatusAdvancedFatigue);
 PREP(teleport);

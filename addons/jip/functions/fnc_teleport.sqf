@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: TheMagnetar
  * Teleports a JIP unit to the highest ranking in the squad, faction or side. If the highest ranking unit is
@@ -13,16 +14,15 @@
  * Example:
  * [87, player] call umf_jip_fnc_teleport
  *
- * Public: Yes
+ * Public: No
  */
-#include "script_component.hpp"
 
 params ["_displayEvent", "_unit"];
 
 private _canTeleport = _unit getVariable [QGVAR(teleportEnabled), false];
 
 
-if (!_canTeleport && {_displayEvent select 1 != 87}) exitWith {false};
+if ((_displayEvent select 1 != DIK_F11) || {!_canTeleport}) exitWith {false};
 
 private _couldTeleport = false;
 
@@ -67,5 +67,3 @@ if (_couldTeleport) then {
 };
 
 _couldTeleport
-
-//============================================= END OF FILE =============================================//

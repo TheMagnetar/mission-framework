@@ -1,16 +1,20 @@
-//=======================================================================================================//
-// File: fn_briefing_listRadioFrequencies.sqf                                                            //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 17/16/2016                                                                             //
-// Description: Function to list radio frequencies in the briefing.                                      //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - none                                                                                  //
-//                                                                                                       //
-// Changes:  1.0 (2016/12/17) First public version.                                                      //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Lists the radio frequencies in the briefing.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ * 1: Vehicle de unit is in <OBJECT> (default: objNull)
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [] call umf_briefing_fnc_radioFrequencies
+ *
+ * Public: No
+ */
 
 params ["_unit", ["_vehicle", objNull]];
 

@@ -1,4 +1,19 @@
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Handles changing the debug mode of DAC.
+ *
+ * Arguments:
+ * None
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [] call umf_dac_fnc_handleChangeDebug
+ *
+ * Public: No
+ */
 
 // Modify DAC output depending whether the debug is activated or not.
 switch (GVAR(debugLevel)) do {

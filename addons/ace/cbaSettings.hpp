@@ -12,6 +12,7 @@ ace_advanced_fatigue_enableStaminaBar = true;
 force force ace_advanced_fatigue_loadFactor = 1;
 force force ace_advanced_fatigue_performanceFactor = 1;
 force force ace_advanced_fatigue_recoveryFactor = 1;
+force force ace_advanced_fatigue_swayFactor = 1;
 force force ace_advanced_fatigue_terrainGradientFactor = 1;
 
 // ACE Advanced Throwing
@@ -97,13 +98,17 @@ ace_interact_menu_colorTextMin = [1,1,1,0.25];
 ace_interact_menu_cursorKeepCentered = false;
 ace_interact_menu_menuAnimationSpeed = 0;
 ace_interact_menu_menuBackground = 0;
+ace_interact_menu_selectorColor = [1,0,0];
 ace_interact_menu_shadowSetting = 2;
 ace_interact_menu_textSize = 2;
 ace_interact_menu_useListMenu = true;
 
 // ACE Logistics
 force force ace_cargo_enable = true;
+force force ace_cargo_loadTimeCoefficient = 5;
 force force ace_cargo_paradropTimeCoefficent = 2.5;
+force force ace_rearm_level = 0;
+force force ace_rearm_supply = 1;
 force force ace_refuel_hoseLength = 12;
 force force ace_refuel_rate = 1;
 force force ace_repair_addSpareParts = true;
@@ -149,55 +154,51 @@ ace_maptools_drawStraightLines = true;
 ace_maptools_rotateModifierKey = 1;
 
 // ACE Medical
-force force ace_medical_advancedBandages = true;
-force force ace_medical_advancedDiagnose = true;
-force force ace_medical_advancedMedication = true;
-force force ace_medical_ai_enabledFor = 2;
-force force ace_medical_AIDamageThreshold = 1.05;
-force force ace_medical_allowLitterCreation = true;
-force force ace_medical_allowSelfIV = 1;
-force force ace_medical_allowUnconsciousAnimationOnTreatment = true;
-force force ace_medical_bleedingCoefficient = 1.05;
-force force ace_medical_blood_enabledFor = 2;
-force force ace_medical_cardiacArrestTime = 300;
-force force ace_medical_cardiacArrestTimeHigh = 300;
-force force ace_medical_cardiacArrestTimeLow = 300;
-force force ace_medical_consumeItem_Medkit = 1;
-force force ace_medical_consumeItem_PAK = 1;
-force force ace_medical_consumeItem_SurgicalKit = 0;
-force force ace_medical_CPRcreatesPulse = true;
-force force ace_medical_enableScreams = true;
-force force ace_medical_fatalInjuryCondition = 0;
-force force ace_medical_fatalInjuryConditionAI = true;
-force force ace_medical_increaseTrainingInLocations = true;
-force force ace_medical_ivFlowRate = 2;
-force force ace_medical_litterCleanUpDelay = 180;
-force force ace_medical_litterSimulationDetail = 1;
-force force ace_medical_medicSetting = 2;
-force force ace_medical_medicSetting_Epi = 2;
-force force ace_medical_medicSetting_Medkit = 2;
-force force ace_medical_medicSetting_PainVisualization = 2;
-force force ace_medical_medicSetting_PAK = 2;
-force force ace_medical_medicSetting_SurgicalKit = 2;
-force force ace_medical_MedkitTime = 0;
-force force ace_medical_menu_allow = 1;
-force force ace_medical_menu_maxRange = 3;
-force force ace_medical_menu_openAfterTreatment = true;
-force force ace_medical_menu_useMenu = 1;
-force force ace_medical_menuTypeStyle = 0;
-force force ace_medical_painCoefficient = 1;
-force force ace_medical_PAKTime = 0;
-force force ace_medical_playerDamageThreshold = 1.05;
-force force ace_medical_remainingDamage_Medkit = 0.1;
-force force ace_medical_showPainInMenu = true;
-force force ace_medical_spontaneousWakeUpChance = 0.1;
-force force ace_medical_unconsciousConditionAI = true;
-force force ace_medical_useLocation_Epi = 0;
-force force ace_medical_useLocation_Medkit = 3;
-force force ace_medical_useLocation_PAK = 3;
-force force ace_medical_useLocation_SurgicalKit = 0;
-force force ace_medical_woundReopening = true;
-force force ace_medical_ui_painEffectType = 0;
+force ace_medical_ai_enabledFor = 2;
+force ace_medical_AIDamageThreshold = 1;
+force ace_medical_allowLitterCreation = true;
+force ace_medical_allowUnconsciousAnimationOnTreatment = false;
+force ace_medical_amountOfReviveLives = -1;
+force ace_medical_bleedingCoefficient = 1;
+force ace_medical_blood_enabledFor = 2;
+force ace_medical_consumeItem_PAK = 1;
+force ace_medical_consumeItem_SurgicalKit = 0;
+force ace_medical_delayUnconCaptive = 3;
+force ace_medical_enableAdvancedWounds = true;
+force ace_medical_enableFor = 0;
+force ace_medical_enableOverdosing = true;
+force ace_medical_enableRevive = 0;
+force ace_medical_enableScreams = true;
+force ace_medical_enableUnconsciousnessAI = 1;
+force ace_medical_enableVehicleCrashes = true;
+force ace_medical_healHitPointAfterAdvBandage = false;
+force ace_medical_increaseTrainingInLocations = false;
+force ace_medical_keepLocalSettingsSynced = true;
+force ace_medical_level = 2;
+force ace_medical_litterCleanUpDelay = 0;
+force ace_medical_litterSimulationDetail = 3;
+force ace_medical_maxReviveTime = 120;
+force ace_medical_medicSetting = 2;
+force ace_medical_medicSetting_basicEpi = 1;
+force ace_medical_medicSetting_PAK = 1;
+force ace_medical_medicSetting_SurgicalKit = 1;
+force ace_medical_menu_allow = 1;
+force ace_medical_menu_maxRange = 3;
+ace_medical_menu_openAfterTreatment = true;
+ace_medical_menu_useMenu = 2;
+ace_medical_menuTypeStyle = 0;
+force ace_medical_moveUnitsFromGroupOnUnconscious = false;
+force ace_medical_painCoefficient = 1;
+ace_medical_painEffectType = 0;
+force ace_medical_painIsOnlySuppressed = true;
+force ace_medical_playerDamageThreshold = 1;
+force ace_medical_preventInstaDeath = false;
+force ace_medical_remoteControlledAI = true;
+force ace_medical_useCondition_PAK = 1;
+force ace_medical_useCondition_SurgicalKit = 1;
+force ace_medical_useLocation_basicEpi = 0;
+force ace_medical_useLocation_PAK = 2;
+force ace_medical_useLocation_SurgicalKit = 3;
 
 // ACE Mk6 Mortar
 force force ace_mk6mortar_airResistanceEnabled = true;
@@ -207,9 +208,14 @@ force force ace_mk6mortar_useAmmoHandling = true;
 
 // ACE Name Tags
 ace_nametags_defaultNametagColor = [0.77,0.51,0.08,1];
-force force ace_nametags_playerNamesMaxAlpha = 0.8;
-force force ace_nametags_playerNamesViewDistance = 5;
-force force ace_nametags_showCursorTagForVehicles = false;
+ace_nametags_nametagColorBlue = [0.67,0.67,1,1];
+ace_nametags_nametagColorGreen = [0.67,1,0.67,1];
+ace_nametags_nametagColorMain = [1,1,1,1];
+ace_nametags_nametagColorRed = [1,0.67,0.67,1];
+ace_nametags_nametagColorYellow = [1,1,0.67,1];
+force ace_nametags_playerNamesMaxAlpha = 0.8;
+force ace_nametags_playerNamesViewDistance = 5;
+force ace_nametags_showCursorTagForVehicles = false;
 ace_nametags_showNamesForAI = false;
 ace_nametags_showPlayerNames = 3;
 ace_nametags_showPlayerRanks = true;
@@ -242,6 +248,7 @@ force force ace_finger_maxRange = 4;
 
 // ACE Pylons
 force force ace_pylons_enabled = true;
+force force ace_pylons_enabledFromAmmoTrucks = true;
 force force ace_pylons_rearmNewPylons = false;
 force force ace_pylons_requireEngineer = true;
 force force ace_pylons_requireToolkit = true;
@@ -250,13 +257,10 @@ force force ace_pylons_timePerPylon = 5;
 
 // ACE Quick Mount
 force force ace_quickmount_distance = 3;
-ace_quickmount_enabled = false;
+force force ace_quickmount_enabled = false;
+ace_quickmount_enableMenu = 3;
 ace_quickmount_priority = 0;
 force force ace_quickmount_speed = 18;
-
-// ACE Rearm
-force force ace_rearm_level = 0;
-force force ace_rearm_supply = 1;
 
 // ACE Respawn
 force force ace_respawn_removeDeadBodiesDisconnected = true;
@@ -298,6 +302,7 @@ force force ace_hitreactions_minDamageToTrigger = 0.1;
 ace_inventory_inventoryDisplaySize = 0;
 force force ace_laser_dispersionCount = 2;
 force force ace_microdagr_mapDataAvailable = 2;
+force ace_microdagr_waypointPrecision = 3;
 ace_optionsmenu_showNewsOnMainMenu = true;
 force force ace_overpressure_distanceCoefficient = 1;
 
@@ -369,11 +374,23 @@ force force ace_winddeflection_vehicleEnabled = true;
 
 // ACE Zeus
 force force ace_zeus_autoAddObjects = true;
+force force ace_zeus_canCreateZeus = 0;
 force force ace_zeus_radioOrdnance = false;
 force force ace_zeus_remoteWind = false;
 force force ace_zeus_revealMines = 0;
 force force ace_zeus_zeusAscension = false;
 force force ace_zeus_zeusBird = false;
+
+// ACEX Field Rations
+force acex_field_rations_enabled = false;
+acex_field_rations_hudShowLevel = 0;
+acex_field_rations_hudTransparency = -1;
+acex_field_rations_hudType = 0;
+force acex_field_rations_timeWithoutFood = 2;
+force acex_field_rations_timeWithoutWater = 2;
+
+// ACEX Fortify
+force force acex_fortify_settingHint = 1;
 
 // ACEX Headless
 force force acex_headless_delay = 15;
@@ -390,6 +407,7 @@ force force acex_viewrestriction_modeSelectiveAir = 0;
 force force acex_viewrestriction_modeSelectiveFoot = 0;
 force force acex_viewrestriction_modeSelectiveLand = 0;
 force force acex_viewrestriction_modeSelectiveSea = 0;
+force acex_viewrestriction_preserveView = false;
 
 // ACEX Volume
 acex_volume_enabled = false;

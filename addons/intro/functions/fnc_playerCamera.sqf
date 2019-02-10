@@ -1,37 +1,31 @@
-//=======================================================================================================//
-// File: bmt_intro_playerCamera.sqf                                                                      //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2016/11/22                                                                             //
-// Description: This script serves as a mission introduction. A static camera is created in front of     //
-//              player while it plays an animation. This function should not be manually executed, since //
-//              it is directly called from `missionConfig/intro/scripts/bmt_intro.sqf`.                  //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - 0: Mission name <STRING>.                                                             //
-//               - 1: Mission location <STRING>.                                                         //
-//               - 2: name of the unit or vehicle <STRING>.                                              //
-//               - 3: Use night vision in camera <BOOL>.                                                 //
-//               - 4: Animation List of animations to be played <ARRAY> to randonly play. If not         //
-//                    defined, the unit will play a random animation selected from:                      //
-//                    "AmovPercMstpSrasWrflDnon_Salute", "c4coming2cdf_genericstani1",                   //
-//                    "c4coming2cdf_genericstani2", "c4coming2cdf_genericstani3" and                     //
-//                    "c4coming2cdf_genericstani4". <OPTIONAL>                                           //
-//                                                                                                       //
-//              Example:                                                                                 //
-//                - A random animation is selected from the predefined ones (no night vision):           //
-//                   [                                                                                   //
-//                     "Operation Desert Fox", "Iran", "Alpha 1" + name player, false                    //
-//                   ] execVM "src/intro/scripts/bmt_intro_playerCamera.sqf";                            //
-//                - A random animation is selected from the given ones (with night vision):              //
-//                   [                                                                                   //
-//                     "Operation Desert Fox", "Iran", "Alpha 1" + name player, true,                    //
-//                     ["c4coming2cdf_genericstani1", "c4coming2cdf_genericstani2"]                      //
-//                   ] execVM "src/intro/scripts/bmt_intro_playerCamera.sqf";                            //
-//                                                                                                       //
-// Changes: 1.0 (2016/11/22) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * A static camera is created in front of player while it plays an animation. This function should not be
+ * manually executed, since it is directly called from `missionConfig/intro/scripts/bmt_intro.sqf`.
+ *
+ * Arguments:
+ * 0: Mission name <STRING>.
+ * 1: Mission location <STRING>.
+ * 2: Name of the unit or vehicle <STRING>.
+ * 3: Use night vision in camera <BOOL>.
+ * 4: Animation List of animations to be played randomly <ARRAY> (default [])
+ *    If not defined, the unit will play a random animation selected from:
+ *    "AmovPercMstpSrasWrflDnon_Salute", "c4coming2cdf_genericstani1", "c4coming2cdf_genericstani2",
+ *    "c4coming2cdf_genericstani3" and"c4coming2cdf_genericstani4".
+ * 5: Date and Time <STRING> (default: "default")
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * -A random animation is selected from the predefined ones (no night vision):
+ * ["Operation Desert Fox", "Iran", "Alpha 1" + name player, false] spawn umf_intro_playerCamera;
+ * - A random animation is selected from the given ones (with night vision):
+ * ["Operation Desert Fox", "Iran", "Alpha 1" + name player, trye] spawn umf_intro_playerCamera;
+ *
+ * Public: Yes
+ */
 
 params ["_missionName", "_missionLocation", "_vehicleName", "_useNVG", ["_animation", []], ["_date", "default"]];
 
@@ -175,5 +169,3 @@ playSound (selectRandom ["Transition1", "Transition2", "Transition3"]);
 "dynamicBlur" ppEffectCommit 2;
 
 player setVariable [QGVAR(introFinished), true];
-
-//============================================= END OF FILE =============================================//

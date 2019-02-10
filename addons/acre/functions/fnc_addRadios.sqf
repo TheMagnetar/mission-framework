@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: TheMagnetar
  * Adds radios to player inventory based on a unit's role.
@@ -11,9 +12,8 @@
  * Example:
  * [player] call umf_acre_fnc_addRadios
  *
- * Public: Yes
+ * Public: No
  */
-#include "script_component.hpp"
 
 // Variable declarations.
 params [["_unit", objNull]];
@@ -51,7 +51,3 @@ private _forceBackpackRadio = _unit getVariable [QEGVAR(gear,forceBackpackRadio)
         } forEach (configProperties [_x, "isClass _x", true]);
     };
 } forEach (configProperties [missionConfigFile >> "CfgAcreNetworks", "isClass _x", true]);
-
-
-//============================================= END OF FILE =============================================//
-

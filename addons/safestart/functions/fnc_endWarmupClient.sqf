@@ -4,24 +4,28 @@
  * Ends the warmup phase.
  *
  * Arguments:
- * 0: Unit <OBJECT> (Default: objNull)
+ * 0: Unit <OBJECT> (Default: acre_player)
  *
  * Return Value:
  * CBA PFH ID <NUMBER>
  *
  * Example:
- * [player] call umf_safestart_fnc_startWarmup
+ * [acre_player] call umf_safestart_fnc_endWarmupClient
  *
  * Public: No
  */
 
-params ["_unit"];
+params [["_unit", acre_player]];
 
 if (!hasInterface) exitWith {};
 
-GVAR(safeStartFinished) = true;
+GVAR(finished) = true;
 
 _unit allowDamage true;
-if (GVAR(safePosPFH) > -1) then {
-    [GVAR(safePosPFH)] call CBA_fnc_removePerFrameHandler;
+if (GVAR(safeStartPFH) > -1) then {
+    [GVAR(safeStartPFH)] call CBA_fnc_removePerFrameHandler;
 };
+
+// Remove safe start count down
+TIMER_DIALOG_IDD cutFadeOut 0;
+TIMER_DIALOG_IDD cutFadeOut 1;

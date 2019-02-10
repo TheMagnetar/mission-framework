@@ -1,18 +1,17 @@
 /*
  * Author: TheMagnetar
- * Adds an item to the player.
+ * Configures the chat.
  *
  * Arguments:
- * 0: Unit <OBJECT> (Default: objNull)
- * 1: Item <STRING>
+ * Nonee
  *
  * Return Value:
- * Adding successfull <BOOL>
+ * None
  *
  * Example:
- * [player, "ACRE_PRC77"] call umf_core_fnc_addItem
+ * [] call umf_core_fnc_handleChat
  *
- * Public: Yes
+ * Public: No
  */
 #include "script_component.hpp"
 

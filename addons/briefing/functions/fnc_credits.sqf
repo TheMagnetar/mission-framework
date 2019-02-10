@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: TheMagnetar
  * Adds the credits entry to the briefing.
@@ -11,9 +12,8 @@
  * Example:
  * [player] call umf_briefing_fnc_credits
  *
- * Public: Yes
+ * Public: No
  */
-#include "script_component.hpp"
 
 params ["_unit"];
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="UMF">
+    <Package name="respawn">
+        <Key ID="STR_UMF_respawn_respawning">
+            <English>Respawning. Be more careful next time!</English>
+            <Spanish>Respawneando. Ten más cuidado la próxima vez!</Spanish>
+        </Key>
+        <Key ID="STR_UMF_respawn_enterSpectator">
+            <English>You are dead! Entering spectator mode.</English>
+            <Spanish>Estás muerto! Entrando en modo espectador</Spanish>
+        </Key>
+        <Key ID="STR_UMF_respawn_noMarkers">
+            <English>It is not possible to respawn anywhere. There are no suitable respawn markers!</English>
+            <Spanish>No puedes respawnear. No hay los marcadores apropiados.</Spanish>
+        </Key>
+        <Key ID="STR_UMF_respawn_respawnAreaTime">
+            <English>Time in respawn area left: %1:%2.</English>
+            <Spanish>Tiempo de espera en respawn: %1:%2 </Spanish>
+        </Key>
+        <Key ID="STR_UMF_respawn_areaRespawnOver">
+            <English>You can now leave the respawn area.</English>
+            <Spanish>Ya puedes abandonar la área de respawn.</Spanish>
+        </Key>
+        <Key ID="STR_UMF_respawn_cannotLeaveZone">
+            <English>You cannot leave the respawn area.</English>
+            <Spanish>No puedes salir de la zona de respawn.</Spanish>
+        </Key>
+        <Key ID="STR_UMF_respawn_active">
+            <English>Wait in respawn area active.</English>
+            <Spanish>Tiempo de espera en la área de respawn activado</Spanish>
+        </Key>
+    </Package>
+</Project>

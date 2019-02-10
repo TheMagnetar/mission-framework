@@ -1,33 +1,30 @@
-//=======================================================================================================//
-// File: bmt_intro_uav.sqf                                                                               //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/04/03                                                                             //
-// Description: This document prepares a introduction screen with a UAV feed. This function should not   //
-//              be manually executed, since it is directly called from                                   //
-//              `missionConfig/intro/scripts/bmt_intro.sqf`.                                             //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//              - 0: Marker where the UAV camera is centered <STRING>.                                   //
-//              - 1: Text displayed in the upper left corner <STRING>.                                   //
-//              - 2: Configuration of UAV movement <ARRAY> of four elements of type <REAL>:              //
-//                   - Altitude in meters of the stablishing shot.                                       //
-//                   - Radius of the circular movement in meters.                                        //
-//                   - Viewing angle in degrees.                                                         //
-//                   - Direction of camera movement (0: anti-clockwise, 1: clockwise, default: random).  //
-//              - 3: Sixth parameter of the function BIS_fnc_establishingShot                            //
-//                   (https://community.bistudio.com/wiki/BIS_fnc_establishingShot) <ARRAY>.             //
-//                                                                                                       //
-//              Example:                                                                                 //
-//               ["markerRescue", "Operation Desert Fox - Iran", [400,200,0,1],                          //
-//                 ["\a3\ui_f\data\map\markers\military\objective_ca.paa", EAST call BIS_fnc_sideColor,  //
-//                   markerPos "markerRescue", 1, 1, 0, "Rescue the marines", 0                          //
-//                 ]                                                                                     //
-//               ] execVM "src/intro/scripts/bmt_intro_uav.sqf";                                         //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Prepares a introduction screen with a UAV feed. This function should not be manually executed, since it
+ * is directly called from `missionConfig/intro/scripts/bmt_intro.sqf`.
+ *
+ * Arguments:
+ * 0: Marker where the UAV camera is centered <STRING>
+ * 1: Text displayed in the upper left corner <STRING>
+ * 2: Configuration of UAV movement <ARRAY>
+ * - 0: Altitude in meters of the stablishing shot <NUMBER>
+ * - 1: Radius of the circular movement in meters <NUMBER>
+ * - 2: Viewing angle in degrees <NUMBER>
+ * - 3: Direction of camera movement (0: anti-clockwise, 1: clockwise, default: random) <NUMBER>
+ * 3: Sixth parameter of the function BIS_fnc_establishingShot (https://community.bistudio.com/wiki/BIS_fnc_establishingShot) <ARRAY>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * -A random animation is selected from the predefined ones (no night vision):
+ * ["Operation Desert Fox", "Iran", "Alpha 1" + name player, false] spawn umf_intro_playerCamera;
+ * - A random animation is selected from the given ones (with night vision):
+ * ["Operation Desert Fox", "Iran", "Alpha 1" + name player, trye] spawn umf_intro_playerCamera;
+ *
+ * Public: Yes
+ */
 
 params ["_markerName", "_text", "_uavMovement", "_markers"];
 
@@ -80,4 +77,3 @@ if (vehicle player != player) then {
 };
 
 player setVariable [QGVAR(introFinished), true];
-//============================================= END OF FILE =============================================//

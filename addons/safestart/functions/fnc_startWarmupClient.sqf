@@ -10,7 +10,7 @@
  * CBA PFH ID <NUMBER>
  *
  * Example:
- * [player] call umf_safestart_fnc_startWarmup
+ * [player] call umf_safestart_fnc_startWarmupClient
  *
  * Public: No
  */
@@ -22,10 +22,15 @@ if (isNull _unit) exitWith {
 };
 
 _unit allowDamage false;
-private _markerName = format ["respawnArea_%1", side _unit];
+private _markerName = format ["safeStartArea_%1", side _unit];
 
+// Show safestart count down
+TIMER_DIALOG_IDD cutRsc [QGVAR(timerDialog), "PLAIN"];
+
+// Check if there is a safe area
 if (getMarkerColor _markerName == "") exitWith {
     ERROR_1("Marker %1 does not exist",_markerName);
+    GVAR(safeStartPFH) = [DFUNC(timer), 1] call CBA_fnc_addPerFrameHandler;
 };
 
 private _previousPos = getPosASL _unit;
@@ -33,9 +38,12 @@ if (_previousPos inArea _markerName) then {
     _previousPos = [_markerName] call CBA_fnc_randPosArea;
 };
 
-GVAR(safePosPFH) = [{
+GVAR(safeStartPFH) = [{
     params ["_params", ""];
     _params params ["_unit", "_marker", "_previousPos"];
+
+    // Update the time
+    [] call FUNC(timer);
 
     private _vehicle = objectParent _unit;
     if (isNull _vehicle) then {

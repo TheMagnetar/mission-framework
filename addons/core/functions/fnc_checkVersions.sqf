@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: TheMagnetar
  * Checks that the latest template version is the correct one.
@@ -11,9 +12,8 @@
  * Example:
  * [] call umf_core_fnc_checkVersions
  *
- * Public: Yes
+ * Public: No
  */
-#include "script_component.hpp"
 
 private _templateVersion = getText (missionConfigFile >> "CfgUmfConfig" >> "templateVersion");
 

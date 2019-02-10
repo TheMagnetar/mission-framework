@@ -1,24 +1,21 @@
-//=======================================================================================================//
-// File: fn_configEquipment.sqf                                                                          //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2018/05/16                                                                             //
-// Description: This function equips the unit according to a specified role and depending on the defined //
-//              faction.                                                                                 //
-//                                                                                                       //
-// Arguments:                                                                                            //
-//    - 0: Unit <OBJECT>                                                                                 //
-//    - 1: Unit role <STRING><OPTIONAL>                                                                  //
-//    - 2: Unit faction <STRING><OPTIONAL>                                                               //
-//                                                                                                       //
-// Return:                                                                                               //
-//      None                                                                                             //
-//                                                                                                       //
-// Changes: 1.0  (2015/11/26) First public version.                                                      //
-//          2.0  (2018/05/16) Rewrite.                                                                   //
-//=======================================================================================================//
-
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Equips the unit according to a specified role and depending on the defined faction.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ * 1: Unit role <STRING> (default: "")
+ * 2: Unit faction <STRING> (default: "")
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [] call umf_gear_fnc_assignGear
+ *
+ * Public: No
+ */
 
 params ["_unit", ["_role", ""], ["_faction", ""]];
 
@@ -108,5 +105,3 @@ private _languages = getArray (_configEntry >> "languages");
 _unit setVariable [QEGVAR(acre,languages), _languages, true];
 
 [_unit] call compile (getText (_configEntry >> "postLoadout"));
-
-//============================================= END OF FILE =============================================//

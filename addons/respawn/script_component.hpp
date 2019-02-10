@@ -15,3 +15,10 @@
 #endif
 
 #include "\u\umf\addons\main\script_macros.hpp"
+
+#define TIMER_DIALOG_IDD 4444
+#define TIMER_DIALOG_IDC 4444
+
+#define COULD_NOT_RESPAWN   0
+#define RESPAWN_AREA_MARKER 1
+#define RESPAWN_MARKER      2

@@ -1,18 +1,19 @@
-//=======================================================================================================//
-// File: fn_ace3_config_instaDeath.sqf                                                                   //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2017/11/10                                                                             //
-// Description: This function configures the ACE3 medical feature instant death. After a certain amount  //
-//              of game time, instant death will be disabled.                                            //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - None                                                                                  //
-//                                                                                                       //
-// Changes: 1.0 (2017/11/10) First public version.                                                       //
-//=======================================================================================================//
-
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Configures the ACE3 medical feature instant death. After a certain amount of game time, instant death will be disabled.
+ *
+ * Arguments:
+ * None
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [] call umf_ace_fnc_preventInstantDeath
+ *
+ * Public: No
+ */
 
 if (GVAR(preventInstaDeathTime) == 0) exitWith {};
 
@@ -32,5 +33,3 @@ if (isServer) then {
         };
     }, 60, 1] call CBA_fnc_addPerFrameHandler;
 };
-
-//============================================= END OF FILE =============================================//

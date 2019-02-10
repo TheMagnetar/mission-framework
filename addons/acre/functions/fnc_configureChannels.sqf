@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: TheMagnetar
  * Configures the channels on the different radios.
@@ -11,9 +12,8 @@
  * Example:
  * [player] call umf_acre_fnc_addRadios
  *
- * Public: Yes
+ * Public: No
  */
-#include "script_component.hpp"
 
 // Variable declarations.
 params [["_unit", objNull]];

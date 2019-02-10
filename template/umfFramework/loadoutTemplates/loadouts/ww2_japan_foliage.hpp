@@ -169,7 +169,7 @@ class exp : rfl {
     magazines[] += {
         EXPAND_4("LIB_Ladung_Small_MINE_mag"), EXPAND_2("LIB_Ladung_Big_MINE_mag")
     };
-    postLoadout = "_unit setVariable ['ACE_IsEOD', 1, true];";
+    postLoadout = "_unit setVariable ['ACE_IsEOD', true, true];";
 };
 
 class sn : rfl {

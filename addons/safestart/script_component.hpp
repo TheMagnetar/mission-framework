@@ -15,3 +15,6 @@
 #endif
 
 #include "\u\umf\addons\main\script_macros.hpp"
+
+#define TIMER_DIALOG_IDD 5555
+#define TIMER_DIALOG_IDC 5555

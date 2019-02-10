@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: TheMagnetar
  * Configures the presets for the different radios.
@@ -9,11 +10,10 @@
  * None
  *
  * Example:
- * [player] call umf_acre_fnc_addRadios
+ * [player] call umf_acre_fnc_configurePresets
  *
- * Public: Yes
+ * Public: No
  */
-#include "script_component.hpp"
 
 private _networkEntries = missionConfigFile >> "CfgAcreNetworks";
 

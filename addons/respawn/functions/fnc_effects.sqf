@@ -1,17 +1,19 @@
-//=======================================================================================================//
-// File: bmt_respawn_effects.sqf                                                                         //
-// Author: TheMagnetar                                                                                   //
-// Version: 1.0                                                                                          //
-// File creation: 2015/04/03                                                                             //
-// Description: This script creates a camera that rotates around the given unit. Useful when the player  //
-//              is killed. Rotating camera script by Greenfist.                                          //
-//                                                                                                       //
-//              Arguments:                                                                               //
-//               - 0: unit targeted by the camera                                                        //
-//                                                                                                       //
-// Changes: 1.0 (2015/11/26) First public version.                                                       //
-//=======================================================================================================//
 #include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Creates a camera that rotates around the given unit. Useful when the player is killed.
+ *
+ * Arguments:
+ * 0: Unit targeted by the camera <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player] call umf_respawn_effects
+ *
+ * Public: No
+ */
 
 params ["_target"];
 
@@ -82,5 +84,3 @@ camDestroy _camera;
 // Fade into first person
 call BIS_fnc_VRFadeIn;
 playSound (selectRandom ["Transition1", "Transition2", "Transition3"]);
-
-//============================================= END OF FILE =============================================//

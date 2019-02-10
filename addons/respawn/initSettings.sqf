@@ -39,3 +39,13 @@
     true,
     {}
 ] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(respawnAreaTime),
+    "SLIDER",
+    "Respawn area time (min)",
+    "UST-Framework",
+    [0, 20, 0, 0],
+    true,
+    {}
+] call CBA_Settings_fnc_init;

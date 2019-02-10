@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="UMF">
+    <Package name="jip">
+        <Key ID="STR_UMF_jip_jipNotAllowed">
+            <English>This mission does not support JIP. Be punctual next time!</English>
+            <Spanish>Esta misión no soporta JIP. ¡Se puntual la próxima vez!</Spanish>
+        </Key>
+        <Key ID="STR_UMF_jip_pressF11">
+            <English>Press F11 to teleport to your squad or any other friendly unit. You have 5 minutes.</English>
+            <Spanish>Presiona F11 para teletransportarte a tu escuadra o otra unidad aliada. Tienes 5 minutos.</Spanish>
+        </Key>
+        <Key ID="STR_UMF_f11TimeExpired">
+            <English>5 minutes have passed. You cannot teleport to your squad anymore.</English>
+            <Spanish>Han pasado 5 minutos. Ya no puedes teletransportarte a tu escuadra.</Spanish>
+        </Key>
+    </Package>
+</Project>
