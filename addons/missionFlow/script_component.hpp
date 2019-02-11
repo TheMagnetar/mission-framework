@@ -1,4 +1,4 @@
-#define COMPONENT missionFlow
+#define COMPONENT missionflow
 #define COMPONENT_BEAUTIFIED Mission Flow
 #include "\u\umf\addons\main\script_mod.hpp"
 
