@@ -54,7 +54,6 @@ if (!_playerAllowed) then {
                 !(GVAR(advancedFatigue) isEqualTo [])
             };
         };*/
-
         [QEGVAR(persistence,retrieveStatusFromServer), [player]] call CBA_fnc_serverEvent;
     };
 };

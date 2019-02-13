@@ -13,5 +13,9 @@
             <English>5 minutes have passed. You cannot teleport to your squad anymore.</English>
             <Spanish>Han pasado 5 minutos. Ya no puedes teletransportarte a tu escuadra.</Spanish>
         </Key>
+        <Key ID="STR_UMF_deadWhenReconnecting">
+            <English>You were dead when you disconnected. Therefore, you are dead when reconnecting!</English>
+            <Spanish>Estahas muerto al desconectar. Por lo tanto estás muerto al reconectar!</Spanish>
+        </Key>
     </Package>
 </Project>

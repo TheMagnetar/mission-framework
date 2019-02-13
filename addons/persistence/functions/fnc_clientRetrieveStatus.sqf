@@ -49,7 +49,7 @@ private _found = false;
             _unit setDamage 1;
 
             [{
-                "normal" cutText ["You were dead when you disconnected. Therefore, you are dead when reconnecting!", "PLAIN"];
+                "normal" cutText [localize LSTRING(deadWhenReconnecting), "PLAIN"];
             }, [_unit], 5] call CBA_fnc_waitAndExecute;
         };
         _found = true;

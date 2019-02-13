@@ -16,9 +16,10 @@ if (isServer) then {
         };
     }, 5, []] call CBA_fnc_addPerFrameHandler;
 
-    if (GVAR(saveStatus)) then {
-        GVAR(missionEH) = addMissionEventHandler ["HandleDisconnect", {
-            [_this select 0, _this select 2, _this select 3, true] call EFUNC(persistence,clientSaveStatus);
+    if (GVAR(savePlayerStatus) > 0) then {
+        addMissionEventHandler ["HandleDisconnect", {
+            params ["_unit", "", "_uid", "_name"];
+            [_unit, _uid, _name, true] call EFUNC(persistence,clientSaveStatus);
         }];
 
         if (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")) then {
@@ -30,9 +31,9 @@ if (isServer) then {
 if !(hasInterface && {side player != sideLogic}) exitWith {};
 
 LOG_2("Player is JIP: %1. JIP is enabled: %2.",didJip,missionNamespace getVariable [QGVAR(isAllowed), true]);
-
 if (didJiP) then {
     // Check if the player is in the initial player list
+
     [{EGVAR(gear,gearAssigned)}, {
         [QGVAR(checkAllowedPlayers), [player]] call CBA_fnc_serverEvent;
     }] call CBA_fnc_waitUntilAndExecute;

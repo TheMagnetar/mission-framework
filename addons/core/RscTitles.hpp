@@ -10,14 +10,14 @@ class RscTitles {
             class Text : RscText {
                 text = CSTRING(preventFire);
                 x = safezoneX;
-                y = safezoneY + 1.5;
+                y = safezoneY + 0.8;
                 w = safezoneW;
                 h = 0.1 * safezoneH;
                 style = ST_CENTER;
                 SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 3)";
                 colorText[] = {0.9, 0, 0, 1};
                 shadow = 2;
-                font = "PuristaBold";//"EtelkaMonospaceProBold";
+                font = "PuristaBold";
             };
         };
     };

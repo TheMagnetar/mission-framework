@@ -6,7 +6,7 @@
  * Arguments:
  * 0: Unit <OBJECT> (default: objNull)
  * 1: Variables to store <ARRAY> (default: ["umf", "ace"])
- * 2: Variables to exclude <ARRAY> (default: [QGVAR(teleportEnabled), QEGVAR(core,preventFiringEH)])
+ * 2: Variables to exclude <ARRAY> (default: [QGVAR(teleportEnabled), QEGVAR(core,preventFiringEH), QEGVAR(core,preventAction)])
  *
  * Return Value:
  * None
@@ -20,7 +20,7 @@
 params [
     "_unit",
     ["_variablesToStore", ["umf", "ace"]],
-    ["_variablesToExclude", [QGVAR(teleportEnabled), QEGVAR(core,preventFiringEH)]]
+    ["_variablesToExclude", [QGVAR(teleportEnabled), QEGVAR(core,preventFiringEH), QEGVAR(core,preventAction)]]
 ];
 
 private _playerVariables = [];

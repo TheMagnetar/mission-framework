@@ -18,9 +18,12 @@
 params ["_unit"];
 
 private _preventFiringEH = _unit getVariable [QGVAR(preventFiringEH), -1];
-if (_preventFiringEH == -1) exitWith {};
+private _preventAction = _unit getVariable [QGVAR(preventAction), -1];
 
-_unit removeEventHandler ["FiredMan", _preventFiringEH];
+if (_preventFiringEH == -1 || _preventAction == -1) exitWith {};
+
+_unit removeEventHandler ["Fired", _preventFiringEH];
+_unit removeAction _preventAction;
 
 // Reenable ACE Advanced Throwing
 ace_advanced_throwing_enabled = true;

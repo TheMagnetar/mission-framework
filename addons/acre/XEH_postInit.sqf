@@ -16,11 +16,6 @@ if (GVAR(configureBabel)) then {
     } foreach GVAR(definedLanguages);
 };
 
-if (didJIP) then {
-    uiSleep 5;
-    waitUntil {uiSleep 0.1; !isNull player};
-};
-
 if (!alive player) exitWith {
     // Player is dead. Make sure it enters the spectator mode.
     [true] call acre_api_fnc_setSpectator;
