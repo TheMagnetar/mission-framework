@@ -17,3 +17,5 @@
 #include "\u\umf\addons\main\script_macros.hpp"
 
 #define TEMPLATE_REQUIRED_VERSION "v0.3"
+
+#define PREVENTFIRING_DIALOG_IDD 5556

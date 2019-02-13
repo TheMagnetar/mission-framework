@@ -21,6 +21,9 @@ params ["_unit", "_markerName"];
 // Prevent unit from taking damage
 _unit allowDamage false;
 
+// Prevent firing
+[_unit] call EFUNC(core,preventFiring);
+
 private _previousPos = getPosASL _unit;
 if (_previousPos inArea _markerName) then {
     _previousPos = [_markerName] call CBA_fnc_randPosArea;
@@ -37,7 +40,9 @@ TIMER_DIALOG_IDD cutRsc [QGVAR(timerDialog), "PLAIN"];
     [] call FUNC(timer);
 
     if (GVAR(respawnAreaTime)*60 - GVAR(killedTime) <= 0) exitWith {
-        _unit allowDamage false;
+        _unit allowDamage true;
+
+        [_unit] call EFUNC(core,enableFiring);
 
         // Remove respawn count down
         TIMER_DIALOG_IDD cutFadeOut 0;

@@ -15,13 +15,18 @@
  * Public: No
  */
 
-params [["_unit", acre_player]];
+params [["_unit", player]];
 
 if (!hasInterface) exitWith {};
 
 GVAR(finished) = true;
 
+// Reenable damage
 _unit allowDamage true;
+
+// Allow firing
+[_unit] call EFUNC(core,enableFiring);
+
 if (GVAR(safeStartPFH) > -1) then {
     [GVAR(safeStartPFH)] call CBA_fnc_removePerFrameHandler;
 };

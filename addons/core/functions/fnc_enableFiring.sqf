@@ -1,0 +1,26 @@
+#include "script_component.hpp"
+/*
+ * Author: TheMagnetar
+ * Allows a unit to fire again.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player] call umf_core_fnc_enableFiring;
+ *
+ * Public: No
+ */
+
+params ["_unit"];
+
+private _preventFiringEH = _unit getVariable [QGVAR(preventFiringEH), -1];
+if (_preventFiringEH == -1) exitWith {};
+
+_unit removeEventHandler ["FiredMan", _preventFiringEH];
+
+// Reenable ACE Advanced Throwing
+ace_advanced_throwing_enabled = true;

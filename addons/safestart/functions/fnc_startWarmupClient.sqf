@@ -21,12 +21,16 @@ if (isNull _unit) exitWith {
     ERROR("Null unit as input parameter.");
 };
 
+// Prevent damage
 _unit allowDamage false;
-private _markerName = format ["safeStartArea_%1", side _unit];
+
+// Prevent firing
+[_unit] call EFUNC(core,preventFiring);
 
 // Show safestart count down
 TIMER_DIALOG_IDD cutRsc [QGVAR(timerDialog), "PLAIN"];
 
+private _markerName = format ["safeStartArea_%1", side _unit];
 // Check if there is a safe area
 if (getMarkerColor _markerName == "") exitWith {
     ERROR_1("Marker %1 does not exist",_markerName);

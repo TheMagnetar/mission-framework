@@ -16,7 +16,7 @@ class RscTitles {
                 w = 0.5 * safezoneW;
                 h = 0.05 * safezoneH;
                 style = ST_CENTER;
-                SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+                SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 2)";
                 colorText[] = {1, 1, 1, 1};
                 shadow = 2;
                 font = "PuristaBold";
