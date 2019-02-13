@@ -42,7 +42,7 @@ private _playerInformation = if (_informationList isEqualTo []) then {
 
 private _found = false;
 {
-    params ["_uidX", "_nameX"];
+    _x params ["_uidX", "_nameX"];
 
     if ((_uidX isEqualTo _uid) && {_nameX isEqualTo _name}) exitWith {
         _found = true;

@@ -33,7 +33,9 @@ LOG_2("Player is JIP: %1. JIP is enabled: %2.",didJip,missionNamespace getVariab
 
 if (didJiP) then {
     // Check if the player is in the initial player list
-    [QGVAR(checkAllowedPlayers), [player]] call CBA_fnc_serverEvent;
+    [{EGVAR(gear,gearAssigned)}, {
+        [QGVAR(checkAllowedPlayers), [player]] call CBA_fnc_serverEvent;
+    }] call CBA_fnc_waitUntilAndExecute;
 } else {
     // Initialise a list of all players that initially connect.
     [QGVAR(registerPlayer), [player]] call CBA_fnc_serverEvent;

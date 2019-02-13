@@ -6,6 +6,7 @@ ADDON = false;
 
 #include "initSettings.sqf"
 
+DGVAR(persistence) = [];
 DGVAR(campaignName) = "";
 DGVAR(lastCampaignMission) = false;
 DGVAR(persistenceEnabled) = false;

@@ -21,8 +21,7 @@ params ["_displayEvent", "_unit"];
 
 private _canTeleport = _unit getVariable [QGVAR(teleportEnabled), false];
 
-
-if ((_displayEvent select 1 != DIK_F11) || {!_canTeleport}) exitWith {false};
+if ((_displayEvent select 1 != 87) || {!_canTeleport}) exitWith {false};
 
 private _couldTeleport = false;
 

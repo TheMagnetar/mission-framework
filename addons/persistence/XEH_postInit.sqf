@@ -2,6 +2,7 @@
 
 [QGVAR(clientSaveStatus), DFUNC(clientSaveStatus)] call CBA_fnc_addEventHandler;
 [QGVAR(clientRetrieveStatus), DFUNC(clientRetrieveStatus)] call CBA_fnc_addEventHandler;
+[QGVAR(serverSaveClient), DFUNC(serverSaveClient)] call CBA_fnc_addEventHandler;
 
 [QGVAR(retrieveStatusFromServer), {
     params ["_player"];

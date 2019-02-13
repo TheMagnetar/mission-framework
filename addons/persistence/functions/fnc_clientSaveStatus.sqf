@@ -29,7 +29,7 @@ private _position = getPosASL _unit;
 private _information = [_uid, _name, _position, _variables, _loadout];
 
 if (!isServer) then {
-    [QGVAR(saveClient), [_information, _jip]] call CBA_fnc_serverEvent;
+    [QGVAR(serverSaveClient), [_information, _jip]] call CBA_fnc_serverEvent;
 } else {
     [_information, _jip] call FUNC(serverSaveClient);
 };
