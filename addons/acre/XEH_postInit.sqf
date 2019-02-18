@@ -38,6 +38,7 @@ if (!_isSideLogic) then {
             // Add radios depending on the role.
             [DFUNC(addRadios), [_unit]] call CBA_fnc_execNextFrame;
         };
+
         // Configure active channels.
         if (GVAR(configureChannels)) then {
             [DFUNC(configureChannels), [_unit], 0.5] call CBA_fnc_waitAndExecute;

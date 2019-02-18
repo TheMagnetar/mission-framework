@@ -10,7 +10,7 @@ if (EGVAR(core,asrai3Loaded)) then {
     #include "initSettings.sqf"
 
     // Load settings file
-    [QPATHTOF(cbaSettings.hpp), true] call CBA_settings_fnc_parse;
+    [QPATHTOF(cbaSettings.hpp)] call EFUNC(core,handleCbaSettings);
 };
 
 ADDON = true;

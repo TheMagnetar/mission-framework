@@ -9,9 +9,8 @@ EGVAR(core,aceMedicalLoaded) = isClass (configFile >> "CfgPatches" >> "ace_medic
 EGVAR(core,aceBallisticsLoaded) = isClass (configFile >> "CfgPatches" >> "ace_advanced_ballistics"); // Check if ACE 3 (advanced ballistics) is loaded.
 
 if (EGVAR(core,aceLoaded)) then {
-
     // Load settings file
-    [QPATHTOF(cbaSettings.hpp), true] call CBA_settings_fnc_parse;
+    [QPATHTOF(cbaSettings.hpp)] call EFUNC(core,handleCbaSettings);
 
     #include "initSettings.sqf"
 };
