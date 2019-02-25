@@ -6,7 +6,7 @@
 
 UST101 Mission Framework (UMF) is a mission framework designed around the needs of Unidad de Simulación Táctica 101 (Tactical Simulation Unit 101). It allows the mission maker to have more focus on mission designing by removing the need of dealing with init lines and scripts. Instead of provinding all the scripts in a template folder, the addon approach allows a cleaner mission folder that can be easily updated without having to modify it.
 
-In addition the mission framework focuses on core functionality, leaving other functionality like AI, spawning, .. out of its scope.
+In addition the mission framework focuses on core functionality, leaving other functionality like AI and spawning out of its scope.
 
 ## Features
 
@@ -33,5 +33,5 @@ Special Thanks:
  - [CBA Team](http://www.github.com/CBATeam/CBA_A3/).
  - [ACE Team](https://github.com/acemod/ACE3).
  - [ACRE2 Team](https://github.com/IDI-Systems/acre2).
- - [ARK](http://www.ark-group.org), [Jonpas](http://github.com/jonpas) for the sling loading performance fix.
+ - [ARK](http://www.ark-group.org) and [Jonpas](http://github.com/jonpas) for the sling loading performance fix.
  - [UST101](http://www.ust101.com) members for testing and feedback.
