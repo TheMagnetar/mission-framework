@@ -22,7 +22,7 @@ private _campaignName = getText (missionConfigFile >> "CfgCampaign" >> "campaign
 GVAR(campaignName) = format [QGVAR(camapignName_%1),_campaignName];
 GVAR(isFirstMission) = getNumber (missionConfigFile >> "CfgCampaign" >> "isFirstMission") == 1;
 GVAR(isLastMission) = getNumber (missionConfigFile >> "CfgCampaign" >> "isLastMission") == 1;
-GVAR(persistenceEnabled) = GVAR(isLastMission) && {getNumber (missionConfigFile >> "CfgCampaign" >> "enableCampaign") == 1};
+GVAR(persistenceEnabled) = !GVAR(isLastMission) && {getNumber (missionConfigFile >> "CfgCampaign" >> "enableCampaign") == 1};
 
 if (GVAR(isFirstMission)) then {
     private _profileInformation = profileNamespace getVariable [QGVAR(persistence), objNull];
