@@ -6,6 +6,9 @@ if (GVAR(configureChannels)) then {
     [] call FUNC(configurePresets);
 };
 
+// Fix for IFA3 adding radios to players when they enter a vehicle
+LIB_GLOBAL_ENABLE_RADIO_IN_VEHICLE = false;
+
 if (!hasInterface) exitWith {};
 
 GVAR(definedLanguages) = getMissionConfigValue [QGVAR(definedLanguages), []];
@@ -16,17 +19,13 @@ if (GVAR(configureBabel)) then {
     } foreach GVAR(definedLanguages);
 };
 
-if (!alive player) exitWith {
-    // Player is dead. Make sure it enters the spectator mode.
-    [true] call acre_api_fnc_setSpectator;
-};
+// If Player is dead, make sure it enters the spectator mode.
+if (!alive player) exitWith {[true] call acre_api_fnc_setSpectator;};
 
-private _isSideLogic = (side player) isEqualTo sideLogic;
-
-if (!_isSideLogic) then {
+if !((side player) isEqualTo sideLogic) then {
     // Wait until ACRE 2 is initialised.
     [{
-        CBA_missionTime > 0 && {[] call acre_api_fnc_isInitialized} && {EGVAR(gear,gearAssigned)}
+        (CBA_missionTime > 0) && {[] call acre_api_fnc_isInitialized} && {EGVAR(gear,gearAssigned)}
     }, {
         params ["_unit"];
 

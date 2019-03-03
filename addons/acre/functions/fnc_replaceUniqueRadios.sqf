@@ -17,7 +17,6 @@
 
 params ["_loadout"];
 
-// Thesseus Aegis. Credits to jonpas
 if ((_loadout select 9) select 2 == "ItemRadioAcreFlagged") then {
     (_loadout select 9) set [2, ""];
 };

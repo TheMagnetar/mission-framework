@@ -31,7 +31,7 @@ if (_assignedNetworks isEqualTo "default") exitWith {
 };
 
 // Get unit's radios.
-private _radioList = call acre_api_fnc_getCurrentRadioList;
+private _radioList = [] call acre_api_fnc_getCurrentRadioList;
 private _baseRadioList = [];
 {
     _baseRadioList pushBackUnique (toUpper ([_x] call acre_api_fnc_getBaseRadio));
@@ -41,7 +41,7 @@ private _findChannelIndex = {
     params ["_netConfig", "_channelName"];
 
     private _channelIndex = 1;
-    if (_channelName isEqualTo "" || _netConfig isEqualTo []) exitWith {_channelIndex};
+    if ((_channelName isEqualTo "") || {_netConfig isEqualTo []}) exitWith {_channelIndex};
 
     {
         if (toLower (_x select 0) isEqualTo _channelName) exitWith {
