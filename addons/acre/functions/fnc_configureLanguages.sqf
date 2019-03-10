@@ -31,15 +31,16 @@ if ((side _unit) isEqualTo sideLogic) exitWith {
 };
 
 private _error = false;
-private _languages = _unit getVariable[QGVAR(languages),[]];
+private _languages = _unit getVariable [QGVAR(languages),[]];
 {
     if !(_x in _allLanguages) then {
-        WARNING_1("language %1 not found",_x);
+        WARNING_1("Language %1 not found",_x);
         _error = true;
     };
 } forEach _languages;
 
 if (!_error) then {
+    systemChat format ["Adding languages %1", _languages];
     _languages call acre_api_fnc_babelSetSpokenLanguages;
     [_languages select 0] call acre_api_fnc_babelSetSpeakingLanguage;
 

@@ -25,7 +25,7 @@ params ["_unit", "_variables"];
 } forEach _variables;
 
 // Handle advanced fatigue
-if ((GVAR(saveStatus) == 2) && {EGVAR(core,aceLoaded)}) then {
+if ((GVAR(saveStatus) == 2) && {EGVAR(ace,loaded)}) then {
     {
         _x params ["_name", "_value"];
         call compile format ["%1 = %2;", _name, _value];

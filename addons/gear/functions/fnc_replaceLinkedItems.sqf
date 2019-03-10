@@ -21,7 +21,7 @@ params ["_unit", "_items", "_type"];
 
 private _selectedItem = "";
 
-if !(EGVAR(core,acreLoaded) && {_type isEqualTo "radio"}) then {
+if !(EGVAR(acre,loaded) && {_type isEqualTo "radio"}) then {
     if !(_items isEqualTo []) then {
         _selectedItem = selectRandom _items;
     };
@@ -35,7 +35,7 @@ switch (toLower _type) do {
         };
     };
     case "radio": {
-        if (EGVAR(core,acreLoaded)) then {
+        if (EGVAR(acre,loaded)) then {
             {
                 _unit addItem _x;
             } forEach _items;

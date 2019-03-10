@@ -4,13 +4,13 @@ ADDON = false;
 
 #include "XEH_PREP.hpp"
 
-EGVAR(core,acreLoaded) = isClass (configFile >> "CfgPatches" >> "acre_main");         // Check if ACRE 2 is loaded.
+GVAR(loaded) = isClass (configFile >> "CfgPatches" >> "acre_main");         // Check if ACRE 2 is loaded.
 
-if (EGVAR(core,acreLoaded)) then {
+if (GVAR(loaded)) then {
     #include "initSettings.sqf"
 
     // Load settings file
-    [QPATHTOF(cbaSettings.hpp)] call EFUNC(core,handleCbaSettings);
+    [QPATHTOF(cbaSettings.hpp)] call EFUNC(main,handleCbaSettings);
 
     DGVAR(radiosConfigured) = false;
 

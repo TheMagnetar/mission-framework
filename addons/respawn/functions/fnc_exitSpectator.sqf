@@ -15,11 +15,11 @@
  * Public: No
  */
 
-if (EGVAR(core,aceLoaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
+if (EGVAR(ace,loaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
     [false] call ace_spectator_fnc_setSpectator;
 } else {
     // Advanced Combat Radio Environment 2 (ACRE 2)
-    if (EGVAR(core,acreLoaded)) then {
+    if (EGVAR(acre,loaded)) then {
         [false] call acre_api_fnc_setSpectator;
     };
 

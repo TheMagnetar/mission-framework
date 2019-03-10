@@ -94,7 +94,7 @@ _camera camCommit 0;
 
 // Play  music and avoid ace_hearing to have an effect on fadeMusic.
 playMusic ("RadioAmbient" + str (1 + floor random 30));
-if (EGVAR(core,aceLoaded)) then {
+if (EGVAR(ace,loaded)) then {
     ace_hearing_disableVolumeUpdate = true;
 };
 
@@ -137,7 +137,7 @@ playMusic "";
 
 // Restore music and ace_hearing.
 0 fadeMusic 1;
-if (EGVAR(core,aceLoaded)) then {
+if (EGVAR(ace,loaded)) then {
     ace_hearing_disableVolumeUpdate = false;
 };
 

@@ -32,3 +32,5 @@ class CfgMods {
 };
 
 #include "CfgSettings.hpp"
+#include "CfgEventHandlers.hpp"
+#include "CfgEden.hpp"

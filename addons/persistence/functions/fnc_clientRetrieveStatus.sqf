@@ -40,7 +40,7 @@ private _found = false;
                 _unit setPosASL _position;
             };
 
-            if (EGVAR(core,acreLoaded)) then {
+            if (EGVAR(acre,loaded)) then {
                 _loadout = [_loadout] call EFUNC(acre,replaceUniqueRadios);
             };
 

@@ -33,17 +33,17 @@ if (!_couldRespawn) exitWith {};
 // Assign equipment before death or default one depending on the role
 if (GVAR(saveGear)) then {
     private _savedLoadout = _unit getVariable [QGVAR(savedLoadout), []];
-    if (EGVAR(core,acreLoaded)) then {
+    if (EGVAR(acre,loaded)) then {
         _savedLoadout =+ [_savedLoadout] call EFUNC(acre,replaceUniqueRadios);
     };
     _unit setUnitLoadout _savedLoadout;
-    if (EGVAR(core,aceLoaded)) then {
+    if (EGVAR(ace,loaded)) then {
         _unit setVariable ["ACE_hasEarPlugsin", _unit getVariable [QGVAR(hasEarPlugs), false]];
         _unit setVariable [QGVAR(hasEarPlugs), nil];
     };
 
     // Configure active channels.
-    if (EGVAR(core,acreLoaded) && {EGVAR(acre,configureChannels)}) then {
+    if (EGVAR(acre,loaded) && {EGVAR(acre,configureChannels)}) then {
         [DEFUNC(acre,configureChannels), [_unit], 0.5] call CBA_fnc_waitAndExecute;
     };
 } else {
@@ -52,7 +52,7 @@ if (GVAR(saveGear)) then {
     [_unit, _role, _faction] call EFUNC(gear,assignGear);
 
     // Remove and distribute ACRE 2 radios.
-    if (EGVAR(core,acreLoaded)) then {
+    if (EGVAR(acre,loaded)) then {
         // Distribute radios
         if (EGVAR(acre,distributeRadios)) then {
             // Remove radios

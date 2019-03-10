@@ -19,7 +19,7 @@
 params [["_respawnUnit", objNull], ["_spectableUnit", objNull]];
 
 // If ACE 3 is loaded use the spectator mode of ACE3. Use the vanila one otherwise (End Game Spectator).
-if (EGVAR(core,aceLoaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
+if (EGVAR(ace,loaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
 
     // Hide seagull body.
     if (_respawnUnit isKindOf "seagull") then {
@@ -35,7 +35,7 @@ if (EGVAR(core,aceLoaded) && {EGVAR(ace,aceSpectatorEnabled)}) then {
     LOG("Using vanila spectator mode.");
 
     // Advanced Combat Radio Environment 2 (ACRE 2)
-    if (EGVAR(core,acreLoaded)) then {
+    if (EGVAR(acre,loaded)) then {
         [true] call acre_api_fnc_setSpectator;
     };
 

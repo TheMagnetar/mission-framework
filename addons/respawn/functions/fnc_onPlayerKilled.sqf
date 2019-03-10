@@ -44,7 +44,7 @@ if ((allPlayers findIf {_x getVariable [QGVAR(playerAlive), true]}) == -1) exitW
 
 if (GVAR(saveGear)) then {
     _unit setVariable [QGVAR(savedLoadout), getUnitLoadout _unit];
-    if (EGVAR(core,aceLoaded)) then {
+    if (EGVAR(ace,loaded)) then {
         _unit setVariable [QGVAR(hasEarPlugs), _unit getVariable ["ACE_hasEarPlugsin", false]];
     };
 };

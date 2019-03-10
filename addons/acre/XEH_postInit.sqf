@@ -42,16 +42,16 @@ if !((side player) isEqualTo sideLogic) then {
         if (GVAR(configureChannels)) then {
             [DFUNC(configureChannels), [_unit], 0.5] call CBA_fnc_waitAndExecute;
         };
-    }, player] call CBA_fnc_waitUntilAndExecute;
-};
 
-// Configure languages
-if (GVAR(configureBabel)) then {
-    ["unit", {
-        params ["_unit"];
-        // Define languages per faction.
-        [_unit] call FUNC(configureLanguages);
-    }, true] call CBA_fnc_addPlayerEventHandler;
+        // Configure languages
+        if (GVAR(configureBabel)) then {
+            ["unit", {
+                params ["_unit"];
+                // Define languages per faction.
+                [_unit] call FUNC(configureLanguages);
+            }, true] call CBA_fnc_addPlayerEventHandler;
+        };
+    }, player] call CBA_fnc_waitUntilAndExecute;
 };
 
 // Make sure that the player is not in spectator mode.

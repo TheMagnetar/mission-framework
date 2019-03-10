@@ -51,7 +51,7 @@ class Cfg3DEN {
                     class GVAR(assignGear) {
                         property = QGVAR(assignGear);
                         condition = "objectBrain";
-                        control = QEGVAR(core,hidden);
+                        control = QEGVAR(main,hidden);
                         expression = " \
                             if (is3DEN) then { \
                                 [_this, _value # 0, _value # 1] spawn umf_gear_fnc_assignGear; \

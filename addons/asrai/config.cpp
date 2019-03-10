@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"umf_main", "umf_core"};
+        requiredAddons[] = {"umf_main"};
         authors[] = {"TheMagnetar"};
         author = "UST101";
         authorUrl = "http://www.ust101.com/";
