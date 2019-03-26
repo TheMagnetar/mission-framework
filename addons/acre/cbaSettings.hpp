@@ -11,4 +11,5 @@ force force acre_sys_core_terrainLoss = 0.9;
 force force acre_sys_core_ts3ChannelName = "";
 force force acre_sys_core_ts3ChannelPassword = "ustacre2";
 force force acre_sys_core_ts3ChannelSwitch = true;
+force force acre_sys_signal_signalModel = 3;
 acre_sys_core_unmuteClients = true;
