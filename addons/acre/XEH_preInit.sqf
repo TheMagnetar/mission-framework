@@ -10,7 +10,12 @@ if (GVAR(loaded)) then {
     #include "initSettings.sqf"
 
     // Load settings file
-    [QPATHTOF(cbaSettings.hpp)] call EFUNC(main,handleCbaSettings);
+    private _settingsFile = preprocessFile QPATHTOF(cbaSettings.hpp);
+    {
+        _x params ["_setting", "_value", "_priority"];
+        diag_log format ["Setting: %1", _x];
+        [_setting, _value, _priority, "server"] call CBA_settings_fnc_set;
+    } forEach ([_settingsFile, true] call CBA_settings_fnc_parse);
 
     DGVAR(radiosConfigured) = false;
 

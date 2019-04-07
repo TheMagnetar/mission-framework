@@ -8,7 +8,12 @@ GVAR(loaded) = isClass (configFile >> "CfgPatches" >> "ace_common");         // 
 
 if (GVAR(loaded)) then {
     // Load settings file
-    [QPATHTOF(cbaSettings.hpp)] call EFUNC(main,handleCbaSettings);
+    private _settingsFile = preprocessFile QPATHTOF(cbaSettings.hpp);
+    {
+        _x params ["_setting", "_value", "_priority"];
+
+        [_setting, _value, _priority, "server"] call CBA_settings_fnc_set;
+    } forEach ([_settingsFile, true] call CBA_settings_fnc_parse);
 
     #include "initSettings.sqf"
 };
