@@ -1,7 +1,6 @@
 #include "script_component.hpp"
 
-[{CBA_missionTime > 0},
-{
+[{CBA_missionTime > 0}, {
     if (GVAR(createModule) && {isServer}) then {
         [] call FUNC(createModule);
     };
@@ -11,12 +10,12 @@
 
 ["zeus", {
     params ["_name"];
-    _name = toLower _name;
-    {
-        if (((toLower name _x) find _name) != -1) exitWith {
-            systemChat format ["Zeus given to %1", name _x];
-            [QGVAR(assignZeus), [_x]] call CBA_fnc_serverEvent;
-        };
 
-    } forEach allPlayers;
+    private _players = allPlayers;
+    private _pos = _players findIf {_x == _name};
+    if (_pos != -1) then {
+        private _player = _players select _pos;
+        systemChat format ["Zeus given to %1", name _player];
+        [QGVAR(assignZeus), [_player]] call CBA_fnc_serverEvent;
+    };
 }, "adminLogged"] call CBA_fnc_registerChatCommand;
