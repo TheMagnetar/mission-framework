@@ -4,7 +4,7 @@
 enableSentences false;
 
 [
-    "UMF",
+    "MF",
     QGVAR(handleChat),
     ["Global chat enable", "Enables/disables global chat"],
     "",

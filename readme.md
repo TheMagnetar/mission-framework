@@ -1,4 +1,4 @@
-# Mission Framework (UMF)
+# Mission Framework (MF)
 
 <p align="center">
     <sup><strong>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases">CBA A3</a>.<br/></strong></sub>
@@ -25,7 +25,7 @@ In addition the mission framework focuses on core functionality, leaving other f
 
 ## Credits
 
-I would like to thank the following projects, without them UMF would not exist nor have the same quality.
+I would like to thank the following projects, without them MF would not exist nor have the same quality.
 
 Special Thanks:
 
