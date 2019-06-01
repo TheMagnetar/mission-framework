@@ -10,7 +10,7 @@
  * CBA PFH ID <NUMBER>
  *
  * Example:
- * [acre_player] call umf_safestart_fnc_endWarmupClient
+ * [acre_player] call mf_safestart_fnc_endWarmupClient
  *
  * Public: No
  */

@@ -19,9 +19,9 @@
  *
  * Example:
  * -A random animation is selected from the predefined ones (no night vision):
- * ["Operation Desert Fox", "Iran", "Alpha 1" + name player, false] spawn umf_intro_playerCamera;
+ * ["Operation Desert Fox", "Iran", "Alpha 1" + name player, false] spawn mf_intro_playerCamera;
  * - A random animation is selected from the given ones (with night vision):
- * ["Operation Desert Fox", "Iran", "Alpha 1" + name player, trye] spawn umf_intro_playerCamera;
+ * ["Operation Desert Fox", "Iran", "Alpha 1" + name player, trye] spawn mf_intro_playerCamera;
  *
  * Public: Yes
  */

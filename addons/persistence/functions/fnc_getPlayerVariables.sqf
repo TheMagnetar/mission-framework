@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player] call umf_persistence_fnc_getPlayerVariables
+ * [player] call mf_persistence_fnc_getPlayerVariables
  *
  * Public: No
  */

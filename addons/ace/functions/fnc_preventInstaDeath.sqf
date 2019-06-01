@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call umf_ace_fnc_preventInstantDeath
+ * [] call mf_ace_fnc_preventInstantDeath
  *
  * Public: No
  */

@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player, player] call umf_respawn_enterSpectator
+ * [player, player] call mf_respawn_enterSpectator
  *
  * Public: No
  */

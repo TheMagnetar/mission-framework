@@ -1,4 +1,4 @@
-umf_gear
+mf_gear
 ========
 
 Gear configuration module inspired by [TMF](https://github.com/TMF3/TMF).

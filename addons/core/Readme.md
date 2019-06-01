@@ -1,4 +1,4 @@
-umf_core
+mf_core
 ========
 
 Core functions for the mission framework.

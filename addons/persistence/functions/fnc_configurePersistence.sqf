@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player] call umf_acre_fnc_getPlayerVariables
+ * [player] call mf_acre_fnc_getPlayerVariables
  *
  * Public: No
  */

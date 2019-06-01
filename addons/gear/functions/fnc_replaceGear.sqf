@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, ["uniformxxx", "uniformyyy"], "uniform"] call umf_gear_fnc_replaceGear
+ * [player, ["uniformxxx", "uniformyyy"], "uniform"] call mf_gear_fnc_replaceGear
  *
  * Public: No
  */

@@ -12,7 +12,7 @@ class CfgPatches {
             "cba_main",
             "cba_xeh"
         };
-        author = ECSTRING(core,UMFTeam);
+        author = ECSTRING(core,MFTeam);
         url = CSTRING(URL);
         VERSION_CONFIG;
     };
@@ -21,13 +21,13 @@ class CfgPatches {
 class CfgMods {
     class PREFIX {
         dir = "@umf";
-        name = "UST101 Mission Framework";
+        name = "Mission Framework";
         picture = "A3\Ui_f\data\Logos\arma3_expansion_alpha_ca";
         hidePicture = "true";
         hideName = "true";
         actionName = "Website";
         action = CSTRING(URL);
-        description = "Issue Tracker: https://github.com/TheMagnetar/ust101-mission-framework/issues";
+        description = "Issue Tracker: https://github.com/TheMagnetar/mission-framework/issues";
     };
 };
 

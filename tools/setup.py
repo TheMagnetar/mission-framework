@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #######################
-#  UMF Setup Script  #
+#  MF Setup Script  #
 #######################
 
 import os
@@ -12,27 +12,27 @@ import subprocess
 import winreg
 
 ######## GLOBALS #########
-MAINDIR = "u"
-PROJECTDIR = "umf"
+MAINDIR = "m"
+PROJECTDIR = "mf"
 ##########################
 
 def main():
     FULLDIR = "{}\\{}".format(MAINDIR,PROJECTDIR)
     print("""
   ######################################
-  # UMF Development Environment Setup #
+  #  MF Development Environment Setup  #
   ######################################
 
-  This script will create your UMF dev environment for you.
+  This script will create your MF dev environment for you.
 
   Before you run this, you should already have:
     - A properly setup ACE3 Development Environment
 
   If you have not done those things yet, please abort this script in the next step and do so first.
 
-  This script will create two hard links on your system, both pointing to your UMF project folder:
-    [Arma 3 installation directory]\\{} => UMF project folder
-    P:\\{}                              => UMF project folder
+  This script will create two hard links on your system, both pointing to your MF project folder:
+    [Arma 3 installation directory]\\{} => MF project folder
+    P:\\{}                              => MF project folder
     """.format(FULLDIR,FULLDIR))
     print("\n")
 

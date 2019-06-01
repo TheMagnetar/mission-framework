@@ -3,7 +3,7 @@
     QGVAR(createModule),
     "CHECKBOX",
     "Create Zeus for administrator?",
-    "UST-Framework",
+    "Mission-Framework",
     true,
     true,
     {}

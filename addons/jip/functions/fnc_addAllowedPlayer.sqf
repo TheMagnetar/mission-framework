@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player] call umf_jip_fnc_addAllowedPlayer
+ * [player] call mf_jip_fnc_addAllowedPlayer
  *
  * Public: No
  */

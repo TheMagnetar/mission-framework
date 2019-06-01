@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call umf_respawn_exitSpectator
+ * [] call mf_respawn_exitSpectator
  *
  * Public: No
  */

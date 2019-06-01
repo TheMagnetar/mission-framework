@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call umf_acre_fnc_removeRadios
+ * [player] call mf_acre_fnc_removeRadios
  *
  * Public: No
  */

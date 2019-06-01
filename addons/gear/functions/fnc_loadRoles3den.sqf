@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [1] call umf_gear_fnc_loadRoles3den
+ * [1] call mf_gear_fnc_loadRoles3den
  *
  * Public: No
  */

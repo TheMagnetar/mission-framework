@@ -1,1 +1,1 @@
-#include "\u\umf\addons\asrai\script_component.hpp"
+#include "\m\mf\addons\asrai\script_component.hpp"

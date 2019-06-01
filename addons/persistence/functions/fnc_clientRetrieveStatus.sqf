@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player] call umf_persistence_fnc_clientRetrieveStatus
+ * [player] call mf_persistence_fnc_clientRetrieveStatus
  *
  * Public: No
  */

@@ -5,7 +5,7 @@ class ctrlStatic;
 class Cfg3DEN {
     class Object {
         class AttributeCategories {
-            class umf_attributes {
+            class mf_attributes {
                 class Attributes {
                     class GVAR(enabled) {
                         property = QGVAR(enabled);
@@ -54,7 +54,7 @@ class Cfg3DEN {
                         control = QEGVAR(main,hidden);
                         expression = " \
                             if (is3DEN) then { \
-                                [_this, _value # 0, _value # 1] spawn umf_gear_fnc_assignGear; \
+                                [_this, _value # 0, _value # 1] spawn mf_gear_fnc_assignGear; \
                             }; \
                         ";
                         defaultValue = "['rfl','']";
@@ -73,15 +73,15 @@ class Cfg3DEN {
             onLoad = "";
             attributeLoad = "\
                 _ctrlRole = _this controlsGroupCtrl 100 ;\
-                [_ctrlRole, _value] call umf_gear_fnc_loadFactions3den;\
+                [_ctrlRole, _value] call mf_gear_fnc_loadFactions3den;\
             ";
             attributeSave = "\
                 private _ctrlFaction = _this controlsGroupCtrl 100;\
                 private _output = _ctrlFaction lbData (lbCurSel _ctrlFaction);\
                 private _objects = get3DENSelected 'object'; \
                 { \
-                    private _array = [(_x get3DENAttribute 'umf_gear_role') select 0, _output]; \
-                    _x set3DENAttribute ['umf_gear_assignGear',_array]; \
+                    private _array = [(_x get3DENAttribute 'mf_gear_role') select 0, _output]; \
+                    _x set3DENAttribute ['mf_gear_assignGear',_array]; \
                 } forEach _objects; \
                 _output; \
             ";
@@ -91,8 +91,8 @@ class Cfg3DEN {
                     idc = 100;
                     // TYPE
                     onLBSelChanged = "\
-                        _ctrlRole = uiNamespace getVariable ['umf_gear_roleControl', controlNull];\
-                        [_ctrlRole] call umf_gear_fnc_loadRoles3den;\
+                        _ctrlRole = uiNamespace getVariable ['mf_gear_roleControl', controlNull];\
+                        [_ctrlRole] call mf_gear_fnc_loadRoles3den;\
                     ";
                     x = ATTRIBUTE_TITLE_W * GRID_W;
                     w = ATTRIBUTE_CONTENT_W * GRID_W;
@@ -101,10 +101,10 @@ class Cfg3DEN {
             };
         };
         class GVAR(roleControl): Combo {
-            onLoad = "uiNamespace setVariable ['umf_gear_roleControl',(_this select 0) controlsGroupCtrl 100];";
+            onLoad = "uiNamespace setVariable ['mf_gear_roleControl',(_this select 0) controlsGroupCtrl 100];";
             attributeLoad = "\
                 _ctrlRole = _this controlsGroupCtrl 100 ;\
-                [_ctrlRole, _value] call umf_gear_fnc_loadRoles3den;\
+                [_ctrlRole, _value] call mf_gear_fnc_loadRoles3den;\
             ";
             attributeSave = "\
                 private _ctrlRole = _this controlsGroupCtrl 100;\
@@ -112,8 +112,8 @@ class Cfg3DEN {
                 private _objects = get3DENSelected 'object'; \
                 { \
                     _array = [_output, \
-                    (_x get3DENAttribute 'umf_gear_faction') select 0]; \
-                    _x set3DENAttribute ['umf_gear_assignGear',_array]; \
+                    (_x get3DENAttribute 'mf_gear_faction') select 0]; \
+                    _x set3DENAttribute ['mf_gear_assignGear',_array]; \
                 } forEach _objects; \
                 _output; \
             ";
@@ -138,14 +138,14 @@ class Cfg3DEN {
         class ADDON {
             onMissionLoad = " \
                 { \
-                    (_x get3DENAttribute 'umf_gear_assignGear') params ['_value']; \
-                    [_x, _value # 0, _value # 1] spawn { sleep 0.5; _this call umf_gear_fnc_assignGear}; \
+                    (_x get3DENAttribute 'mf_gear_assignGear') params ['_value']; \
+                    [_x, _value # 0, _value # 1] spawn { sleep 0.5; _this call mf_gear_fnc_assignGear}; \
                 } forEach allUnits; \
             ";
             onMissionPreviewEnd = " \
                 { \
-                    (_x get3DENAttribute 'umf_gear_assignGear') params ['_value']; \
-                    [_x, _value # 0, _value # 1] spawn { sleep 0.5; _this call umf_gear_fnc_assignGear}; \
+                    (_x get3DENAttribute 'mf_gear_assignGear') params ['_value']; \
+                    [_x, _value # 0, _value # 1] spawn { sleep 0.5; _this call mf_gear_fnc_assignGear}; \
                 } forEach allUnits; \
             ";
         };

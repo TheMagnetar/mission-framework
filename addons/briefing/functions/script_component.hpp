@@ -1,1 +1,1 @@
-#include "\u\umf\addons\briefing\script_component.hpp"
+#include "\m\mf\addons\briefing\script_component.hpp"

@@ -12,7 +12,7 @@
  * Number of respawns left <NUMBER>
  *
  * Example:
- * [player] call umf_respawn_manageTickets
+ * [player] call mf_respawn_manageTickets
  *
  * Public: No
  */

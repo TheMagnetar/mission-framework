@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [] call umf_briefing_fnc_radioFrequencies
+ * [] call mf_briefing_fnc_radioFrequencies
  *
  * Public: No
  */

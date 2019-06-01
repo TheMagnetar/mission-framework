@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player, s1] call umf_respawn_config
+ * [player, s1] call mf_respawn_config
  *
  * Public: No
  */

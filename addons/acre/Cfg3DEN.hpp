@@ -5,7 +5,7 @@ class ctrlStatic;
 class Cfg3DEN {
     class Object {
         class AttributeCategories {
-            class umf_attributes {
+            class mf_attributes {
                 class Attributes {
                     class GVAR(assignedNetworks) {
                         property = QGVAR(assignedNetworks);
@@ -69,7 +69,7 @@ class Cfg3DEN {
         class GVAR(assignedNetworksControl): Combo {
             attributeLoad = "\
                 _ctrlRole = _this controlsGroupCtrl 100 ;\
-                [_ctrlRole, _value] call umf_acre_fnc_loadNetworks3den;\
+                [_ctrlRole, _value] call mf_acre_fnc_loadNetworks3den;\
             ";
             class Controls {
                 class Title: ctrlStatic {

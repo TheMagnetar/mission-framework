@@ -1,4 +1,4 @@
-umf_intro
+mf_intro
 ========
 
 Several introduction screens to be used in the missions.

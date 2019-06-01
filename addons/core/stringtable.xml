@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="UMF">
     <Package name="Core">
-        <Key ID="STR_UMF_Core_UMFTeam">
+        <Key ID="STR_mf_Core_UMFTeam">
             <English>UMF-Team</English>
         </Key>
-        <Key ID="STR_UMF_Core_templateError">
+        <Key ID="STR_mf_Core_templateError">
             <English>Outdated template version detected. Required version is %1 while mission has %2. Please update the mission template.</English>
             <Spanish>La versión de la plantilla está desactualizada. La versión requerida es %1 mientras que la misión tiene %2. Por favor actualiza la plantilla.</Spanish>
         </Key>
-        <Key ID="STR_UMF_core_preventFire">
+        <Key ID="STR_mf_core_preventFire">
             <English>Firing not allowed!</English>
             <Spanish>Prohibido disparar!</Spanish>
         </Key>

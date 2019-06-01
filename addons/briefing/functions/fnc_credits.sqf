@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call umf_briefing_fnc_credits
+ * [player] call mf_briefing_fnc_credits
  *
  * Public: No
  */
@@ -32,6 +32,6 @@ Mission created by <font color='#00FFFF'>%3</font> for the community <font color
 <br/>
 With the collaboration of %5.
 <br/><br/>
-UST101 Mission Framework %6 By %7", _missionName, _missionVersion, _authors, _community, _collaborators, _templateVersion, _templateAuthors];
+Mission Framework %6 By %7", _missionName, _missionVersion, _authors, _community, _collaborators, _templateVersion, _templateAuthors];
 
 _unit createDiaryRecord ["diary", ["Credits", _creditsText]];

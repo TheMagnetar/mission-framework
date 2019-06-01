@@ -15,7 +15,7 @@
  * None
  *
  * Example:
- * ["Operation Desert Fox", "Iran","Soldiers live. And wonder why.\nGlen Cook"] spawn umf_intro_fnc_blackScreen_typeText
+ * ["Operation Desert Fox", "Iran","Soldiers live. And wonder why.\nGlen Cook"] spawn mf_intro_fnc_blackScreen_typeText
  *
  * Public: Yes
  */

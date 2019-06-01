@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, ["gpsxxx", "gpsyyy"], "gps"] call umf_gear_fnc_replaceLinkedItems
+ * [player, ["gpsxxx", "gpsyyy"], "gps"] call mf_gear_fnc_replaceLinkedItems
  *
  * Public: No
  */

@@ -2,7 +2,7 @@
     QGVAR(saveGear),
     "CHECKBOX",
     "Save Gear on respawn?",
-    "UST-Framework",
+    "Mission-Framework",
     true,
     true,
     {}
@@ -13,7 +13,7 @@
     QGVAR(killCamEnabled),
     "CHECKBOX",
     "Kill Cam",
-    "UST-Framework",
+    "Mission-Framework",
     true,
     true,
     {}
@@ -24,7 +24,7 @@
     QGVAR(respawnTicketsFor),
     "LIST",
     "Respawn tickets for",
-    "UST-Framework",
+    "Mission-Framework",
     [[0, 1], ["Player", "Side"], 0],
     true,
     {}
@@ -34,7 +34,7 @@
     QGVAR(numRespawnsConfig),
     "SLIDER",
     ["Number of respawns (-1 for infinite respawns)", "-1: unlimited respawns, 0: respawn disabled, >0: number of respawns"],
-    "UST-Framework",
+    "Mission-Framework",
     [-1, 50, 0, 0],
     true,
     {}
@@ -44,7 +44,7 @@
     QGVAR(respawnAreaTime),
     "SLIDER",
     "Respawn area time (min)",
-    "UST-Framework",
+    "Mission-Framework",
     [0, 20, 0, 0],
     true,
     {}

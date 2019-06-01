@@ -22,7 +22,7 @@ def main():
                     "-x",
                     "*.md",
                     os.path.join(componentspath, component),
-                    os.path.join(buildpath, "umf_{}.pbo".format(component.lower()))
+                    os.path.join(buildpath, "mf_{}.pbo".format(component.lower()))
                 ], stderr = subprocess.STDOUT)
             except:
                 print("Failed to make {}.".format(component))

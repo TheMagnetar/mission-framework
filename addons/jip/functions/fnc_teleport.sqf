@@ -12,7 +12,7 @@
  * Teleport successful <BOOL>
  *
  * Example:
- * [87, player] call umf_jip_fnc_teleport
+ * [87, player] call mf_jip_fnc_teleport
  *
  * Public: No
  */

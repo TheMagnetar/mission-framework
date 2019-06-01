@@ -12,7 +12,7 @@
  * Unit successfully teleported <BOOL>
  *
  * Example:
- * [] call umf_teleport_fnc_teleport
+ * [] call mf_teleport_fnc_teleport
  *
  * Public: No
  */

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [true] call umf_respawn_respawnCounter
+ * [true] call mf_respawn_respawnCounter
  *
  * Public: No
  */

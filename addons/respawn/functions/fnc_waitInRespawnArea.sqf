@@ -11,7 +11,7 @@
  * CBA PFH ID <NUMBER>
  *
  * Example:
- * [player] call umf_respawn_fnc_waitInRespawnArea
+ * [player] call mf_respawn_fnc_waitInRespawnArea
  *
  * Public: No
  */

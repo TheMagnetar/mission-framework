@@ -1,4 +1,4 @@
-umf_acre
+mf_acre
 ========
 
 ACRE configuration module. Automatically assigns radios and configures their channels depending on roles and networks.

@@ -11,7 +11,7 @@
  * CBA PFH ID <NUMBER>
  *
  * Example:
- * [] call umf_safestart_fnc_startWarmupServer
+ * [] call mf_safestart_fnc_startWarmupServer
  *
  * Public: No
  */

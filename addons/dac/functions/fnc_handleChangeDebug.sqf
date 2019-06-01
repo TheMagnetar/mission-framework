@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call umf_dac_fnc_handleChangeDebug
+ * [] call mf_dac_fnc_handleChangeDebug
  *
  * Public: No
  */

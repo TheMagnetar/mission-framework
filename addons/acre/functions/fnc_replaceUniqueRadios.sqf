@@ -10,7 +10,7 @@
  * Loadout without unique radio IDs <ARRAY>
  *
  * Example:
- * [player getUnitLoadout] call umf_acre_fnc_replaceUniqueRadios
+ * [player getUnitLoadout] call mf_acre_fnc_replaceUniqueRadios
  *
  * Public: No
  */

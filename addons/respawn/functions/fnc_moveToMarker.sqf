@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call umf_respawn_moveToMarker
+ * [player] call mf_respawn_moveToMarker
  *
  * Public: No
  */

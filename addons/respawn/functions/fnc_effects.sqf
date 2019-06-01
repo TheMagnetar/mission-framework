@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call umf_respawn_effects
+ * [player] call mf_respawn_effects
  *
  * Public: No
  */

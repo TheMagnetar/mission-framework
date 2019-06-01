@@ -3,7 +3,7 @@
     QGVAR(debugEnabled),
     "CHECKBOX",
     "Enable DAC",
-    "UST-Framework",
+    "Mission-Framework",
     false,
     true,
     {

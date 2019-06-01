@@ -1,4 +1,4 @@
-umf_teleport
+mf_teleport
 ========
 
 Handles moving a player through the teleport option.

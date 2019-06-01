@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call umf_safestart_fnc_timer
+ * [] call mf_safestart_fnc_timer
  *
  * Public: No
  */

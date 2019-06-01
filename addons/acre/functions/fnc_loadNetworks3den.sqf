@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call umf_acre_fnc_loadNetworks3den
+ * [player] call mf_acre_fnc_loadNetworks3den
  *
  * Public: No
  */

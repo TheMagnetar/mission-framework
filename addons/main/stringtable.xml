@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="UMF">
+<Project name="MF">
     <Package name="Main">
-        <Key ID="STR_UMF_Main_URL">
-            <English>http://www.ust101.com/</English>
+        <Key ID="STR_MF_Main_URL">
+            <English>https://github.com/TheMagnetar/mission-framework/</English>
         </Key>
     </Package>
 </Project>

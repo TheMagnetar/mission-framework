@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [acre_player, s1] spawn umf_respawn_onPlayerKilled
+ * [acre_player, s1] spawn mf_respawn_onPlayerKilled
  *
  * Public: No
  */

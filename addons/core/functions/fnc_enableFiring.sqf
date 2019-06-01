@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call umf_core_fnc_enableFiring;
+ * [player] call mf_core_fnc_enableFiring;
  *
  * Public: No
  */

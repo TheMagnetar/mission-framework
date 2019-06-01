@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, ["weaponxX", "weaponY"], "primaryWeapon"] call umf_gear_fnc_replaceWeapons
+ * [player, ["weaponxX", "weaponY"], "primaryWeapon"] call mf_gear_fnc_replaceWeapons
  *
  * Public: No
  */

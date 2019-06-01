@@ -1,5 +1,5 @@
 //=======================================================================================================//
-// File: umf_briefing_rhs_usn.sqf                                                                        //
+// File: mf_briefing_rhs_usn.sqf                                                                        //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
 // File creation: 2015/06/12                                                                             //
@@ -17,9 +17,9 @@
 // NOTES: RADIO. If the player is inside a vehicle or a vehicle is passed as a second argument, the      //
 // vehicle radio configurations will also be displayed                                                   //
 // Example:                                                                                              //
-//     [player, myMRAP] call umf_briefing_radioFrequencies                                               //
+//     [player, myMRAP] call mf_briefing_radioFrequencies                                                //
 //=======================================================================================================//
-private _radio = player createDiaryRecord ["diary", ["Radio frequencies", [player] call umf_briefing_fnc_radioFrequencies]];
+private _radio = player createDiaryRecord ["diary", ["Radio frequencies", [player] call mf_briefing_fnc_radioFrequencies]];
 
 //=======================================================================================================//
 // NOTES: ADMINISTRATION/LOGISTICS.                                                                      //

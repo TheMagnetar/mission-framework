@@ -8,5 +8,5 @@ params ["_player", "_didJip"];
 
 // Execute briefing only on player machines.
 if (hasInterface) then {
-    #include "missionConfig\briefing\umf_briefing.sqf"
+    #include "missionConfig\briefing\mf_briefing.sqf"
 };

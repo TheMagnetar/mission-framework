@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call umf_jip_fnc_processJipPlayer
+ * [player] call mf_jip_fnc_processJipPlayer
  *
  * Public: No
  */

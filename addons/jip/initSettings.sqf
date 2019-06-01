@@ -2,7 +2,7 @@
     QGVAR(jipAllowedTime),
     "SLIDER",
     "JIP allowed time (min)",
-    "UST-Framework",
+    "Mission-Framework",
     [-1, 600, 15, 0],
     true,
     {}
@@ -12,7 +12,7 @@
     QGVAR(savePlayerStatus),
     "LIST",
     "Save player status",
-    "UST-Framework",
+    "Mission-Framework",
     [[0, 1, 2], ["No", "Yes", "Yes + A.Fatigue"], 0],
     true,
     {

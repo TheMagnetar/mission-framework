@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player] call umf_persistence_fnc_applyPlayerVariables
+ * [player] call mf_persistence_fnc_applyPlayerVariables
  *
  * Public: No
  */

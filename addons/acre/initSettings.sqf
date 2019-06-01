@@ -12,7 +12,7 @@
     QGVAR(distributeRadios),
     "CHECKBOX",
     "Distribute radios",
-    "UST-Framework",
+    "Mission-Framework",
     true,
     true,
     {}
@@ -23,7 +23,7 @@
     QGVAR(configureChannels),
     "CHECKBOX",
     "Configure radio channels",
-    "UST-Framework",
+    "Mission-Framework",
     true,
     true,
     {}
@@ -34,7 +34,7 @@
     QGVAR(configureBabel),
     "CHECKBOX",
     "Configure babel languages",
-    "UST-Framework",
+    "Mission-Framework",
     true,
     true,
     {}

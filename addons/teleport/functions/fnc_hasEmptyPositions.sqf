@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call umf_teleport_fnc_hasEmptyPositions
+ * [] call mf_teleport_fnc_hasEmptyPositions
  *
  * Public: No
  */

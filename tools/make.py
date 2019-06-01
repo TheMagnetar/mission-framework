@@ -57,7 +57,7 @@ if sys.platform == "win32":
     import winreg
 
 ######## GLOBALS #########
-project = "@umf"
+project = "@mf"
 project_version = "0.1.0"
 arma3tools_path = ""
 work_drive = ""
@@ -66,13 +66,13 @@ make_root = ""
 release_dir = ""
 module_root_parent = ""
 optionals_root = ""
-key_name = "umf"
+key_name = "mf"
 key = ""
 dssignfile = ""
-prefix = "umf"
-pbo_name_prefix = "umf_"
+prefix = "mf"
+pbo_name_prefix = "mf_"
 signature_blacklist = []
-importantFiles = ["mod.cpp", "readme.md", "authors.txt", "license", "logo_ust101_ca.paa", "logo_ust101_over_ca.paa", "logo_ust101_small_ca.paa"]
+importantFiles = ["mod.cpp", "readme.md", "authors.txt", "license"]
 versionFiles = ["readme.md", "mod.cpp"]
 
 ciBuild = False # Used for CI builds

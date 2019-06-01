@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [] call umf_gear_fnc_assignGear
+ * [] call mf_gear_fnc_assignGear
  *
  * Public: No
  */
@@ -20,7 +20,11 @@
 params ["_unit", ["_role", ""], ["_faction", ""]];
 
 if (_role isEqualTo "") then {
-    _role = _unit getVariable [QGVAR(role), "rfl"];
+    _role = _unit getVariable [QGVAR(role), ""];
+    if (_role isEqualTo "") then {
+        _unit setVariable [QGVAR(role), "rfl", true];
+        _role = "rfl";
+    };
 } else {
     _unit setVariable [QGVAR(role), _role, true];
 };

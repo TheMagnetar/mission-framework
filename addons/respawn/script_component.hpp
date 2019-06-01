@@ -1,6 +1,6 @@
 #define COMPONENT respawn
 #define COMPONENT_BEAUTIFIED Respawn
-#include "\u\umf\addons\main\script_mod.hpp"
+#include "\m\mf\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
@@ -14,7 +14,7 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_RESPAWN
 #endif
 
-#include "\u\umf\addons\main\script_macros.hpp"
+#include "\m\mf\addons\main\script_macros.hpp"
 
 #define TIMER_DIALOG_IDD 4444
 #define TIMER_DIALOG_IDC 4444

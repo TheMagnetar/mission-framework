@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [] call umf_dac_fnc_init
+ * [] call mf_dac_fnc_init
  *
  * Public: No
  */

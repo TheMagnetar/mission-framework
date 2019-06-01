@@ -4,8 +4,8 @@
 class Cfg3DEN {
     class Object {
         class AttributeCategories {
-            class umf_attributes {
-                displayName = "UST101 Mission Framework";
+            class mf_attributes {
+                displayName = "Mission Framework";
                 collapsed = 1;
                 class Attributes {};
             };

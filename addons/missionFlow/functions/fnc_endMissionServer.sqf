@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call umf_missionFlow_fnc_endMissionServer
+ * [] call mf_missionFlow_fnc_endMissionServer
  *
  * Public: No
  */

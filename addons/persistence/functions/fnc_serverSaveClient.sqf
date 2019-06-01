@@ -11,7 +11,7 @@
  * Adding successfull <BOOL>
  *
  * Example:
- * [player, "ACRE_PRC77"] call umf_persistence_fnc_serverSaveClient
+ * [player, "ACRE_PRC77"] call mf_persistence_fnc_serverSaveClient
  *
  * Public: No
  */

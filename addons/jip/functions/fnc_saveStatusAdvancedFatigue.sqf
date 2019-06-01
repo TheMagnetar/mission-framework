@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call umf_persistence_fnc_saveStatusAdvancedFatigue
+ * [player] call mf_persistence_fnc_saveStatusAdvancedFatigue
  *
  * Public: No
  */

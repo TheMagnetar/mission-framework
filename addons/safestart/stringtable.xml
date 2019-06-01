@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="UMF">
     <Package name="safestart">
-        <Key ID="STR_UMF_safestart_cannotLeaveZone">
+        <Key ID="STR_mf_safestart_cannotLeaveZone">
             <English>You cannot leave the safe start area.</English>
             <Spanish>No puedes salir de la zona de calentamiento.</Spanish>
         </Key>
-        <Key ID="STR_UMF_safestart_active">
+        <Key ID="STR_mf_safestart_active">
             <English>Safe start active.</English>
             <Spanish>Fase de calentamiento</Spanish>
         </Key>
-        <Key ID="STR_UMF_safestart_safestartTime">
+        <Key ID="STR_mf_safestart_safestartTime">
             <English>Safe start remaining time: %1:%2.</English>
             <Spanish>Tiempo restante de calentamiento: %1:%2 </Spanish>
         </Key>
-        <Key ID="STR_UMF_safestart_safeStartOver">
+        <Key ID="STR_mf_safestart_safeStartOver">
             <English>Safe start over: go go go!</English>
             <Spanish>Empieza la misión!</Spanish>
         </Key>

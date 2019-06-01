@@ -1,4 +1,4 @@
-umf_zeus
+mf_zeus
 ========
 
 Creates a zeus module for administrators. This functionality can be toggled on/off.

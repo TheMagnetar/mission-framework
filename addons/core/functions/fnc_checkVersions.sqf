@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call umf_core_fnc_checkVersions
+ * [] call mf_core_fnc_checkVersions
  *
  * Public: No
  */

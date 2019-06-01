@@ -3,7 +3,7 @@
     QGVAR(enabled),
     "CHECKBOX",
     "Enable DAC",
-    "UST-Framework",
+    "Mission-Framework",
     EGVAR(core,dac),
     true,
     {}
@@ -14,7 +14,7 @@
     QGVAR(debugLevel),
     "LIST",
     "DAC Debug Level",
-    "UST-Framework",
+    "Mission-Framework",
     [[0, 1, 2], ["Disabled", "Simplified", "Full"], 0],
     true,
     {

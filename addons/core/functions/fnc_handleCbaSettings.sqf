@@ -10,7 +10,7 @@
  * Adding successfull <BOOL>
  *
  * Example:
- * ["cbaSettings.hpp"] call umf_core_fnc_handleCbaSettings
+ * ["cbaSettings.hpp"] call mf_core_fnc_handleCbaSettings
  *
  * Public: No
  */

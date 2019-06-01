@@ -1,4 +1,4 @@
-umf_asrai
+mf_asrai
 ========
 
 ASR AI 3 configuration module.

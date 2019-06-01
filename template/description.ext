@@ -13,7 +13,7 @@
 //=======================================================================================================//
 // UST101 Mission Framework.                                                                             //
 //=======================================================================================================//
-#include "umfFramework\frameworkConfig.hpp"
+#include "mfFramework\frameworkConfig.hpp"
 
 //=======================================================================================================//
 // Mission header - Game type definition and minimum and maximum number of players.                      //
@@ -33,13 +33,13 @@ class CfgMission {
     essentialAddons[] = {};
     recommendedAddons[] = {};
     clientAddons[] = {};
-    community = "Unidad de Simulación Táctica 101 (UST101)";
+    community = "";
     missionVersion = "vX.Y (date).";
     missionCollaborators = "*** Possible collaborators ***.";
 };
 
 class CfgCampaign {
-    campaignName = "Nombre de la campaña";
+    campaignName = "Campaign name";
     enableCampaign = 0;
     isLastMission = 0;
 };
@@ -49,12 +49,12 @@ class CfgCampaign {
 //=======================================================================================================//
 onLoadName = "*** Mission name. ***";                 // Mission name.
 onLoadMission = "*** Mission description. ***";       // Brief mission description.
-onLoadIntro = "UST101 Mission Framework (UMF)";       // Message shown while loading introduction.
+onLoadIntro = "Mission Framework (MF)";               // Message shown while loading introduction.
 onLoadIntroTime = 0;                                  // Show (1) or hide (0) date and time on when loading introduction.
 onLoadMissionTime = 0;                                // Show (1) or hide (0) date and time on when loading mission.
 author = "*** Author(s). ***";                        // Author.
-loadScreen = "media\images\loadScreen.jpg";           // Image displayed when loading mission.
-overviewPicture = "media\images\overviewPicture.jpg"; // Imatge displayed when selecting mission (aspect 2:1).
+loadScreen = "";                                      // Image displayed when loading mission.
+overviewPicture = "";                                 // Imatge displayed when selecting mission (aspect 2:1).
 overviewText = "*** Text to show. ***";               // Text shown when selecting mission.
 
 //=======================================================================================================//

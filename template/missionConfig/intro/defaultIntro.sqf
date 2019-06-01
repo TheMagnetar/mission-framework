@@ -1,5 +1,5 @@
 //=======================================================================================================//
-// File: bmt_intro.sqf                                                                                   //
+// File: dafault.sqf                                                                                     //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
 // File creation: 2015/04/03                                                                             //
@@ -43,10 +43,10 @@ private _unitFaction = "";
 if (side player isEqualTo sideLogic) then {
     _unitFaction = "logic";
 } else {
-    _unitFaction = player getVariable ["umf_gear_faction", toLower (faction player)];
+    _unitFaction = player getVariable ["mf_gear_faction", toLower (faction player)];
 
     // Use leader faction if unit's faction is different.
-    private _factionLeader = (leader group player) getVariable ["umf_gear_faction", toLower (faction (leader group player))];
+    private _factionLeader = (leader group player) getVariable ["mf_gear_faction", toLower (faction (leader group player))];
 
     if !(_unitFaction isEqualTo _factionLeader) then {
         _unitFaction = _factionLeader;
@@ -220,15 +220,15 @@ switch (_unitFaction) do {
 if (alive player) then {
     switch (_introType) do {
         case "blackScreen": {
-            [_missionName, _missionLocation, _introText, _dateAndTime] spawn umf_intro_fnc_blackScreen_typeText;
+            [_missionName, _missionLocation, _introText, _dateAndTime] spawn mf_intro_fnc_blackScreen_typeText;
         };
 
         case "uavFeed": {
-            [_uavMarker, _missionName + " - " + _missionLocation, [400,200,0,1], _uavMarkerType] spawn umf_intro_fnc_uav;
+            [_uavMarker, _missionName + " - " + _missionLocation, [400,200,0,1], _uavMarkerType] spawn mf_intro_fnc_uav;
         };
 
         case "playerCamera": {
-            [_missionName, _missionLocation, _vehicleName, false, _animationList, _dateAndTime] spawn umf_intro_fnc_playerCamera;
+            [_missionName, _missionLocation, _vehicleName, false, _animationList, _dateAndTime] spawn mf_intro_fnc_playerCamera;
         };
 
         default {

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call umf_jip_fnc_handleAllowTeleport
+ * [player] call mf_jip_fnc_handleAllowTeleport
  *
  * Public: No
  */

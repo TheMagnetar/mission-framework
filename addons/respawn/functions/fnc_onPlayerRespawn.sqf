@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [player] spawn umf_respawn_onPlayerRespawn
+ * [player] spawn mf_respawn_onPlayerRespawn
  *
  * Public: No
  */

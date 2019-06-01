@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call umf_zeus_fnc_createModule
+ * [] call mf_zeus_fnc_createModule
  *
  * Public: No
  */

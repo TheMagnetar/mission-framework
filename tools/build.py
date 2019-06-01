@@ -6,7 +6,7 @@ import subprocess
 
 ######## GLOBALS #########
 MAINPREFIX = "u"
-PREFIX = "umf_"
+PREFIX = "mf_"
 ##########################
 
 def mod_time(path):
@@ -32,7 +32,7 @@ def check_for_obsolete_pbos(addonspath, file):
 def main():
     print("""
   ####################
-  # UMF Debug Build #
+  #  MF Debug Build  #
   ####################
 """)
 

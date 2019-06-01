@@ -2,7 +2,7 @@
     QGVAR(aceSpectatorEnabled),
     "CHECKBOX",
     "Enable ACE3 Spectator?",
-    "UST-Framework",
+    "Mission-Framework",
     true,
     true,
     {}

@@ -11,7 +11,7 @@
  * Adding successfull <BOOL>
  *
  * Example:
- * [player, "ACRE_PRC77"] call umf_core_fnc_addItem
+ * [player, "ACRE_PRC77"] call mf_core_fnc_addItem
  *
  * Public: No
  */

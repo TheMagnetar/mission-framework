@@ -1,7 +1,7 @@
 VERSION = $(shell cat "VERSION")
-PREFIX = umf
-BIN = @umf
-ZIP = umf
+PREFIX = mf
+BIN = @mf
+ZIP = mf
 FLAGS = -i include -w unquoted-string -w redefinition-wo-undef
 VERSION_FILES = mod.cpp
 
@@ -80,7 +80,7 @@ push: commit
 release: clean version commit
 	@"$(MAKE)" $(MAKEFLAGS) signatures
 	@echo "  ZIP  $(ZIP)_v$(VERSION_S).zip"
-	@cp authors.txt license logo_ust101_ca.paa logo_ust101_over_ca.paa logo_ust101_small_ca.paa mod.cpp readme.md $(BIN)
+	@cp authors.txt license mod.cpp readme.md $(BIN)
 	@7z a -tzip $(ZIP)_$(VERSION).zip "./$(BIN)"
 
 clean:

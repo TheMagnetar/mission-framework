@@ -1,1 +1,1 @@
-#include "\u\umf\addons\jip\script_component.hpp"
+#include "\m\mf\addons\jip\script_component.hpp"

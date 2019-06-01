@@ -1,4 +1,4 @@
-umf_briefing
+mf_briefing
 ========
 
 Briefing backend functions.

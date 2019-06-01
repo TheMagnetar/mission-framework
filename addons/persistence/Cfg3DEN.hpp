@@ -5,7 +5,7 @@ class ctrlStatic;
 class Cfg3DEN {
     class Object {
         class AttributeCategories {
-            class umf_attributes {
+            class mf_attributes {
                 class Attributes {
                     class GVAR(persist) {
                         property = QGVAR(persist);

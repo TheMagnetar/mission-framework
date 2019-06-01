@@ -9,7 +9,7 @@
  * None
  *
  * Example:
- * [] call umf_core_fnc_handleChat
+ * [] call mf_core_fnc_handleChat
  *
  * Public: No
  */
